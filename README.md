@@ -17,8 +17,7 @@ FrondEnd de ShopShop para clientes y vendedores.
 ##Entregables 
 
 ### Primer Entregable  
-
-- Registro de Vendedores 
+ 
 - Registro de Productos 
 - Login 
 - Ver Productos 

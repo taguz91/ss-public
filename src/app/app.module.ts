@@ -7,7 +7,6 @@ import { LoginComponent } from './components/login/login.component';
 import { ProductoListComponent } from './components/producto-ss/producto/producto-list/producto-list.component';
 import { ClienteListComponent } from './components/human-ss/cliente/cliente-list/cliente-list.component';
 import { LocalListComponent } from './components/human-ss/vendedor/local-list/local-list.component';
-import { VendedorFormComponent } from './components/human-ss/vendedor/vendedor-form/vendedor-form.component';
 import { LocalFormComponent } from './components/human-ss/vendedor/local-form/local-form.component';
 import { ProductoFormComponent } from './components/producto-ss/producto/producto-form/producto-form.component';
 import { ClienteFormComponent } from './components/human-ss/cliente/cliente-form/cliente-form.component';
@@ -29,7 +28,6 @@ import { ComentarioComponent } from './components/producto-ss/comentario/comenta
     ProductoListComponent,
     ClienteListComponent,
     LocalListComponent,
-    VendedorFormComponent,
     LocalFormComponent,
     ProductoFormComponent,
     ClienteFormComponent
