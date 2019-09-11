@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +17,7 @@ import { VendedorComponent } from './components/human-ss/vendedor/vendedor/vende
 import { ClienteComponent } from './components/human-ss/cliente/cliente/cliente.component';
 import { LocalComponent } from './components/human-ss/vendedor/local/local.component';
 import { ComentarioComponent } from './components/producto-ss/comentario/comentario/comentario.component';
+import { ProductoShopComponent } from './components/producto-ss/producto/producto-shop/producto-shop.component';
 
 @NgModule({
   declarations: [
@@ -30,11 +33,14 @@ import { ComentarioComponent } from './components/producto-ss/comentario/comenta
     LocalListComponent,
     LocalFormComponent,
     ProductoFormComponent,
-    ClienteFormComponent
+    ClienteFormComponent,
+    ProductoShopComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

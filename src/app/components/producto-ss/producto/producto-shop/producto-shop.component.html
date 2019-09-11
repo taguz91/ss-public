@@ -1,0 +1,27 @@
+<div class="container">
+
+    <div>
+        <div class="row">
+
+            <div class="col-md-6" *ngFor="let p of productos; let i = index;">
+
+                <div class="card">
+                    <div>
+                        <span class="d-inline badge badge-info h2">
+                                {{ p.precio }}
+                        </span>
+                        <img src="favicon.ico" class="card-img-top" alt="...">
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">{{ p.nombre }}</h5>
+                        <a href="#" class="btn btn-primary">Más información</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
