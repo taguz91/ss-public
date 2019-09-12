@@ -1,1 +1,114 @@
-<p>producto-form works!</p>
+<div class="row">
+    <div class="col-md-8 offset-md-3">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+            <div class="form-row">
+
+                <div class="col-md-6 form-group">
+                    <label for="nombreVendedor">Vendedor</label>
+                    <select name="nombreVendedor" id="nombreVendedor" class="custom-select" required
+                        [ngClass]="{ 'is-invalid': submitted && form.nombreVendedor.errors }">
+                        <option value="">Seleccione a un Vendedor</option>
+                        <option value="0">Vendedor 1</option>
+                    </select>
+                    <div *ngIf="submitted && form.nombreVendedor.errors" class="invalid-feedback">
+                        <div *ngIf="form.nombreVendedor.errors.required">El nombre del Vendedor es requerido</div>
+                    </div>
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="nombreMarca">Marca</label>
+                    <select name="nombreMarca" id="nombreMarca" class="custom-select" required
+                        [ngClass]="{ 'is-invalid': submitted && form.nombreMarca.errors }">
+                        <option value="">Seleccione una marca</option>
+                        <option value="0">Marca 1</option>
+                    </select>
+                    <div *ngIf="submitted && form.nombreMarca.errors" class="invalid-feedback">
+                        <div *ngIf="form.nombreMarca.errors.required">El nombre de la Marca es requerido</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-row">
+
+                <div class="col-md-12 form-group">
+                    <label for="nombreProducto">Nombre del Producto</label>
+                    <input class="form-control" type="text" name="nombreProducto" id="nombreProducto"
+                        placeholder="Ingrese el nombre del producto" required
+                        [ngClass]="{ 'is-invalid': submitted && form.nombreProducto.errors }">
+                    <div *ngIf="submitted && form.nombreProducto.errors" class="invalid-feedback">
+                        <div *ngIf="form.nombreProducto.errors.required">El nombre del Producto es requerido</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-row">
+
+                <div class="col form-group">
+                    <label for="productoDescrip">Descripción del Producto</label>
+                    <textarea class="form-control" name="productoDescrip" id="productoDescrip"
+                        placeholder="Ingrese la descripción del producto" required
+                        [ngClass]="{ 'is-invalid': submitted && form.productoDescrip.errors }"></textarea>
+                    <div *ngIf="submitted && form.productoDescrip.errors" class="invalid-feedback">
+                        <div *ngIf="form.productoDescrip.errors.required">La descripción del Producto es requerida</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-row">
+
+                <div class="col form-group">
+                    <label for="maxEdad">Máximo de Edad para Compra</label>
+                    <input class="form-control" type="number" name="maxEdad" id="maxEdad" value="0" min="0" max="100"
+                        required [ngClass]="{ 'is-invalid': submitted && form.maxEdad.errors }">
+                    <div *ngIf="submitted && form.maxEdad.errors" class="invalid-feedback">
+                        <div *ngIf="form.maxEdad.errors.required">El máximo de edad es requerido</div>
+                    </div>
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="minEdad">Mínimo de Edad para Compra</label>
+                    <input class="form-control" type="number" name="minEdad" id="minEdad" value="0" min="0" max="50"
+                        required [ngClass]="{ 'is-invalid': submitted && form.minEdad.errors }">
+                    <div *ngIf="submitted && form.minEdad.errors" class="invalid-feedback">
+                        <div *ngIf="form.minEdad.errors.required">El mínimo de edad es requerido</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-row">
+
+                <div class="col-md-4 form-group">
+                    <label for="stockTotal">Stock Total</label>
+                    <input class="form-control" type="number" name="stockTotal" id="stockTotal"
+                        placeholder="Ingrese el stock total" value="0" required
+                        [ngClass]="{ 'is-invalid': submitted && form.stockTotal.errors }">
+                    <div *ngIf="submitted && form.stockTotal.errors" class="invalid-feedback">
+                        <div *ngIf="form.stockTotal.errors.required">El stock es requerido para guardar</div>
+                    </div>
+                </div>
+                <div class="col-md-4 offset-md-4 form-group">
+                    <label for="productoPrecio">Precio del Producto</label>
+                    <input class="form-control" type="number" name="productoPrecio" id="productoPrecio"
+                        placeholder="Ingrese el precio" value="0" required
+                        [ngClass]="{ 'is-invalid': submitted && form.productoPrecio.errors }">
+                    <div *ngIf="submitted && form.productoPrecio.errors" class="invalid-feedback">
+                        <div *ngIf="form.productoPrecio.errors.required">El precio es requerido para guardar</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-row">
+
+                <div class="col-md-4 offset-md-4">
+                    <button type="submit" class="btn btn-primary">Guardar Producto</button>
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+</div>
