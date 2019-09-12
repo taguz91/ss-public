@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-producto-shop',
   templateUrl: './producto-shop.component.html',
-  styleUrls: ['./producto-shop.component.css']
+  styleUrls: [
+    './producto-shop.component.css',
+    '../producto/producto.component.css'
+  ]
 })
 export class ProductoShopComponent implements OnInit {
 
@@ -26,7 +30,11 @@ export class ProductoShopComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(private ruter: Router) { }
+
+  verProducto(id: number): void {
+    this.ruter.navigate(['empleado', id]);
+  }
 
   ngOnInit() {
   }

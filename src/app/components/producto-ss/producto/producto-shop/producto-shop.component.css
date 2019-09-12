@@ -1,0 +1,10 @@
+.precio_producto {
+    position: absolute;
+    padding: 3% 3% 5% 3%;
+    right: 20px;
+    text-align: center;
+    border-bottom: 1px solid;
+    border-radius: 0 0 10px 10px;
+    visibility: hidden;
+    background-color: #33d9b2;
+}
