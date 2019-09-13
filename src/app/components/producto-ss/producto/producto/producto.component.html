@@ -1,87 +1,85 @@
-<div class="container">
+<div class="my-3">
 
-    <div class="my-3">
+    <div class="row">
 
-        <div class="row">
+        <!--IMG DEL PRODUCTO-->
+        <div class="col-md-6 col-lg-6 col-xl-4">
+            <div class="img-producto">
+                <img src="../../../../../assets/img/noimage.png" class="card-img-top img-producto d-block" alt="...">
+            </div>
 
-            <!--IMG DEL PRODUCTO-->
-            <div class="col-md-6 col-lg-6 col-xl-4">
-                <div class="img-producto">
-                    <img src="../../../../../assets/img/noimage.png" class="card-img-top img-producto d-block" alt="...">
-                </div>
+            <div class="accion-producto mx-auto">
 
-                <div class="accion-producto mx-auto">
+                <div class="row py-2 mr-1">
 
-                    <div class="row py-2 mr-1">
-
-                        <div class="col-12">
-                            <button type="button" name="button" class="btn btn-agregar btn-carro">
+                    <div class="col-12">
+                        <button type="button" name="button" class="btn btn-agregar btn-carro">
                                     <img src="../../../../../assets/icon/mi-carrito.png" alt="">
                    </button>
 
-                            <button type="button" name="button" class="btn btn-agregar btn-lista">
+                        <button type="button" name="button" class="btn btn-agregar btn-lista">
                                     <img src="../../../../../assets/icon/mi-lista.png" alt="">
                    </button>
-                        </div>
                     </div>
-
                 </div>
 
             </div>
-
-
-
-            <!--INFORMACION PRODUCTO-->
-            <div class="col-md-6 col-lg-6 col-xl-4 info-producto mt-2 mt-md-0">
-
-                <div class="row">
-                    <div class="col-12 col-sm-6 col-md-12">
-                        <h2 class="mb-0">PC MARTES RACE {{ idProducto }} </h2>
-                        <h4 class="mb-0">HP</h4>
-                    </div>
-
-
-                    <div class="col-12 col-sm-6 col-md-12 form-calificacion">
-                        <p class="calificacion-general">
-                            <input id="est1" type="radio" name="estrella" value="5">
-                            <label for="est1">&#9733;</label>
-                            <input id="est2" type="radio" name="estrella" value="4">
-                            <label for="est2">&#9733;</label>
-                            <input id="est3" type="radio" name="estrella" value="3">
-                            <label for="est3">&#9733;</label>
-                            <input id="est4" type="radio" name="estrella" value="2">
-                            <label for="est4">&#9733;</label>
-                            <input id="est5" type="radio" name="estrella" value="1">
-                            <label for="est5">&#9733;</label>
-                        </p>
-                    </div>
-
-                </div>
-
-
-                <div class="row">
-
-                    <div class="col-12">
-                        <div class="info-precio">
-                            <h4 class="mt-2">$ 1524</h4>
-                        </div>
-                    </div>
-
-                    <div class="col-12">
-                        <div class="info-categorias">
-                            <a href="#">PC</a> <a href="#">Tecnologia</a> <a href="#">Master</a>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
 
         </div>
 
 
-    </div>
+        <!--INFORMACION PRODUCTO-->
+        <div class="col-md-6 col-lg-6 col-xl-4 info-producto mt-2 mt-md-0">
 
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-12">
+                    <h2 class="mb-0">PC MARTES RACE {{ idProducto }} </h2>
+                    <h4 class="mb-0">HP</h4>
+                </div>
+
+
+                <div class="col-12 col-sm-6 col-md-12 form-calificacion">
+                    <p class="calificacion-general">
+                        <input id="est1" type="radio" name="estrella" value="5">
+                        <label for="est1">&#9733;</label>
+                        <input id="est2" type="radio" name="estrella" value="4">
+                        <label for="est2">&#9733;</label>
+                        <input id="est3" type="radio" name="estrella" value="3">
+                        <label for="est3">&#9733;</label>
+                        <input id="est4" type="radio" name="estrella" value="2">
+                        <label for="est4">&#9733;</label>
+                        <input id="est5" type="radio" name="estrella" value="1">
+                        <label for="est5">&#9733;</label>
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="row">
+
+                <div class="col-12">
+                    <div class="info-precio">
+                        <h4 class="mt-2">$ 1524</h4>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="info-categorias">
+                        <a href="#">PC</a> <a href="#">Tecnologia</a> <a href="#">Master</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--RECOMENDACIONES DE PRODUCTOS-->
+        <div class="col-md-12 col-xl-4">
+            <app-producto-recom></app-producto-recom>
+        </div>
+        <!--/RECOMENDACIONES DE PRODUCTOS-->
+
+    </div>
 
 </div>

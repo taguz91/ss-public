@@ -6,7 +6,7 @@ import { ProductoFormComponent } from './components/producto-ss/producto/product
 
 
 const routes: Routes = [
-  // { path: 'producto/:id', component: ProductoComponent},
+  { path: 'producto/:id', component: ProductoComponent},
   { path: 'productos', component: ProductoShopComponent},
   { path: 'productos/guardar', component: ProductoFormComponent },
   { path: '', pathMatch: 'full', redirectTo: 'productos' },
