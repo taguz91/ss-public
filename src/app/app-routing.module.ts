@@ -7,7 +7,7 @@ import { ProductoListComponent } from './components/producto-ss/producto/product
 
 
 const routes: Routes = [
-  // { path: 'producto/:id', component: ProductoComponent},
+  { path: 'producto/:id', component: ProductoComponent},
   { path: 'productos', component: ProductoShopComponent},
   { path: 'productos/lista', component: ProductoListComponent},
   { path: 'productos/guardar', component: ProductoFormComponent },

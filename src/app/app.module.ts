@@ -19,6 +19,7 @@ import { ClienteComponent } from './components/human-ss/cliente/cliente/cliente.
 import { LocalComponent } from './components/human-ss/vendedor/local/local.component';
 import { ComentarioComponent } from './components/producto-ss/comentario/comentario/comentario.component';
 import { ProductoShopComponent } from './components/producto-ss/producto/producto-shop/producto-shop.component';
+import { ProductoRecomComponent } from './components/producto-ss/producto/producto-recom/producto-recom.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ProductoShopComponent } from './components/producto-ss/producto/product
     LocalFormComponent,
     ProductoFormComponent,
     ClienteFormComponent,
-    ProductoShopComponent
+    ProductoShopComponent,
+    ProductoRecomComponent
   ],
   imports: [
     BrowserModule,

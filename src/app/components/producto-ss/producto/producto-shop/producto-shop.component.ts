@@ -33,7 +33,7 @@ export class ProductoShopComponent implements OnInit {
   constructor(private ruter: Router) { }
 
   verProducto(id: number): void {
-    this.ruter.navigate(['empleado', id]);
+    this.ruter.navigate(['producto', id]);
   }
 
   ngOnInit() {
