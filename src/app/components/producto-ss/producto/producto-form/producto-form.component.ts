@@ -50,13 +50,14 @@ export class ProductoFormComponent implements OnInit {
 
   onSubmit() {
 
+    console.log(this.producto);
+
     this.submitted = true;
 
     if (this.registerForm.invalid) {
-        return;
-    } else{
-
+      this.producto.prod_fecha_ingreso = new Date();
       this.productoService.guardarProducto(this.producto);
+      
     }
 
     
