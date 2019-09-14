@@ -1,0 +1,176 @@
+.btn-img {
+    float: right;
+    margin-right: 2%;
+}
+
+.mi-btn {
+    font-size: 1.2em;
+}
+
+.mi-icon-btn {
+    display: inline-block;
+}
+
+.img-producto {
+    width: 340px;
+    height: 250px;
+    display: block;
+    margin: auto;
+}
+
+.head-producto {
+    position: relative;
+    cursor: pointer;
+}
+
+.head-producto:hover>.precio_producto {
+    visibility: visible;
+}
+
+.foot-producto {
+    background-color: #f1f2f6;
+    color: black;
+    padding: 5% 5% 0 5%;
+    width: 340px;
+    margin: 0 auto;
+}
+
+.btn-agregar {
+    float: right;
+    transition: all 0.3s ease-out 0.1s;
+}
+
+.btn-carro:hover {
+    background-color: #33d9b2;
+}
+
+.btn-lista:hover {
+    background-color: #34ace0;
+}
+
+
+/*INFORMACION DEL PRODUCTO*/
+
+.info-producto {
+    border-top: solid 5px #33d9b2;
+    padding-top: 10px;
+}
+
+.info-foot {
+    display: relative;
+}
+
+.info-categorias {
+    margin-top: 2%;
+}
+
+.info-categorias a {
+    text-decoration: none;
+    padding: 2px 5px;
+    border: 1px solid #808e9b;
+    border-radius: 3px;
+    color: #808e9b;
+}
+
+.info-categorias a:hover {
+    color: white;
+    background-color: #808e9b;
+}
+
+
+/* /INFORMACION DEL PRODUCTO*/
+
+
+/* ACCIONES AL VER UN PRODUCTO */
+
+.accion-producto {
+    border-bottom: 5px solid #33d9b2;
+    position: relative;
+    background-color: #f1f2f6;
+    width: 340px;
+}
+
+.btn-agregar-carro {
+    background-color: #33d9b2;
+    color: white;
+    width: 100%;
+}
+
+.btn-agregar-carro:hover {
+    background-color: #218c74;
+    color: white;
+}
+
+.btn-agregar-lista {
+    background-color: #34ace0;
+    color: white;
+    width: 100%;
+}
+
+.btn-agregar-lista:hover {
+    background-color: #227093;
+    color: white;
+}
+
+
+/* / ACCIONES AL VER UN PRODUCTO */
+
+
+/*Calificacion producto */
+
+.form-calificacion {
+    width: 250px;
+    margin: 1% auto;
+    height: 50px;
+}
+
+.form-calificacion p {
+    text-align: left;
+}
+
+.form-calificacion label {
+    font-size: 40px;
+}
+
+.info-precio {
+    display: inline-block;
+}
+
+.calificacion-general {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    cursor: pointer;
+}
+
+.calificacion-total {
+    font-size: 40px;
+}
+
+.calificacion-general label {
+    color: #808e9b;
+    cursor: pointer;
+}
+
+.calificacion-total {
+    font-size: 25px;
+}
+
+.calificacion-general input[type="radio"] {
+    display: none;
+    cursor: pointer;
+}
+
+.calificacion-general label:hover:not("disabled") {
+    color: #ffc048;
+}
+
+.calificacion-general label:hover~label {
+    color: #ffc048;
+}
+
+.calificacion-general input[type="radio"]:checked~label {
+    color: #ffc048;
+}
+
+
+/* /Calificacion producto */

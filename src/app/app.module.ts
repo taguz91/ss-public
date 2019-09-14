@@ -1,7 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProductoListComponent } from './components/producto-ss/producto/producto-list/producto-list.component';
@@ -15,6 +18,8 @@ import { VendedorComponent } from './components/human-ss/vendedor/vendedor/vende
 import { ClienteComponent } from './components/human-ss/cliente/cliente/cliente.component';
 import { LocalComponent } from './components/human-ss/vendedor/local/local.component';
 import { ComentarioComponent } from './components/producto-ss/comentario/comentario/comentario.component';
+import { ProductoShopComponent } from './components/producto-ss/producto/producto-shop/producto-shop.component';
+import { ProductoRecomComponent } from './components/producto-ss/producto/producto-recom/producto-recom.component';
 
 @NgModule({
   declarations: [
@@ -30,11 +35,16 @@ import { ComentarioComponent } from './components/producto-ss/comentario/comenta
     LocalListComponent,
     LocalFormComponent,
     ProductoFormComponent,
-    ClienteFormComponent
+    ClienteFormComponent,
+    ProductoShopComponent,
+    ProductoRecomComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

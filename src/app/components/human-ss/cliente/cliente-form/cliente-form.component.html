@@ -1,1 +1,101 @@
 <p>cliente-form works!</p>
+<form class="needs-validation" novalidate>
+    <div class="form-row">
+        <div class="col-md-4 mb-3">
+            <label for="identificacionPersonacli">Identificacion:</label>
+            <input type="text" class="form-control" id="identifiacionPersonacli" placeholder="Identificacion" required>
+            <div class="valid-feedback">
+                Identificacion válida.
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="primerNombrePersonacli">Primer Nombre:</label>
+            <input type="text" class="form-control" id="primerNombrePersonacli" placeholder="Primer Nombre" required>
+            <div class="valid-feedback">
+                Primer nombre válido.
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="segundoNombrePersonacli">Segundo Nombre:</label>
+            <input type="text" class="form-control" id="segundoNombrePersonacli" placeholder="Segundo Nombre">
+            <div class="valid-feedback">
+                Segundo nombre válido.
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="primerApellidoPersonacli">Primer Apellido:</label>
+            <input type="text" class="form-control" id="primerApellidoPersonacli" placeholder="Primer Apellido" required>
+            <div class="valid-feedback">
+                Primer apellido válido.
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="segundoApellidoPersonacli">Segundo Apellido:</label>
+            <input type="text" class="form-control" id="segundoApellidoPersonacli" placeholder="Segundo Apellido">
+            <div class="valid-feedback">
+                Segundo apellido válido.
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="emailPersonacli">Correo electrónico</label>
+            <input type="email" class="form-control" id="emailPersonacli" aria-describedby="emailAyuda" placeholder="E-mail" required>
+            <small id="emailAyuda" class="form-text text-muted"></small>
+        </div>
+
+
+    </div>
+    <div class="form-row">
+        <div class="col-md-6 mb-3">
+            <label for="sexosPersonacli">Sexo:</label>
+            <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="sexoFemeninocli" name="sexosPersona">
+                <label class="custom-control-label" for="sexoFemenino">Femenino</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="sexoMasculinocli" name="sexosPersona">
+                <label class="custom-control-label" for="sexoMasculino">Masculino</label>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="nickUsuarioPersonacli">Nombre de usuario (Nick):</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="formatoUsuarioPersona">@</span>
+                </div>
+                <input type="text" class="form-control" id="nickUsuarioPersonacli" placeholder="NickName" aria-describedby="formatoUsuarioPersona" required>
+                <div class="invalid-feedback">
+                    Por favor ingrese un nombre de usuario válido!
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="form-group">
+                <label for="contrasenaUsuarioPersona1cli">Contraseña:</label>
+                <input type="password" class="form-control" id="contrasenaUsuarioPersona1cli" placeholder="Contraseña">
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="form-group">
+                <label for="contrasenaUsuarioPersona2cli">Repita su contraseña:</label>
+                <input type="password" class="form-control" id="contrasenaUsuarioPersona2cli" placeholder="Contraseña">
+            </div>
+        </div>
+
+    </div>
+    <div class="form-group">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="aceptacionTerminoscli" required>
+            <label class="form-check-label" for="aceptacionTerminos">
+        Acepta los términos y condiciones
+      </label>
+            <div class="invalid-feedback">
+                Usted debe aceptar antes de registrarse.
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-primary btn-sm" type="submit">Registrar</button>
+</form>
