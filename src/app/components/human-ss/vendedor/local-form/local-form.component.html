@@ -1,1 +1,47 @@
-<p>local-form works!</p>
+<!--Formulario locales
+    id_local BIGSERIAL NOT NULL,
+    id_vendedor BIGINT NOT NULL,
+    loc_correo character varying(50) NOT NULL,
+    loc_calle_principal character varying(150) NOT NULL,
+    loc_calle_secundaria character varying(150) NOT NULL,
+    loc_activo BOOLEAN DEFAULT 'true',
+-->
+<div>Formulario de locales</div>
+<hr>
+<div class="container">
+    <form>
+        <div class="form-group row">
+            <label for="idVendedor" class="col-sm-2 col-form-label">CI. / RUC Vendedor</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="idVendedor" placeholder="Cedula / Ruc">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="loc_correo" class="col-sm-2 col-form-label">Correo</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="loc_correo" placeholder="ejemplo@ejm.com">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="loc_calle_principal" class="col-sm-2 col-form-label">Calle Principal</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="loc_calle_principal" placeholder="calle principal">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="loc_calle_secundaria" class="col-sm-2 col-form-label">Calle Secundaria</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="loc_calle_secundaria" placeholder="calle principal">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+        </div>
+    </form>
+
+</div>
