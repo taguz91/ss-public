@@ -20,6 +20,10 @@ import { LocalComponent } from './components/human-ss/vendedor/local/local.compo
 import { ComentarioComponent } from './components/producto-ss/comentario/comentario/comentario.component';
 import { ProductoShopComponent } from './components/producto-ss/producto/producto-shop/producto-shop.component';
 import { ProductoRecomComponent } from './components/producto-ss/producto/producto-recom/producto-recom.component';
+import { NavClComponent } from './components/templates/nav-cl/nav-cl.component';
+import { NavVeComponent } from './components/templates/nav-ve/nav-ve.component';
+import { FootClComponent } from './components/templates/foot-cl/foot-cl.component';
+import { FootVeComponent } from './components/templates/foot-ve/foot-ve.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +41,11 @@ import { ProductoRecomComponent } from './components/producto-ss/producto/produc
     ProductoFormComponent,
     ClienteFormComponent,
     ProductoShopComponent,
-    ProductoRecomComponent
+    ProductoRecomComponent,
+    NavClComponent,
+    NavVeComponent,
+    FootClComponent,
+    FootVeComponent
   ],
   imports: [
     BrowserModule,
