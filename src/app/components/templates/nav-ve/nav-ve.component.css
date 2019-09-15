@@ -40,3 +40,79 @@ body {
         margin-left: -15rem;
     }
 }
+
+.shadow-dark {
+    -webkit-box-shadow: 1px 0px 1px 1px rgba(87, 96, 111, 0.5);
+    -moz-box-shadow: 1px 0px 1px 1px rgba(87, 96, 111, 0.5);
+    box-shadow: 1px 0px 1px 1px rgba(87, 96, 111, 0.5);
+}
+
+.nav-ve {
+    background-color: #2f3542;
+    height: 70px !important;
+}
+
+.nav-left {
+    background-color: #2f3542;
+}
+
+.nav-head {
+    background-color: #2f3542;
+    color: white;
+    text-align: center;
+    height: 70px;
+}
+
+
+/* Estilos de bootstrap sobreescritos */
+
+.navbar-white .navbar-brand {
+    color: white;
+}
+
+.navbar-white .navbar-brand:hover,
+.navbar-white .navbar-brand:focus {
+    color: white;
+}
+
+.navbar-white .navbar-nav .nav-link {
+    color: rgba(241, 242, 246, 1);
+}
+
+.navbar-white .navbar-nav .nav-link:hover,
+.navbar-white .navbar-nav .nav-link:focus {
+    color: rgba(241, 242, 246, 0.75);
+}
+
+.navbar-white .navbar-nav .nav-link.disabled {
+    color: rgba(241, 242, 246, 0.50);
+}
+
+.navbar-white .navbar-nav .show>.nav-link,
+.navbar-white .navbar-nav .active>.nav-link,
+.navbar-white .navbar-nav .nav-link.show,
+.navbar-white .navbar-nav .nav-link.active {
+    color: white;
+}
+
+.navbar-white .navbar-toggler {
+    color: rgba(241, 242, 246, 1);
+    border-color: rgba(241, 242, 246, 0.75);
+}
+
+.navbar-white .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(241, 242, 246, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-white .navbar-text {
+    color: rgba(241, 242, 246, 1);
+}
+
+.navbar-white .navbar-text a {
+    color: white;
+}
+
+.navbar-white .navbar-text a:hover,
+.navbar-white .navbar-text a:focus {
+    color: white;
+}
