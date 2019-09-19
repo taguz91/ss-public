@@ -4,6 +4,7 @@ import { ProductoComponent } from './components/producto-ss/producto/producto/pr
 import { ProductoShopComponent } from './components/producto-ss/producto/producto-shop/producto-shop.component';
 import { ProductoFormComponent } from './components/producto-ss/producto/producto-form/producto-form.component';
 import { ProductoListComponent } from './components/producto-ss/producto/producto-list/producto-list.component';
+import { LocalFormComponent } from './components/human-ss/vendedor/local-form/local-form.component';
 
 
 const routes: Routes = [
@@ -11,7 +12,11 @@ const routes: Routes = [
   { path: 'productos', component: ProductoShopComponent},
   { path: 'productos/lista', component: ProductoListComponent},
   { path: 'productos/guardar', component: ProductoFormComponent },
+  // se llama al componente de formulario locales segun yo jjj para ver como va el avanze del form local
+  { path: 'locales', component: LocalFormComponent },
   { path: '', pathMatch: 'full', redirectTo: 'productos' },
+  // Solo para ver como va funcionando el formulario de locales
+  { path: 'locales', pathMatch: 'full', redirectTo: 'locales' },
   { path: '**', pathMatch: 'full', redirectTo: 'productos' }
 ];
 
