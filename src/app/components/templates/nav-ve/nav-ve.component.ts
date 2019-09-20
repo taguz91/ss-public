@@ -20,5 +20,4 @@ export class NavVeComponent implements OnInit {
       BTN.classList.add('toggled');
     }
   }
-
 }
