@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: 'productos', component: ProductoShopComponent},
   { path: 'productos/lista', component: ProductoListComponent},
   { path: 'productos/guardar', component: ProductoFormComponent },
+  { path: 'productos/guardar/:idProducto', component: ProductoFormComponent },
   { path: '', pathMatch: 'full', redirectTo: 'productos' },
   { path: '**', pathMatch: 'full', redirectTo: 'productos' }
 ];

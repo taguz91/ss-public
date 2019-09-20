@@ -9,15 +9,29 @@ import { Producto } from 'src/app/models/producto-ss/producto';
 })
 export class ProductoListComponent implements OnInit {
 
-  private listaProductos: Producto[];
+  public listaProductos: Producto[];
+  public producto: Producto;
 
-  constructor( private productoService: ProductoService ) { 
-    this.listaProductos = this.productoService.getProductos();
+  constructor( private productoService: ProductoService ) {
+   
   }
 
   ngOnInit() {
+
+    this.productoService.getProductos().subscribe( 
+      data => {
+        this.listaProductos = data;
+      }
+     );
   }
 
-  
+  // editarProducto(idProducto:number) {
+  //   this.productoService.getProductoById(idProducto).subscribe(
+  //     data => {
+  //       this.producto = data;
+  //     }
+  //   );
+    
+  // }
 
 }

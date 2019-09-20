@@ -1,9 +1,9 @@
 export interface Producto {
-    id_producto?: number;
-    //Objeto de la clase Vendedor
-    vendedor: string;
-    //oBjeto de la clase Marcas
-    marcas: string;
+    id_producto?: number
+    id_vendedor: number;
+    id_marca: number;
+    id_unidad: number;
+    id_linea: number;
     prod_nombre: string;
     prod_fecha_ingreso: Date;
     prod_stock_total: number;
