@@ -25,11 +25,12 @@
                         ],
                         "styles": [
                             "src/styles.css",
-                            "src/public/css/bootstrap.min.css"
+                            "./node_modules/bootstrap/dist/css/bootstrap.min.css"
                         ],
                         "scripts": [
-                            "src/public/js/jquery.min.js",
-                            "src/public/js/bootstrap.min.js"
+                            "./node_modules/jquery/dist/jquery.min.js",
+                            "./node_modules/bootstrap/dist/js/bootstrap.min.js",
+                            "./node_modules/popper.js/dist/umd/popper.min.js"
                         ]
                     },
                     "configurations": {
@@ -85,11 +86,12 @@
                         ],
                         "styles": [
                             "src/styles.css",
-                            "src/public/css/bootstrap.min.css"
+                            "./node_modules/bootstrap/dist/css/bootstrap.min.css"
                         ],
                         "scripts": [
-                            "src/public/js/jquery.min.js",
-                            "src/public/js/bootstrap.min.js"
+                            "./node_modules/jquery/dist/jquery.min.js",
+                            "./node_modules/bootstrap/dist/js/bootstrap.min.js",
+                            "./node_modules/popper.js/dist/umd/popper.min.js"
                         ]
                     }
                 },
