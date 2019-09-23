@@ -61,12 +61,8 @@ export class ProductoService {
   //   return this.http.get<Producto>(this.url+`/${idProducto}`)
   // }
 
-  public guardarProducto(productoG: Producto){
-    return this.http.post(this.url+"/guardar", productoG).toPromise().then(
-      data => {
-        console.log(data);
-      }
-    );
+  public saveProducto(productoG: Producto){
+    return this.http.post<Producto>(this.url+"/guardar", productoG);
   }
 
   public editarProducto(productoG: Producto){

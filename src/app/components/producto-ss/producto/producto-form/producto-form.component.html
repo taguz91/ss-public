@@ -1,59 +1,10 @@
 <div class="row">
-    <div class="col-md-8 offset-md-4 m-5">
-        <form #registerForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="col-md-10 offset-md-1 m-5">
 
-            <div class="form-row">
+        <h2>Ingresar nuevo producto</h2>
+        <hr>
 
-                <div class="col-md-6 form-group">
-                    <label for="nombreUnidad">Unidad</label>
-                    <select [(ngModel)]="producto.id_unidad" name="nombreUnidad" id="nombreUnidad"
-                        class="custom-select">
-                        <!-- [ngClass]="{ 'is-invalid': submitted && form.nombreUnidad.errors }" > -->
-                        <option value=0>Seleccione una Unidad</option>
-                        <option value=1>Unidad 1</option>
-                    </select>
-                    <input list="brow">
-<datalist id="brow">
-  <option value="Internet Explorer">
-  <option value="Firefox">
-  <option value="Chrome">
-  <option value="Opera">
-  <option value="Safari">
-</datalist>
-                    <!-- <div *ngIf="submitted && form.nombreUnidad.errors" class="invalid-feedback">
-                        <div *ngIf="form.nombreUnidad.errors.required">El nombre del Vendedor es requerido</div>
-                    </div> -->
-                </div>
-                <div class="col-md-6 form-group">
-                    <label for="nombreMarca">Marca</label>
-                    <select name="nombreMarca" id="nombreMarca" class="custom-select" [(ngModel)]="producto.id_marca">
-                        <!-- [ngClass]="{ 'is-invalid': submitted && form.nombreMarca.errors }" -->
-                        <option value= 0>Seleccione una Marca</option>
-                        <option value= 1>Marca 1</option>
-                    </select>
-                    <!-- <div *ngIf="submitted && form.nombreMarca.errors" class="invalid-feedback">
-                        <div *ngIf="form.nombreMarca.errors.required">El nombre de la Marca es requerido</div>
-                    </div> -->
-                </div>
-
-            </div>
-
-            <div class="form-row">
-
-                <div class="col-md-6 form-group">
-                    <label for="nombreLinea">Linea</label>
-                    <select [(ngModel)]="producto.id_linea" name="nombreLinea" id="nombreLinea"
-                        class="custom-select">
-                        <!-- [ngClass]="{ 'is-invalid': submitted && form.nombreLinea.errors }" > -->
-                        <option value=0>Seleccione una Linea</option>
-                        <option value=1>Linea 1</option>
-                    </select>
-                    <!-- <div *ngIf="submitted && form.nombreLinea.errors" class="invalid-feedback">
-                        <div *ngIf="form.nombreLinea.errors.required">El nombre del Vendedor es requerido</div>
-                    </div> -->
-                </div> 
-
-            </div>
+        <form class="m-4">
 
             <div class="form-row">
 
@@ -63,8 +14,8 @@
                         placeholder="Ingrese el nombre del producto" [(ngModel)]="producto.prod_nombre">
                     <!-- [ngClass]="{ 'is-invalid': submitted && form.nombreProducto.errors }" -->
                     <!-- <div *ngIf="submitted && form.nombreProducto.errors" class="invalid-feedback">
-                        <div *ngIf="form.nombreProducto.errors.required">El nombre del Producto es requerido</div>
-                    </div> -->
+                                <div *ngIf="form.nombreProducto.errors.required">El nombre del Producto es requerido</div>
+                            </div> -->
                 </div>
 
             </div>
@@ -78,7 +29,42 @@
                         [(ngModel)]="producto.prod_descripcion"></textarea>
                     <!-- [ngClass]="{ 'is-invalid': submitted && form.productoDescrip.errors }" -->
                     <!-- <div *ngIf="submitted && form.productoDescrip.errors" class="invalid-feedback">
-                        <div *ngIf="form.productoDescrip.errors.required">La descripción del Producto es requerida</div>
+                                <div *ngIf="form.productoDescrip.errors.required">La descripción del Producto es requerida</div>
+                            </div> -->
+                </div>
+
+            </div>
+
+            <div class="form-row">
+
+                <div class="col-md-6 form-group">
+                    <label for="nombreUnidad">Unidad</label>
+                    <input [(ngModel)]="producto.id_unidad.id_unidad" list="unidades" name="nombreUnidad" id="nombreUnidad"
+                        placeholder="Seleccione una unidad" class="custom-select" required>
+                    <datalist id="unidades">
+                        <option *ngFor="let item of unidades" [value]="item.id_unidad"> {{ item.unid_nombre}} </option>
+                    </datalist>
+                    <!-- <select [(ngModel)]="producto.id_unidad" name="nombreUnidad" id="nombreUnidad"
+                        class="custom-select">
+                        <option value=0>Seleccione una Unidad</option>
+                        <option value=1>Unidad 1</option>
+                    </select> -->
+                    <!-- [ngClass]="{ 'is-invalid': submitted && form.nombreUnidad.errors }" > -->
+                    <!-- <div *ngIf="submitted && form.nombreUnidad.errors" class="invalid-feedback">
+                        <div *ngIf="form.nombreUnidad.errors.required">El nombre del Vendedor es requerido</div>
+                    </div> -->
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="nombreMarca">Marca</label>
+                    <input [(ngModel)]="producto.id_marca.id_marca" list="marcas" name="nombreMarca" id="nombreMarca"
+                        placeholder="Seleccione una marca" class="custom-select" required>
+                    <datalist id="marcas">
+                        <option *ngFor="let item of marcas" [value]="item.id_marca"> {{ item.marc_nombre }} </option>
+                    </datalist>
+
+                    <!-- [ngClass]="{ 'is-invalid': submitted && form.nombreMarca.errors }" -->
+                    <!-- <div *ngIf="submitted && form.nombreMarca.errors" class="invalid-feedback">
+                        <div *ngIf="form.nombreMarca.errors.required">El nombre de la Marca es requerido</div>
                     </div> -->
                 </div>
 
@@ -86,10 +72,76 @@
 
             <div class="form-row">
 
-                <div class="col form-group">
+                <div class="col-md-6 form-group">
+                    <label for="nombreLinea">Linea</label>
+                    <input [(ngModel)]="producto.id_linea.id_linea" list="lineas" name="nombreLinea" id="nombreLinea"
+                        placeholder="Seleccione una línea" class="custom-select" required>
+                    <datalist id="lineas">
+                        <option *ngFor="let item of lineas" [value]="item.id_linea">{{ item.lin_nombre }}</option>
+                    </datalist>
+
+
+                    <!-- [ngClass]="{ 'is-invalid': submitted && form.nombreLinea.errors }" > -->
+                    <!-- <div *ngIf="submitted && form.nombreLinea.errors" class="invalid-feedback">
+                        <div *ngIf="form.nombreLinea.errors.required">El nombre del Vendedor es requerido</div>
+                    </div> -->
+                </div>
+
+                <div class="col-md-2 offset-md-3 m-4 form-group form-check">
+
+                    <input type="checkbox" id="iva" class="form-check-input" required 
+                    (click)="producto.prod_tiene_iva = !producto.prod_tiene_iva">
+                    <label for="iva" class="form-check-label">El producto tiene IVA</label>
+
+                </div>
+
+            </div>
+
+            <div class="form-row">
+
+                <div class="col-md-6 form-group">
+                    <label for="minStock">Mínimo de Stock</label>
+                    <input type="number" class="form-control" name="minStock" id="minStock" value="0" min="0"
+                        [(ngModel)]="producto.prod_stock_min" placeholder="Ingrese el mínimo de stock" required>
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="maxStock">Máximo de Stock</label>
+                    <input class="form-control" type="number" name="maxStock" id="maxStock" value="1" min="1"
+                        [(ngModel)]="producto.prod_stock_max" placeholder="Ingrese el máximo de stock" required>
+                </div>
+
+            </div>
+
+            <div class="form-row">
+
+                <div class="col-md-6 form-group">
+                    <label for="stockTotal">Stock Total</label>
+                    <input class="form-control" type="number" name="stockTotal" id="stockTotal"
+                        placeholder="Ingrese el stock total" value="0" [(ngModel)]="producto.prod_stock_total" required>
+                    <!-- [ngClass]="{ 'is-invalid': submitted && form.stockTotal.errors }" -->
+                    <!-- <div *ngIf="submitted && form.stockTotal.errors" class="invalid-feedback">
+                            <div *ngIf="form.stockTotal.errors.required">El stock es requerido para guardar</div>
+                        </div> -->
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="productoPrecio">Precio del Producto</label>
+                    <input class="form-control" type="number" name="productoPrecio" id="productoPrecio"
+                        placeholder="Ingrese el precio" [(ngModel)]="producto.prod_precio_venta" required
+                        placeholder="Ingrese el precio del producto">
+                    <!-- [ngClass]="{ 'is-invalid': submitted && form.productoPrecio.errors }" -->
+                    <!-- <div *ngIf="submitted && form.productoPrecio.errors" class="invalid-feedback">
+                            <div *ngIf="form.productoPrecio.errors.required">El precio es requerido para guardar</div>
+                        </div> -->
+                </div>
+
+            </div>
+
+            <div class="form-row">
+
+                <div class="col-md-6 form-group">
                     <label for="maxEdad">Máximo de Edad para Compra</label>
-                    <input class="form-control" type="number" name="maxEdad" id="maxEdad" value="0" min="0" max="100"
-                        [(ngModel)]="producto.prod_restriccion_edad_max">
+                    <input class="form-control" type="number" name="maxEdad" id="maxEdad" min="1" max="100"
+                        [(ngModel)]="producto.prod_restriccion_edad_max" placeholder="Ingrese una edad máxima de compra" required>
                     <!-- [ngClass]="{ 'is-invalid': submitted && form.maxEdad.errors }" -->
 
                     <!-- <div *ngIf="submitted && form.maxEdad.errors" class="invalid-feedback">
@@ -98,8 +150,8 @@
                 </div>
                 <div class="col-md-6 form-group">
                     <label for="minEdad">Mínimo de Edad para Compra</label>
-                    <input class="form-control" type="number" name="minEdad" id="minEdad" value="0" min="0" max="50"
-                        [(ngModel)]="producto.prod_restriccion_edad_min">
+                    <input class="form-control" type="number" name="minEdad" id="minEdad" min="0" max="50"
+                        [(ngModel)]="producto.prod_restriccion_edad_min" placeholder="Ingrese una edad mínima de compra" required>
                     <!-- [ngClass]="{ 'is-invalid': submitted && form.minEdad.errors }" -->
                     <!-- <div *ngIf="submitted && form.minEdad.errors" class="invalid-feedback">
                         <div *ngIf="form.minEdad.errors.required">El mínimo de edad es requerido</div>
@@ -110,32 +162,9 @@
 
             <div class="form-row">
 
-                <div class="col-md-4 form-group">
-                    <label for="stockTotal">Stock Total</label>
-                    <input class="form-control" type="number" name="stockTotal" id="stockTotal"
-                        placeholder="Ingrese el stock total" value="0" [(ngModel)]="producto.prod_stock_total">
-                    <!-- [ngClass]="{ 'is-invalid': submitted && form.stockTotal.errors }" -->
-                    <!-- <div *ngIf="submitted && form.stockTotal.errors" class="invalid-feedback">
-                        <div *ngIf="form.stockTotal.errors.required">El stock es requerido para guardar</div>
-                    </div> -->
-                </div>
-                <div class="col-md-4 offset-md-4 form-group">
-                    <label for="productoPrecio">Precio del Producto</label>
-                    <input class="form-control" type="number" name="productoPrecio" id="productoPrecio"
-                        placeholder="Ingrese el precio" value="0" [(ngModel)]="producto.prod_precio_venta">
-                    <!-- [ngClass]="{ 'is-invalid': submitted && form.productoPrecio.errors }" -->
-                    <!-- <div *ngIf="submitted && form.productoPrecio.errors" class="invalid-feedback">
-                        <div *ngIf="form.productoPrecio.errors.required">El precio es requerido para guardar</div>
-                    </div> -->
-                </div>
+                <div class="col-md-3 offset-md-5">
+                    <button (click)="onSubmit()" type="submit" class="btn btn-primary">Guardar Producto</button>
 
-            </div>
-
-            <div class="form-row">
-
-                <div class="col-md-4 offset-md-4">
-                    <button type="submit" class="btn btn-primary">Guardar Producto</button>
-                    
                 </div>
                 <div *ngIf="guardado" class="alert alert-success m-4 col-md-4 offset-md-6" role="alert">
                     Se guardó exitosamente!!

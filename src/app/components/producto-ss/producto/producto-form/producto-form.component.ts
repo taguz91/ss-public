@@ -3,6 +3,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProductoService } from 'src/app/services/producto-ss/producto/producto.service';
 import { Producto } from 'src/app/models/producto-ss/producto';
 import { Router, ActivatedRoute } from '@angular/router';
+import { LineaService } from 'src/app/services/producto-ss/linea/linea.service';
+import { Linea } from 'src/app/models/producto-ss/linea';
+import { Marca } from 'src/app/models/producto-ss/marca';
+import { Unidad } from 'src/app/models/producto-ss/unidad';
+import { UnidadService } from 'src/app/services/producto-ss/unidad/unidad.service';
+import { MarcaService } from 'src/app/services/producto-ss/marca/marca.service';
 
 @Component({
   selector: 'app-producto-form',
@@ -14,14 +20,20 @@ export class ProductoFormComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
   idProducto: number;
-  palabraReservada: string = "guardarProdudcto";
+  //palabraReservada: string = "guardarProdudcto";
   producto: Producto;
   guardado: boolean;
+  lineas: Linea[];
+  marcas: Marca[];
+  unidades: Unidad[];
 
   constructor(private formBuilder: FormBuilder,
     private productoService: ProductoService, 
     private router:Router,
-    private route: ActivatedRoute) {
+    private lineaService: LineaService,
+    private unidadService: UnidadService,
+    private marcaService: MarcaService) {
+
     this.guardado = false;
 
     // this.idProducto = this.route.snapshot.params.idProducto || this.palabraReservada;
@@ -51,18 +63,57 @@ export class ProductoFormComponent implements OnInit {
     this.producto = {
 
       id_vendedor: 1,
-      id_marca: null,
-      id_unidad: null,
-      id_linea: null,
+      id_marca : {
+        id_marca: null,
+        marc_nombre: "",
+        marc_codigo: "",
+        marc_activo: true,
+        productos: null
+      },
+      id_unidad: {
+        id_unidad: null,
+        unid_nombre: "",
+        unid_codigo: "",
+        unid_activo: true,
+        productos: null
+      },
+      id_linea: {
+        id_linea: null,
+        lin_nombre: "",
+        lin_codigo: "",
+        lin_activo: true,
+        productos: null
+      },
       prod_nombre: '',
       prod_fecha_ingreso: null,
-      prod_stock_total: 0,
-      prod_precio_venta: 0,
+      prod_stock_min: null,
+      prod_stock_max: null,
+      prod_stock_total: null,
+      prod_precio_venta: null,
       prod_descripcion: '',
-      prod_restriccion_edad_max: 0,
-      prod_restriccion_edad_min: 0,
+      prod_restriccion_edad_max: null,
+      prod_restriccion_edad_min: null,
+      prod_tiene_iva: false,
       prod_activo: true
     }
+
+    this.lineaService.getAllLineas().subscribe(
+      data => {
+        this.lineas = data;
+      }
+    );
+
+    this.marcaService.getAllMarcas().subscribe(
+      data =>{
+        this.marcas = data;
+      }
+    );
+
+    this.unidadService.getAllUnidades().subscribe(
+      data =>{
+        this.unidades = data;
+      }
+    );
 
     // this.producto = this.productoService.getProductoById(this.idProducto) || {
     //   vendedor: '',
@@ -90,9 +141,14 @@ export class ProductoFormComponent implements OnInit {
 
     this.submitted = true;
 
-    // if (this.registerForm.invalid) {
+    if (this.registerForm.invalid) {
       this.producto.prod_fecha_ingreso = new Date();
-      this.productoService.guardarProducto(this.producto);
+      this.productoService.saveProducto(this.producto).subscribe(
+        data => {
+          alert("Se guardó correctamente el producto ingresado");
+          this.router.navigate(["productos/lista"]);
+        }
+      );
 
       // .subscribe(
       //   data => {
@@ -116,7 +172,7 @@ export class ProductoFormComponent implements OnInit {
       // }
       
       
-    // }
+    }
 
    
     // display form values on success
