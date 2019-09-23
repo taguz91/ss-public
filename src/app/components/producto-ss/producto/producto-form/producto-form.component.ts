@@ -24,14 +24,14 @@ export class ProductoFormComponent implements OnInit {
     private route: ActivatedRoute) {
     this.guardado = false;
 
-    this.idProducto = this.route.snapshot.params.idProducto || this.palabraReservada;
+    // this.idProducto = this.route.snapshot.params.idProducto || this.palabraReservada;
     
 
-    this.productoService.getProductoById(this.idProducto).subscribe(
-      data => {
-        console.log(data);
-      }
-    );
+    // this.productoService.getProductoById(this.idProducto).subscribe(
+    //   data => {
+    //     console.log(data);
+    //   }
+    // );
   }
 
   ngOnInit() {
@@ -48,7 +48,21 @@ export class ProductoFormComponent implements OnInit {
       nombreLinea: ['', Validators.required]
     });
 
-    this.producto
+    this.producto = {
+
+      id_vendedor: 1,
+      id_marca: null,
+      id_unidad: null,
+      id_linea: null,
+      prod_nombre: '',
+      prod_fecha_ingreso: null,
+      prod_stock_total: 0,
+      prod_precio_venta: 0,
+      prod_descripcion: '',
+      prod_restriccion_edad_max: 0,
+      prod_restriccion_edad_min: 0,
+      prod_activo: true
+    }
 
     // this.producto = this.productoService.getProductoById(this.idProducto) || {
     //   vendedor: '',
@@ -76,20 +90,33 @@ export class ProductoFormComponent implements OnInit {
 
     this.submitted = true;
 
-    if (this.registerForm.invalid) {
+    // if (this.registerForm.invalid) {
       this.producto.prod_fecha_ingreso = new Date();
-      if(this.productoService.guardarProducto(this.producto) != null){
-        this.guardado = true;
-        setTimeout(() => {
-          this.guardado = false;
-        }, 4000);
-        this.router.navigate(["productos/lista"]);
-      } else{
-        alert("No se pudo guardar el Producto");
-      }
+      this.productoService.guardarProducto(this.producto);
+
+      // .subscribe(
+      //   data => {
+      //     if(data == null){
+      //       alert("No se pudo guardar el Producto");
+      //     }
+      //     this.guardado = true;
+      //     setTimeout(() => {
+      //       this.guardado = false;
+      //     }, 4000);
+      //     this.router.navigate(["productos/lista"]);
+      //   }
+      // );
+
+
+      // if(this.productoService.guardarProducto(this.producto) != null){
+        
+      //   this.router.navigate(["productos/lista"]);
+      // } else{
+        
+      // }
       
       
-    }
+    // }
 
    
     // display form values on success

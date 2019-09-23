@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class ProductoService {
 
-  url: string = "http://localhost:6060/api/v1/Productos";
+  url: string = "http://localhost:6060/api/v1/producto";
 
   // private listaProductos: Producto[] = [
   //   {
@@ -54,19 +54,23 @@ export class ProductoService {
   constructor( private http:HttpClient ) { }
 
   public getProductos(){
-    return this.http.get<Producto[]>(this.url+"/producto");
+    return this.http.get<Producto[]>(this.url+"/");
   }
 
-  public getProductoById(idProducto: number): Observable<Producto>{
-    return this.http.get<Producto>(this.url+`/${idProducto}`)
-  }
+  // public getProductoById(idProducto: number): Observable<Producto>{
+  //   return this.http.get<Producto>(this.url+`/${idProducto}`)
+  // }
 
   public guardarProducto(productoG: Producto){
-    return this.http.post<Producto>(this.url+"/", productoG);
+    return this.http.post(this.url+"/guardar", productoG).toPromise().then(
+      data => {
+        console.log(data);
+      }
+    );
   }
 
   public editarProducto(productoG: Producto){
-    return this.http.post<Producto>(this.url+"/", productoG);
+    return this.http.post<Producto>(this.url+"/guardar", productoG);
   }
 
   public eliminarProducto(id: number){

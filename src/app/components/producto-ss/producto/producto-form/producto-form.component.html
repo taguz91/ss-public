@@ -6,22 +6,30 @@
 
                 <div class="col-md-6 form-group">
                     <label for="nombreUnidad">Unidad</label>
-                    <select [(ngModel)]="producto.vendedor" name="nombreUnidad" id="nombreUnidad"
+                    <select [(ngModel)]="producto.id_unidad" name="nombreUnidad" id="nombreUnidad"
                         class="custom-select">
                         <!-- [ngClass]="{ 'is-invalid': submitted && form.nombreUnidad.errors }" > -->
-                        <option value="0">Seleccione una Unidad</option>
-                        <option value="1">Unidad 1</option>
+                        <option value=0>Seleccione una Unidad</option>
+                        <option value=1>Unidad 1</option>
                     </select>
+                    <input list="brow">
+<datalist id="brow">
+  <option value="Internet Explorer">
+  <option value="Firefox">
+  <option value="Chrome">
+  <option value="Opera">
+  <option value="Safari">
+</datalist>
                     <!-- <div *ngIf="submitted && form.nombreUnidad.errors" class="invalid-feedback">
                         <div *ngIf="form.nombreUnidad.errors.required">El nombre del Vendedor es requerido</div>
                     </div> -->
                 </div>
                 <div class="col-md-6 form-group">
                     <label for="nombreMarca">Marca</label>
-                    <select name="nombreMarca" id="nombreMarca" class="custom-select" [(ngModel)]="producto.marcas">
+                    <select name="nombreMarca" id="nombreMarca" class="custom-select" [(ngModel)]="producto.id_marca">
                         <!-- [ngClass]="{ 'is-invalid': submitted && form.nombreMarca.errors }" -->
-                        <option value="">Seleccione una Marca</option>
-                        <option value="0">Marca 1</option>
+                        <option value= 0>Seleccione una Marca</option>
+                        <option value= 1>Marca 1</option>
                     </select>
                     <!-- <div *ngIf="submitted && form.nombreMarca.errors" class="invalid-feedback">
                         <div *ngIf="form.nombreMarca.errors.required">El nombre de la Marca es requerido</div>
@@ -34,11 +42,11 @@
 
                 <div class="col-md-6 form-group">
                     <label for="nombreLinea">Linea</label>
-                    <select [(ngModel)]="producto.vendedor" name="nombreLinea" id="nombreLinea"
+                    <select [(ngModel)]="producto.id_linea" name="nombreLinea" id="nombreLinea"
                         class="custom-select">
                         <!-- [ngClass]="{ 'is-invalid': submitted && form.nombreLinea.errors }" > -->
-                        <option value="0">Seleccione una Linea</option>
-                        <option value="1">Linea 1</option>
+                        <option value=0>Seleccione una Linea</option>
+                        <option value=1>Linea 1</option>
                     </select>
                     <!-- <div *ngIf="submitted && form.nombreLinea.errors" class="invalid-feedback">
                         <div *ngIf="form.nombreLinea.errors.required">El nombre del Vendedor es requerido</div>
