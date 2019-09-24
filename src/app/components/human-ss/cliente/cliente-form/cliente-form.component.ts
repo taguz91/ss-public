@@ -88,7 +88,7 @@ export class ClienteFormComponent implements OnInit {
 
     editar(){
       console.log(this.cliente);
-      let id_cliente=23;
+      let id_cliente=24;
       console.log(id_cliente);
         this.service.getClienteId(+id_cliente)
         .subscribe(data=>{

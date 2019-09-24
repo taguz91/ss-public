@@ -1,1 +1,124 @@
-<app-cliente-form></app-cliente-form>
+<h2>Información de Perfil:</h2>
+<hr>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+        <div class="col-md-4 mb-3">
+            <label for="tipoIdentificacionPersona">Tipo de Identificacion:</label>
+            <select [(ngModel)]="cliente.tipoIdentificacion.id_tipo_identificacion" formControlName="tipoIdentificacion" class="browser-default custom-select">
+                        <option [ngValue]="undefined" disabled>Selecccione un tipo</option>
+                            <option  *ngFor="let tipoIdentificacion of tiposIdentificacion" [ngValue]="tipoIdentificacion.id_tipo_identificacion" >{{tipoIdentificacion.tiid_nombre}}</option>          
+            </select>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="identificacionPersona">Identificacion:</label>
+            <input [(ngModel)]="cliente.per_identificacion" formControlName="identificacion" type="text" class="form-control" id="identifiacionPersona" placeholder="Identificacion" required [ngClass]="{ 'is-invalid': submitted && f.primerNombre.errors }">
+            <div *ngIf="submitted && !!f.identificacion.errors" class="invalid-feedback">
+                <div *ngIf="!!f.identificacion.errors.required">Identificacion requerido</div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="primerNombrePersona">Primer Nombre:</label>
+            <input [(ngModel)]="cliente.per_primer_nombre" formControlName="primerNombre" type="text" class="form-control" id="primerNombrePersona" placeholder="Primer Nombre" required [ngClass]="{ 'is-invalid': submitted && f.primerNombre.errors }">
+            <div *ngIf="submitted && !!f.primerNombre.errors" class="invalid-feedback">
+                <div *ngIf="!!f.primerNombre.errors.required">Primer nombre requerido</div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="segundoNombrePersona">Segundo Nombre:</label>
+            <input [(ngModel)]="cliente.per_segundo_nombre" formControlName="segundoNombre" type="text" class="form-control" id="segundoNombrePersona" placeholder="Segundo Nombre">
+
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="primerApellidoPersona">Primer Apellido:</label>
+            <input [(ngModel)]="cliente.per_primer_apellido" formControlName="primerApellido" type="text" class="form-control" id="primerApellidoPersona" placeholder="Primer Apellido" required [ngClass]="{ 'is-invalid': submitted && f.primerApellido.errors }">
+            <div *ngIf="submitted && !!f.primerApellido.errors" class="invalid-feedback">
+                <div *ngIf="!!f.primerApellido.errors.required">Primer apellido requerido</div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="segundoApellidoPersona">Segundo Apellido:</label>
+            <input [(ngModel)]="cliente.per_segundo_apellido" formControlName="segundoApellido" type="text" class="form-control" id="segundoApellidoPersona" placeholder="Segundo Apellido">
+
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="emailPersona">Correo electrónico:</label>
+            <input [(ngModel)]="cliente.per_correo" formControlName="correoElectronico" type="email" class="form-control" id="emailPersona" aria-describedby="emailAyuda" placeholder="E-mail" required [ngClass]="{ 'is-invalid': submitted && f.correoElectronico.errors }">
+            <small id="emailAyuda" class="form-text text-muted"></small>
+            <div *ngIf="submitted && !!f.correoElectronico.errors" class="invalid-feedback">
+                <div *ngIf="!!f.correoElectronico.errors.required">Correo electrónico requerido</div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="form-row">
+        <div class="col-md-6 mb-3">
+            <div class="form-group">
+                <label for="sexosPersona">Sexo:</label>
+                <div class="col-md-5"></div>
+                <div class="custom-control custom-radio custom-control-inline" style="margin-left: 100px">
+                    <input [(ngModel)]="cliente.per_sexo" formControlName="sexo" type="radio" class="custom-control-input" id="sexoFemenino" value="Femenino" required [ngClass]="{ 'is-invalid': submitted && f.sexo.errors }">
+                    <label class="radio-inline custom-control-label" for="sexoFemenino">Femenino</label>
+
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input [(ngModel)]="cliente.per_sexo" formControlName="sexo" type="radio" class="custom-control-input" id="sexoMasculino" value="Masculino" required [ngClass]="{ 'is-invalid': submitted && f.sexo.errors }">
+                    <label class="radio-inline custom-control-label" for="sexoMasculino">Masculino</label>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="nickUsuarioPersona">Nombre de usuario (Nick):</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="formatoUsuarioPersona">@</span>
+                </div>
+                <input [(ngModel)]="cliente.usuario.user_nick" formControlName="nick" type="text" class="form-control" id="nickUsuarioPersona" placeholder="nickname" aria-describedby="formatoUsuarioPersona" required [ngClass]="{ 'is-invalid': submitted && f.nick.errors }">
+                <div *ngIf="submitted && !!f.nick.errors" class="invalid-feedback">
+                    <div *ngIf="!!f.nick.errors.required">Nombre de usuario requerido</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="form-group">
+                <label for="contrasenaUsuarioPersona">Contraseña:</label>
+                <input [(ngModel)]="cliente.usuario.user_pass" formControlName="contrasena" type="password" class="form-control" id="contrasenaUsuarioPersona" placeholder="Contraseña" required [ngClass]="{ 'is-invalid': submitted && f.contrasena.errors }">
+                <div *ngIf="submitted && !!f.contrasena.errors" class="invalid-feedback">
+                    <div *ngIf="!!f.contrasena.errors.required">Contraseña requerida</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 mb-12"></div>
+        <div class="col-md-3 mb-3">
+            <!-- <div class="form-group">
+                <label for="contrasenaUsuarioPersona2cli">Repita su contraseña:</label>
+                <input type="password" class="form-control" id="contrasenaUsuarioPersona2cli" placeholder="Contraseña">
+            </div> -->
+            <div class="form-group"></div>
+            <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+            <input [(ngModel)]="cliente.cli_fecha_nacimiento" type="date" class="form-control" formControlName="fechaNacimiento" required [ngClass]="{ 'is-invalid': submitted && f.fechaNacimiento.errors }">
+            <div *ngIf="submitted && !!f.fechaNacimiento.errors" class="invalid-feedback">
+                <div *ngIf="!!f.fechaNacimiento.errors.required">Fecha de Nacimiento requerida</div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="aceptacionTerminoscli" required>
+            <label class="form-check-label" for="aceptacionTerminos">
+        Acepta los términos y condiciones
+      </label>
+            <div class="invalid-feedback">
+                Usted debe aceptar antes de registrarse.
+            </div>
+        </div>
+    </div>
+    <button (click)="guardar(cliente)" class=" btn btn-primary btn-sm " type="submit ">Registrar </button>
+</form>
