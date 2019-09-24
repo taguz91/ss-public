@@ -24,6 +24,8 @@ import { NavClComponent } from './components/templates/nav-cl/nav-cl.component';
 import { NavVeComponent } from './components/templates/nav-ve/nav-ve.component';
 import { FootClComponent } from './components/templates/foot-cl/foot-cl.component';
 import { FootVeComponent } from './components/templates/foot-ve/foot-ve.component';
+import { TipoIdentificacionService } from './services/human-ss/tipoIdentificacion/tipo-identificacion.service';
+import { ClienteService } from './services/human-ss/cliente/cliente.service';
 
 @NgModule({
   declarations: [
@@ -51,10 +53,13 @@ import { FootVeComponent } from './components/templates/foot-ve/foot-ve.componen
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}),
     FormsModule
   ],
-  providers: [],
+  providers: [
+    TipoIdentificacionService,
+    ClienteService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
