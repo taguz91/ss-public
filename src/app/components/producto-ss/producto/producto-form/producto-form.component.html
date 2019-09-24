@@ -11,7 +11,7 @@
                 <div class="col-md-12 form-group">
                     <label for="nombreProducto">Nombre del Producto</label>
                     <input class="form-control" type="text" name="nombreProducto" id="nombreProducto"
-                        placeholder="Ingrese el nombre del producto" [(ngModel)]="producto.prod_nombre">
+                        placeholder="Ingrese el nombre del producto" [(ngModel)]="producto.prod_nombre" required>
                     <!-- [ngClass]="{ 'is-invalid': submitted && form.nombreProducto.errors }" -->
                     <!-- <div *ngIf="submitted && form.nombreProducto.errors" class="invalid-feedback">
                                 <div *ngIf="form.nombreProducto.errors.required">El nombre del Producto es requerido</div>
@@ -26,7 +26,7 @@
                     <label for="productoDescrip">Descripción del Producto</label>
                     <textarea class="form-control" name="productoDescrip" id="productoDescrip"
                         placeholder="Ingrese la descripción del producto"
-                        [(ngModel)]="producto.prod_descripcion"></textarea>
+                        [(ngModel)]="producto.prod_descripcion" required></textarea>
                     <!-- [ngClass]="{ 'is-invalid': submitted && form.productoDescrip.errors }" -->
                     <!-- <div *ngIf="submitted && form.productoDescrip.errors" class="invalid-feedback">
                                 <div *ngIf="form.productoDescrip.errors.required">La descripción del Producto es requerida</div>
@@ -90,7 +90,7 @@
                 <div class="col-md-2 offset-md-3 m-4 form-group form-check">
 
                     <input type="checkbox" id="iva" class="form-check-input" required 
-                    (click)="producto.prod_tiene_iva = !producto.prod_tiene_iva">
+                    (click)="producto.prod_tiene_iva = !producto.prod_tiene_iva" checked>
                     <label for="iva" class="form-check-label">El producto tiene IVA</label>
 
                 </div>

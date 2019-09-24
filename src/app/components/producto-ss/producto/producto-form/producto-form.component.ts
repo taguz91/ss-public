@@ -68,21 +68,19 @@ export class ProductoFormComponent implements OnInit {
         marc_nombre: "",
         marc_codigo: "",
         marc_activo: true,
-        productos: null
+        productos: []
       },
       id_unidad: {
         id_unidad: null,
         unid_nombre: "",
         unid_codigo: "",
-        unid_activo: true,
-        productos: null
+        unid_activo: true
       },
       id_linea: {
         id_linea: null,
         lin_nombre: "",
         lin_codigo: "",
-        lin_activo: true,
-        productos: null
+        lin_activo: true
       },
       prod_nombre: '',
       prod_fecha_ingreso: null,
@@ -93,7 +91,7 @@ export class ProductoFormComponent implements OnInit {
       prod_descripcion: '',
       prod_restriccion_edad_max: null,
       prod_restriccion_edad_min: null,
-      prod_tiene_iva: false,
+      prod_tiene_iva: true,
       prod_activo: true
     }
 
@@ -142,7 +140,10 @@ export class ProductoFormComponent implements OnInit {
     this.submitted = true;
 
     if (this.registerForm.invalid) {
-      this.producto.prod_fecha_ingreso = new Date();
+      //this.producto.prod_fecha_ingreso = new Date();
+      this.producto.id_linea.id_linea = Number(this.producto.id_linea.id_linea);
+      this.producto.id_marca.id_marca = Number(this.producto.id_marca.id_marca);
+      this.producto.id_unidad.id_unidad = Number(this.producto.id_unidad.id_unidad);
       this.productoService.saveProducto(this.producto).subscribe(
         data => {
           alert("Se guardó correctamente el producto ingresado");
