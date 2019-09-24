@@ -12,7 +12,7 @@ export interface Producto {
     id_linea: Linea,
     // id_linea: number,
     prod_nombre: string,
-    prod_fecha_ingreso: Date,
+    prod_fecha_ingreso?: Date,
     prod_stock_min: number,
     prod_stock_max: number, 
     prod_stock_total: number,
