@@ -72,6 +72,8 @@ export class ClienteFormComponent implements OnInit {
   get f() { return this.registerForm.controls; }
 
     onSubmit() {
+
+      
         this.submitted = true;
 
         // stop here if form is invalid
@@ -93,12 +95,14 @@ export class ClienteFormComponent implements OnInit {
         this.service.getClienteId(+id_cliente)
         .subscribe(data=>{
           console.log(data);
-          data.usuario.user_pass="";
+          data.usuario.user_pass=null;
           this.cliente=data;
         })
     }
   
     actualizar(cliente:Cliente){
+    
+
       if (this.submitted){
         this.service.updateCliente(cliente)
         .subscribe(data=>{
