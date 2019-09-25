@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProductoService } from 'src/app/services/producto-ss/producto/producto.service';
 import { Producto } from 'src/app/models/producto-ss/producto';
@@ -19,7 +19,9 @@ export class ProductoFormComponent implements OnInit {
 
   registerForm: FormGroup;
   submitted = false;
-  idProducto: number;
+  idMarca: number;
+  idUnidad: number;
+  idLinea: number;
   //palabraReservada: string = "guardarProdudcto";
   producto: Producto;
   guardado: boolean;
@@ -129,6 +131,36 @@ export class ProductoFormComponent implements OnInit {
 
   }
 
+  buscarIdMarca(nombre:string){
+    let id: number;
+    this.marcas.forEach(element => {
+      if(element.marc_nombre == nombre){
+        id = element.id_marca;
+      }
+    });
+    return id;
+  }
+
+  buscarIdUnidad(nombre:string){
+    let id: number;
+    this.unidades.forEach(element => {
+      if(element.unid_nombre == nombre){
+        id = element.id_unidad;
+      }
+    });
+    return id;
+  }
+
+  buscarIdLinea(nombre:string){
+    let id: number;
+    this.lineas.forEach(element => {
+      if(element.lin_nombre == nombre){
+        id = element.id_linea;
+      }
+    });
+    return id;
+  }
+
   get form() {
     return this.registerForm.controls;
   }
@@ -141,9 +173,9 @@ export class ProductoFormComponent implements OnInit {
 
     if (this.registerForm.invalid) {
       //this.producto.prod_fecha_ingreso = new Date();
-      this.producto.id_linea.id_linea = Number(this.producto.id_linea.id_linea);
-      this.producto.id_marca.id_marca = Number(this.producto.id_marca.id_marca);
-      this.producto.id_unidad.id_unidad = Number(this.producto.id_unidad.id_unidad);
+      this.producto.id_linea.id_linea = this.buscarIdLinea(this.producto.id_linea.lin_nombre);
+      this.producto.id_marca.id_marca = this.buscarIdMarca(this.producto.id_marca.marc_nombre);
+      this.producto.id_unidad.id_unidad = this.buscarIdUnidad(this.producto.id_unidad.unid_nombre);
       this.productoService.saveProducto(this.producto).subscribe(
         data => {
           alert("Se guardó correctamente el producto ingresado");

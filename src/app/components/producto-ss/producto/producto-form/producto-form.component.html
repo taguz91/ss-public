@@ -39,16 +39,11 @@
 
                 <div class="col-md-6 form-group">
                     <label for="nombreUnidad">Unidad</label>
-                    <input [(ngModel)]="producto.id_unidad.id_unidad" list="unidades" name="nombreUnidad" id="nombreUnidad"
+                    <input [(ngModel)]="producto.id_unidad.unid_nombre" list="unidades" name="nombreUnidad" id="nombreUnidad"
                         placeholder="Seleccione una unidad" class="custom-select" required>
                     <datalist id="unidades">
-                        <option *ngFor="let item of unidades" [value]="item.id_unidad"> {{ item.unid_nombre}} </option>
+                        <option *ngFor="let item of unidades; let i = index" [value]="item.unid_nombre">
                     </datalist>
-                    <!-- <select [(ngModel)]="producto.id_unidad" name="nombreUnidad" id="nombreUnidad"
-                        class="custom-select">
-                        <option value=0>Seleccione una Unidad</option>
-                        <option value=1>Unidad 1</option>
-                    </select> -->
                     <!-- [ngClass]="{ 'is-invalid': submitted && form.nombreUnidad.errors }" > -->
                     <!-- <div *ngIf="submitted && form.nombreUnidad.errors" class="invalid-feedback">
                         <div *ngIf="form.nombreUnidad.errors.required">El nombre del Vendedor es requerido</div>
@@ -56,10 +51,10 @@
                 </div>
                 <div class="col-md-6 form-group">
                     <label for="nombreMarca">Marca</label>
-                    <input [(ngModel)]="producto.id_marca.id_marca" list="marcas" name="nombreMarca" id="nombreMarca"
+                    <input [(ngModel)]="producto.id_marca.marc_nombre" list="marcas" name="nombreMarca" id="nombreMarca"
                         placeholder="Seleccione una marca" class="custom-select" required>
                     <datalist id="marcas">
-                        <option *ngFor="let item of marcas" [value]="item.id_marca"> {{ item.marc_nombre }} </option>
+                        <option *ngFor="let item of marcas; let i = index" [value]="item.marc_nombre">
                     </datalist>
 
                     <!-- [ngClass]="{ 'is-invalid': submitted && form.nombreMarca.errors }" -->
@@ -74,10 +69,10 @@
 
                 <div class="col-md-6 form-group">
                     <label for="nombreLinea">Linea</label>
-                    <input [(ngModel)]="producto.id_linea.id_linea" list="lineas" name="nombreLinea" id="nombreLinea"
+                    <input [(ngModel)]="producto.id_linea.lin_nombre" list="lineas" name="nombreLinea" id="nombreLinea"
                         placeholder="Seleccione una línea" class="custom-select" required>
                     <datalist id="lineas">
-                        <option *ngFor="let item of lineas" [value]="item.id_linea">{{ item.lin_nombre }}</option>
+                        <option *ngFor="let item of lineas; let i = index" [value]="item.lin_nombre">
                     </datalist>
 
 
