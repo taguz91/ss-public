@@ -44,6 +44,7 @@ export class ClienteComponent implements OnInit {
   constructor(private router:Router, private service:ClienteService, private service2:TipoIdentificacionService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.editar();
     this.service2.getTiposIdentificacion()
     .subscribe(data=>{
       this.tiposIdentificacion=data;
@@ -84,7 +85,16 @@ export class ClienteComponent implements OnInit {
         this.registerForm.reset();
     }
 
-    
+    enviar(cliente:Cliente){
+
+      if (cliente){
+       
+        this.actualizar(cliente);
+      }else{
+        
+        this.guardar();
+      }
+    }
   
     guardar(){
 
@@ -99,5 +109,35 @@ export class ClienteComponent implements OnInit {
 
 
   
+    }
+
+
+    editar(){
+      console.log(this.cliente);
+      let id_cliente=9;
+      console.log(id_cliente);
+        this.service.getClienteId(+id_cliente)
+        .subscribe(data=>{
+          console.log(data);
+          data.usuario.user_pass=null;
+          this.cliente=data;
+        })
+    }
+  
+
+    
+
+    actualizar(cliente:Cliente){
+    
+
+      if (this.submitted){
+        this.service.updateCliente(cliente)
+        .subscribe(data=>{
+          this.cliente=data;
+          alert("Se actualizó exitosamente");
+          this.router.navigate(["productos"]);
+        })
+      }
+     
     }
 }
