@@ -6,12 +6,12 @@ import { ProductoFormComponent } from './components/producto-ss/producto/product
 import { ProductoListComponent } from './components/producto-ss/producto/producto-list/producto-list.component';
 import { LocalFormComponent } from './components/human-ss/vendedor/local-form/local-form.component';
 import { ClienteFormComponent } from './components/human-ss/cliente/cliente-form/cliente-form.component';
-import { ClienteComponent } from './components/human-ss/cliente/cliente/cliente.component';
 import { FilterVendedorService } from './services/filter-nav/filter-vendedor/filter-vendedor.service';
 import { FilterClienteService } from './services/filter-nav/filter-cliente/filter-cliente.service';
 import { LoginComponent } from './components/login/login.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { ClienteComponent } from './components/human-ss/cliente/cliente/cliente.component';
 
 
 const routes: Routes = [
@@ -64,7 +64,7 @@ const routes: Routes = [
   },
   { 
     path: 'cliente/guardar', 
-    component: ClienteComponent,
+    component: ClienteFormComponent,
     outlet: 'cli'
   },
   // se llama al componente de formulario locales segun yo jjj para ver como va el avanze del form local
