@@ -7,8 +7,9 @@ import { HttpClient } from '@angular/common/http';
 export class ImagenesService {
 
   urlCloud: string = "https://api.cloudinary.com/v1_1/dk2igbyki/image/upload";
+  URL_CLOUDINARY_PRESET: string = "ml_default";
 
   constructor( private _http: HttpClient ) { }
 
-  
+
 }
