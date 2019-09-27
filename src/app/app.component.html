@@ -1,1 +1,18 @@
-<app-nav-ve></app-nav-ve>
+<!-- SI NO ESTA LOGUEADO SE ABRITRAN AQUI CUANDO ES PAGINA COMPLETA AQUI -->
+
+<router-outlet></router-outlet>
+
+
+<div *ngIf="!esPaginaCompleta()">
+  <!--SI ESTA LOGUEADO Y ES VENDEDOR SE MUETRAESTO -->
+  <div *ngIf="userService.esVendedor()">
+    <app-nav-ve></app-nav-ve>
+  </div>
+  
+  <!--SI ESTA LOGUEADO Y ES CLIENTE SE MUETRAESTO -->
+  <div *ngIf="!userService.esVendedor()">
+    <app-nav-cl></app-nav-cl>
+  </div>
+</div>
+
+

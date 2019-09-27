@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Cliente } from 'src/app/models/human-ss/cliente/cliente';
 import { TipoIdentificacion } from 'src/app/models/human-ss/tipoIdentificacion';
@@ -13,6 +14,7 @@ import { ClienteService } from 'src/app/services/human-ss/cliente/cliente.servic
 })
 export class ClienteFormComponent implements OnInit {
 
+  
   registerForm: FormGroup;
   submitted = false;
   
@@ -45,7 +47,17 @@ export class ClienteFormComponent implements OnInit {
   constructor(private router:Router, private service:ClienteService, private service2:TipoIdentificacionService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.editar();
+  
+
+    //Solo para pruebas
+    console.log(this.router.url); 
+      if (this.router.url === '/cliente/editar'){
+
+        this.editar();
+      }
+    
+          
+  
     this.service2.getTiposIdentificacion()
     .subscribe(data=>{
       this.tiposIdentificacion=data;
@@ -72,8 +84,6 @@ export class ClienteFormComponent implements OnInit {
   get f() { return this.registerForm.controls; }
 
     onSubmit() {
-
-      
         this.submitted = true;
 
         // stop here if form is invalid
@@ -88,9 +98,38 @@ export class ClienteFormComponent implements OnInit {
         this.registerForm.reset();
     }
 
+    enviar(cliente:Cliente){
+      
+      if (cliente.id_persona){
+       
+        this.actualizar(cliente);
+      }else{
+        
+        this.guardar();
+      }
+    }
+  
+    guardar(){
+
+      if (this.submitted){
+        console.log(this.cliente);
+        this.service.insertCliente(this.cliente)
+        .subscribe(data=>{
+          alert("Se agregó exitosamente");
+          this.router.navigate(["productos"]);
+        })
+      }
+
+
+  
+    }
+
+
     editar(){
+
+     
       console.log(this.cliente);
-      let id_cliente=24;
+      let id_cliente=9;
       console.log(id_cliente);
         this.service.getClienteId(+id_cliente)
         .subscribe(data=>{
@@ -100,6 +139,9 @@ export class ClienteFormComponent implements OnInit {
         })
     }
   
+
+    
+
     actualizar(cliente:Cliente){
     
 

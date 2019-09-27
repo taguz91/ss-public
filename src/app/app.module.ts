@@ -27,6 +27,8 @@ import { FootVeComponent } from './components/templates/foot-ve/foot-ve.componen
 import { TipoIdentificacionService } from './services/human-ss/tipoIdentificacion/tipo-identificacion.service';
 import { ClienteService } from './services/human-ss/cliente/cliente.service';
 import { CategoriaListComponent } from './components/producto-ss/categoria/categoria-list/categoria-list.component';
+import { LogoutComponent } from './components/logout/logout.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +52,8 @@ import { CategoriaListComponent } from './components/producto-ss/categoria/categ
     FootClComponent,
     FootVeComponent,
     CategoriaListComponent
+    LogoutComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { UsuarioService } from './services/human-ss/usuario/usuario.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,28 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ss-public';
+  title = 'SSI';
+
+  constructor(
+    private userService: UsuarioService,
+    private router: Router
+  ) { }
+
+  esPaginaCompleta(): boolean {
+    console.log('Ruta: ' + this.router.url);
+
+    if(this.userService.estaLogueado()){
+      let user = sessionStorage.getItem('userssp');
+      console.log('Usuario');
+      console.log(user);
+      
+    }
+    
+    if(this.router.url === '/login') {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
 }

@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+.bg-pri {
+  background-color: #303952 !important;
+}
+
+a.bg-pri:hover, a.bg-pri:focus,
+button.bg-pri:hover,
+button.bg-pri:focus {
+  background-color: #596275 !important;
+}
