@@ -6,7 +6,6 @@ import { ProductoFormComponent } from './components/producto-ss/producto/product
 import { ProductoListComponent } from './components/producto-ss/producto/producto-list/producto-list.component';
 import { LocalFormComponent } from './components/human-ss/vendedor/local-form/local-form.component';
 import { ClienteFormComponent } from './components/human-ss/cliente/cliente-form/cliente-form.component';
-import { ClienteComponent } from './components/human-ss/cliente/cliente/cliente.component';
 import { FilterVendedorService } from './services/filter-nav/filter-vendedor/filter-vendedor.service';
 import { FilterClienteService } from './services/filter-nav/filter-cliente/filter-cliente.service';
 import { LoginComponent } from './components/login/login.component';

@@ -47,7 +47,17 @@ export class ClienteFormComponent implements OnInit {
   constructor(private router:Router, private service:ClienteService, private service2:TipoIdentificacionService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.editar();
+  
+
+    //Solo para pruebas
+    console.log(this.router.url); 
+      if (this.router.url === '/cliente/editar'){
+
+        this.editar();
+      }
+    
+          
+  
     this.service2.getTiposIdentificacion()
     .subscribe(data=>{
       this.tiposIdentificacion=data;
@@ -89,7 +99,7 @@ export class ClienteFormComponent implements OnInit {
     }
 
     enviar(cliente:Cliente){
-
+      
       if (cliente.id_persona){
        
         this.actualizar(cliente);
@@ -116,6 +126,8 @@ export class ClienteFormComponent implements OnInit {
 
 
     editar(){
+
+     
       console.log(this.cliente);
       let id_cliente=9;
       console.log(id_cliente);
