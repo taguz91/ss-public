@@ -51,7 +51,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     NavVeComponent,
     FootClComponent,
     FootVeComponent,
-    CategoriaListComponent
+    CategoriaListComponent,
     LogoutComponent,
     NotFoundComponent
   ],
