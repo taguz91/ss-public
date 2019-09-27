@@ -7,6 +7,7 @@ import { ProductoListComponent } from './components/producto-ss/producto/product
 import { LocalFormComponent } from './components/human-ss/vendedor/local-form/local-form.component';
 import { ClienteFormComponent } from './components/human-ss/cliente/cliente-form/cliente-form.component';
 import { ClienteComponent } from './components/human-ss/cliente/cliente/cliente.component';
+import { CategoriaListComponent } from './components/producto-ss/categoria/categoria-list/categoria-list.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'productos/lista', component: ProductoListComponent},
   { path: 'productos/guardar', component: ProductoFormComponent },
   { path: 'productos/guardar/:idProducto', component: ProductoFormComponent },
+  { path: 'categorias/asignar/:idProducto', component: CategoriaListComponent },
   {path:'cliente/editar', component: ClienteFormComponent},
   {path:'cliente/guardar', component: ClienteComponent},
   // se llama al componente de formulario locales segun yo jjj para ver como va el avanze del form local

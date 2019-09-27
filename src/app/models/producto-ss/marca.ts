@@ -6,5 +6,5 @@ import { Producto } from './producto';
     marc_nombre?: string,
     marc_codigo?: string,
     marc_activo?: boolean,
-    productos:[]
+    productos?:[]
  }
