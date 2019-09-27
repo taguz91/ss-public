@@ -1,7 +1,7 @@
-<!-- SI NO ESTA LOGUEADO SE GUARDARA AQUI -->
-<div *ngIf="!userService.estaLogueado()">
-    <router-outlet></router-outlet>
-</div>
+<!-- SI NO ESTA LOGUEADO SE ABRITRAN AQUI CUANDO ES PAGINA COMPLETA AQUI -->
+
+<router-outlet></router-outlet>
+
 
 <div *ngIf="!esPaginaCompleta()">
   <!--SI ESTA LOGUEADO Y ES VENDEDOR SE MUETRAESTO -->

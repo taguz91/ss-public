@@ -10,68 +10,89 @@ import { ClienteComponent } from './components/human-ss/cliente/cliente/cliente.
 import { FilterVendedorService } from './services/filter-nav/filter-vendedor/filter-vendedor.service';
 import { FilterClienteService } from './services/filter-nav/filter-cliente/filter-cliente.service';
 import { LoginComponent } from './components/login/login.component';
+import { LogoutComponent } from './components/logout/logout.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 
 const routes: Routes = [
   {
     path: 'login',
-    component: LoginComponent,
+    component: LoginComponent
+  },
+  {
+    path: 'logout',
+    component: LogoutComponent
   },
   { 
     path: 'producto/:id', 
     component: ProductoComponent,
-    outlet: 'ctn-cl'
+    outlet: 'cli'
   },
   { 
     path: 'productos', 
     component: ProductoShopComponent,
-    outlet: 'ctn-cl'
+    outlet: 'cli'
   },
   { 
     path: 'productos/lista', 
     component: ProductoListComponent,
     canActivate: [FilterVendedorService],
-    outlet: 'ctn-ve'
+    outlet: 'ven'
   },
   { 
     path: 'productos/guardar', 
     component: ProductoFormComponent,
     canActivate: [FilterVendedorService],
-    outlet: 'ctn-ve'
+    outlet: 'ven'
   },
   { 
     path: 'productos/guardar/:idProducto', 
     component: ProductoFormComponent,
     canActivate: [FilterVendedorService],
-    outlet: 'ctn-ve'
+    outlet: 'ven'
+  },
+  { 
+    path: 'cliente', 
+    component: ClienteComponent,
+    outlet: 'cli'
   },
   { 
     path: 'cliente/editar', 
     component: ClienteFormComponent,
     canActivate: [FilterClienteService],
+    outlet: 'cli'
   },
   { 
     path: 'cliente/guardar', 
-    component: ClienteComponent
+    component: ClienteComponent,
+    outlet: 'cli'
   },
   // se llama al componente de formulario locales segun yo jjj para ver como va el avanze del form local
   { 
     path: 'locales', 
     component: LocalFormComponent,
     canActivate: [FilterVendedorService],
-    outlet: 'ctn-ve'
+    outlet: 'ven'
   },
   { 
     path: '',  
     component: ProductoShopComponent,
-    outlet: 'ctn-cl'
+    outlet: 'cli'
   },
   { 
     path: '**', 
-    pathMatch: 'full', 
-    redirectTo: 'productos' 
+    component: NotFoundComponent
   },
-
+  { 
+    path: '**', 
+    component: NotFoundComponent,
+    outlet: 'cli'
+  },
+  { 
+    path: '**', 
+    component: NotFoundComponent,
+    outlet: 'ven'
+  },
 ];
 
 @NgModule({

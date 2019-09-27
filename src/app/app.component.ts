@@ -17,6 +17,13 @@ export class AppComponent {
 
   esPaginaCompleta(): boolean {
     console.log('Ruta: ' + this.router.url);
+
+    if(this.userService.estaLogueado()){
+      let user = sessionStorage.getItem('userssp');
+      console.log('Usuario');
+      console.log(user);
+      
+    }
     
     if(this.router.url === '/login') {
       return true;

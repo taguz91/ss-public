@@ -3,7 +3,8 @@
 
   <div class="container">
 
-    <a class="navbar-brand" >
+    <a class="navbar-brand" 
+    [routerLink]="['']">
       Shop Shop I
     </a>
 
@@ -19,16 +20,19 @@
         </li>
 
         <li class="nav-item mx-0 mx-lg-1">
-          <a class="nav-link py-3 px-0 px-lg-3 rounded" >Producto</a>
+          <a class="nav-link py-3 px-0 px-lg-3 rounded" 
+          [routerLink]="[{outlets: {cli: 'productos'}}]">Producto</a>
         </li>
 
         <li *ngIf="userService.estaLogueado()" class="nav-item mx-0 mx-lg-1">
-          <a class="nav-link py-3 px-0 px-lg-3 rounded ">Perfil</a>
+          <a class="nav-link py-3 px-0 px-lg-3 rounded " 
+          [routerLink]="[{outlets: {cli: 'cliente'}}]">Perfil</a>
         </li>
 
       </ul>
 
-      <a *ngIf="userService.estaLogueado()" class="nav-link text-light">Salir</a>
+      <a *ngIf="userService.estaLogueado()" class="nav-link text-light" 
+      [routerLink]="['logout']">Salir</a>
       <a *ngIf="!userService.estaLogueado()" class="nav-link text-light" 
       [routerLink]="['login']">Login</a>
 
@@ -38,4 +42,4 @@
 </nav>
 
 
-<router-outlet name="ctn-cl"></router-outlet>
+<router-outlet name="cli"></router-outlet>

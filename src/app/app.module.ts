@@ -26,6 +26,8 @@ import { FootClComponent } from './components/templates/foot-cl/foot-cl.componen
 import { FootVeComponent } from './components/templates/foot-ve/foot-ve.component';
 import { TipoIdentificacionService } from './services/human-ss/tipoIdentificacion/tipo-identificacion.service';
 import { ClienteService } from './services/human-ss/cliente/cliente.service';
+import { LogoutComponent } from './components/logout/logout.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import { ClienteService } from './services/human-ss/cliente/cliente.service';
     NavClComponent,
     NavVeComponent,
     FootClComponent,
-    FootVeComponent
+    FootVeComponent,
+    LogoutComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
