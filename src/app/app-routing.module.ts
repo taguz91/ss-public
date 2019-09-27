@@ -52,7 +52,7 @@ const routes: Routes = [
   },
   { 
     path: 'cliente/guardar', 
-    component: ClienteComponent
+    component: ClienteFormComponent
   },
   // se llama al componente de formulario locales segun yo jjj para ver como va el avanze del form local
   { 
