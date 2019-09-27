@@ -9,7 +9,7 @@ export class TipoIdentificacionService {
 
   constructor(private http:HttpClient) { }
 
-  Url="http://localhost:2020/api/v1/tipo-identificacion/";
+  Url="http://localhost:2020/api/v1/tipo/identificacion/";
 
   getTiposIdentificacion(){
     return this.http.get<TipoIdentificacion[]>(this.Url);
