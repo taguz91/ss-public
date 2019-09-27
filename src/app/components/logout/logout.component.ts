@@ -20,8 +20,8 @@ export class LogoutComponent implements OnInit {
     this.router.navigate([{
       outlets: {
         primary: '',
-        cli: '',
-        ven: ''
+        //cli: '',
+        //ven: ''
       },
     }]);
   }

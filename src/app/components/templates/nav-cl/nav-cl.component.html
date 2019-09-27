@@ -35,6 +35,7 @@
       [routerLink]="['logout']">Salir</a>
       <a *ngIf="!userService.estaLogueado()" class="nav-link text-light" 
       [routerLink]="['login']">Login</a>
+      <!--[routerLink]="[{outlets: {primary: 'login', cli: ''}}]-->
 
     </div>
 
