@@ -11,7 +11,7 @@
         </div>
         <div class="col-md-4 mb-3">
             <label for="identificacionPersona">Identificacion:</label>
-            <input [(ngModel)]="cliente.per_identificacion" formControlName="identificacion" type="text" class="form-control" id="identifiacionPersona" placeholder="Identificacion" required [ngClass]="{ 'is-invalid': submitted && f.primerNombre.errors }">
+            <input [(ngModel)]="cliente.per_identificacion" formControlName="identificacion" type="text" class="form-control" id="identificacionPersona" placeholder="Identificacion" required [ngClass]="{ 'is-invalid': submitted && f.identificacion.errors }">
             <div *ngIf="submitted && !!f.identificacion.errors" class="invalid-feedback">
                 <div *ngIf="!!f.identificacion.errors.required">Identificacion requerido</div>
             </div>
