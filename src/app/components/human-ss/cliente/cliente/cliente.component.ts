@@ -87,7 +87,7 @@ export class ClienteComponent implements OnInit {
 
     enviar(cliente:Cliente){
 
-      if (cliente){
+      if (cliente.id_persona){
        
         this.actualizar(cliente);
       }else{
