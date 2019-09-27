@@ -1,1 +1,41 @@
-<p>nav-cl works!</p>
+<!-- Navegacion -->
+<nav class="navbar navbar-expand-lg bg-pri text-uppercase text-white sticky-top" id="main-nav">
+
+  <div class="container">
+
+    <a class="navbar-brand" >
+      Shop Shop I
+    </a>
+
+    <button class="navbar-toggler navbar-toggler-right text-uppercase p-1" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="menu-logo-circulo"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav mr-auto ml-2">
+
+        <li class="nav-item mx-0 mx-lg-1">
+          <a class="nav-link py-3 px-0 px-lg-3 rounded">Inicio</a>
+        </li>
+
+        <li class="nav-item mx-0 mx-lg-1">
+          <a class="nav-link py-3 px-0 px-lg-3 rounded" >Producto</a>
+        </li>
+
+        <li *ngIf="userService.estaLogueado()" class="nav-item mx-0 mx-lg-1">
+          <a class="nav-link py-3 px-0 px-lg-3 rounded ">Perfil</a>
+        </li>
+
+      </ul>
+
+      <a *ngIf="userService.estaLogueado()" class="nav-link text-light">Salir</a>
+      <a *ngIf="!userService.estaLogueado()" class="nav-link text-light" 
+      [routerLink]="['login']">Login</a>
+
+    </div>
+
+  </div>
+</nav>
+
+
+<router-outlet name="ctn-cl"></router-outlet>
