@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductoService } from 'src/app/services/producto-ss/producto/producto.service';
 import { Producto } from 'src/app/models/producto-ss/producto';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-producto-list',
@@ -10,9 +11,10 @@ import { Producto } from 'src/app/models/producto-ss/producto';
 export class ProductoListComponent implements OnInit {
 
   public listaProductos: Producto[];
-  public producto: Producto;
+ // public producto: Producto;
 
-  constructor( private productoService: ProductoService ) {
+  constructor( private productoService: ProductoService,
+              private router: Router ) {
    
   }
 
@@ -26,13 +28,14 @@ export class ProductoListComponent implements OnInit {
      );
   }
 
-  // editarProducto(idProducto:number) {
-  //   this.productoService.getProductoById(idProducto).subscribe(
-  //     data => {
-  //       this.producto = data;
-  //     }
-  //   );
-    
-  // }
+  editarProducto(producto:Producto) {
+    console.log(producto);
+    // this.productoService.getProductoById(producto.id_producto).subscribe(
+    //   data => {
+    //     this.producto = data;
+    //   }
+    // );
+    this.router.navigate([`productos/guardar/:${producto.id_producto}`]);
+  }
 
 }

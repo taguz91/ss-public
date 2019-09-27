@@ -12,9 +12,18 @@ import { LoginComponent } from './components/login/login.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ClienteComponent } from './components/human-ss/cliente/cliente/cliente.component';
+import { CategoriaListComponent } from './components/producto-ss/categoria/categoria-list/categoria-list.component';
 
 
 const routes: Routes = [
+  { path: 'producto/:id', component: ProductoComponent},
+  { path: 'productos', component: ProductoShopComponent},
+  { path: 'productos/lista', component: ProductoListComponent},
+  { path: 'productos/guardar', component: ProductoFormComponent },
+  { path: 'productos/guardar/:idProducto', component: ProductoFormComponent },
+  { path: 'categorias/asignar/:idProducto', component: CategoriaListComponent },
+  {path:'cliente/editar', component: ClienteFormComponent},
+  {path:'cliente/guardar', component: ClienteComponent},
   {
     path: 'login',
     component: LoginComponent

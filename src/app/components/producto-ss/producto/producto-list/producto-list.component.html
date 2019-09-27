@@ -17,6 +17,7 @@
             <th scope="col">Precio</th>
             <th scope="col">Editar</th>
             <th scope="col">Eliminar</th>
+            <th scope="col">Asignación</th>
           </tr>
         </thead>
         <tbody>
@@ -31,8 +32,9 @@
             <td> {{ producto.prod_restriccion_edad_min}} </td>
             <td>{{ producto.prod_stock_total }}</td>
             <td>{{ producto.prod_precio_venta}}</td>
-            <td> <button class="btn btn-primary">Editar</button> </td>
+            <td> <a class="btn btn-primary" routerLink="/productos/guardar/{{producto.id_producto}}">Editar</a> </td>
             <td> <button class="btn btn-primary">Eliminar</button> </td>
+            <td> <a class="btn btn-primary" routerLink="/categorias/asignar/{{producto.id_producto}}" >Asignar Categorías</a> </td>
           </tr>
         </tbody>
       </table>
