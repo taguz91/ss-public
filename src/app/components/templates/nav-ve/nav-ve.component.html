@@ -9,7 +9,7 @@
 
         <div class="list-group list-group-flush">
 
-            <a [routerLink]="['/']" class=" list-group-item list-group-item-action bg-light">Dashboard</a>
+            <a [routerLink]="['']" class=" list-group-item list-group-item-action bg-light">Dashboard</a>
 
             <!-- <a [routerLink]="['productos/']" class=" list-group-item list-group-item-action bg-light">Productos</a> -->
 
@@ -20,16 +20,16 @@
             <!-- Opciones del primer menu -->
             <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#sidebar-wrapper">
                 <div class="list-group">
-                    <a [routerLink]="[{outlets: {ven: 'productos/lista'}}]" class="list-group-item list-group-item-action bg-light">Lista de Productos</a>
-                    <a [routerLink]="[{outlets: {ven: 'productos/guardar'}}]" class=" list-group-item list-group-item-action bg-light">Ingresar Producto</a>
+                    <a [routerLink]="['productos/lista']" class="list-group-item list-group-item-action bg-light">Lista de Productos</a>
+                    <a [routerLink]="['productos/guardar']" class=" list-group-item list-group-item-action bg-light">Ingresar Producto</a>
                 </div>
             </div>
 
 
 
-            <a [routerLink]="[{outlets: {ven: 'locales'}}]" class=" list-group-item list-group-item-action bg-light">Local</a>
+            <a [routerLink]="['locales']" class=" list-group-item list-group-item-action bg-light">Local</a>
 
-            <a [routerLink]="[{outlets: {ven: 'cliente/guardar'}}]" class=" list-group-item list-group-item-action bg-light">Cliente</a>
+            <a [routerLink]="['cliente/guardar']" class=" list-group-item list-group-item-action bg-light">Cliente</a>
 
 
         </div>
@@ -62,8 +62,8 @@
 
 
         <div class="container-fluid">
-
-            <router-outlet name="ven"></router-outlet>
+            <!--<router-outlet name="ven"></router-outlet>-->
+            <router-outlet></router-outlet>
 
         </div>
         <!-- /#page-content-wrapper -->

@@ -16,14 +16,10 @@ import { CategoriaListComponent } from './components/producto-ss/categoria/categ
 
 
 const routes: Routes = [
-  { path: 'producto/:id', component: ProductoComponent},
-  { path: 'productos', component: ProductoShopComponent},
-  { path: 'productos/lista', component: ProductoListComponent},
-  { path: 'productos/guardar', component: ProductoFormComponent },
-  { path: 'productos/guardar/:idProducto', component: ProductoFormComponent },
-  { path: 'categorias/asignar/:idProducto', component: CategoriaListComponent },
-  {path:'cliente/editar', component: ClienteFormComponent},
-  {path:'cliente/guardar', component: ClienteComponent},
+  { 
+    path: 'categorias/asignar/:idProducto', 
+    component: CategoriaListComponent 
+  },
   {
     path: 'login',
     component: LoginComponent
@@ -35,58 +31,48 @@ const routes: Routes = [
   { 
     path: 'producto/:id', 
     component: ProductoComponent,
-    outlet: 'cli'
   },
   { 
     path: 'productos', 
     component: ProductoShopComponent,
-    outlet: 'cli'
   },
   { 
     path: 'productos/lista', 
     component: ProductoListComponent,
     canActivate: [FilterVendedorService],
-    outlet: 'ven'
   },
   { 
     path: 'productos/guardar', 
     component: ProductoFormComponent,
     canActivate: [FilterVendedorService],
-    outlet: 'ven'
   },
   { 
     path: 'productos/guardar/:idProducto', 
     component: ProductoFormComponent,
     canActivate: [FilterVendedorService],
-    outlet: 'ven'
   },
   { 
     path: 'cliente', 
     component: ClienteComponent,
-    outlet: 'cli'
   },
   { 
     path: 'cliente/editar', 
     component: ClienteFormComponent,
     canActivate: [FilterClienteService],
-    outlet: 'cli'
   },
   { 
     path: 'cliente/guardar', 
     component: ClienteFormComponent,
-    outlet: 'cli'
   },
   // se llama al componente de formulario locales segun yo jjj para ver como va el avanze del form local
   { 
     path: 'locales', 
     component: LocalFormComponent,
     canActivate: [FilterVendedorService],
-    outlet: 'ven'
   },
   { 
     path: '',  
     component: ProductoShopComponent,
-    outlet: 'cli'
   },
   { 
     path: '**', 
@@ -95,12 +81,10 @@ const routes: Routes = [
   { 
     path: '**', 
     component: NotFoundComponent,
-    outlet: 'cli'
   },
   { 
     path: '**', 
     component: NotFoundComponent,
-    outlet: 'ven'
   },
 ];
 

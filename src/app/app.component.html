@@ -1,6 +1,8 @@
 <!-- SI NO ESTA LOGUEADO SE ABRITRAN AQUI CUANDO ES PAGINA COMPLETA AQUI -->
+<div *ngIf="esPaginaCompleta()">
+  <router-outlet></router-outlet>
+</div>
 
-<router-outlet></router-outlet>
 
 
 <div *ngIf="!esPaginaCompleta()">

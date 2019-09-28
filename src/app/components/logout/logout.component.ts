@@ -17,13 +17,7 @@ export class LogoutComponent implements OnInit {
   ngOnInit() {
     console.log('SALIMOSSS');
     this.userService.salir();
-    this.router.navigate([{
-      outlets: {
-        primary: '',
-        //cli: '',
-        //ven: ''
-      },
-    }]);
+    this.router.navigate(['']);
   }
 
 }

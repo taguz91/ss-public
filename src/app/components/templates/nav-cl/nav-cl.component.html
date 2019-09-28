@@ -21,12 +21,13 @@
 
         <li class="nav-item mx-0 mx-lg-1">
           <a class="nav-link py-3 px-0 px-lg-3 rounded" 
-          [routerLink]="[{outlets: {cli: 'productos'}}]">Producto</a>
+          [routerLink]="['productos']">Producto</a>
+          <!--[routerLink]="[{outlets: {cli: 'productos'}}]-->
         </li>
 
         <li *ngIf="userService.estaLogueado()" class="nav-item mx-0 mx-lg-1">
           <a class="nav-link py-3 px-0 px-lg-3 rounded " 
-          [routerLink]="[{outlets: {cli: 'cliente'}}]">Perfil</a>
+          [routerLink]="['cliente']">Perfil</a>
         </li>
 
       </ul>
@@ -44,7 +45,8 @@
 
 
 <div class="container my-2">
-  <router-outlet name="cli"></router-outlet>
+  <!--<router-outlet name="cli"></router-outlet>-->
+  <router-outlet></router-outlet>
 </div>
 
 
