@@ -1,5 +1,5 @@
 <!-- Navegacion -->
-<nav class="navbar navbar-expand-lg bg-pri text-uppercase text-white sticky-top" id="main-nav">
+<nav class="navbar navbar-expand-lg bg-pri text-uppercase text-white sticky-top shadow" id="main-nav">
 
   <div class="container">
 
@@ -16,17 +16,16 @@
       <ul class="navbar-nav mr-auto ml-2">
 
         <li class="nav-item mx-0 mx-lg-1">
-          <a class="nav-link py-3 px-0 px-lg-3 rounded">Inicio</a>
+          <a class="nav-link py-3 px-0 px-lg-3">Inicio</a>
         </li>
 
         <li class="nav-item mx-0 mx-lg-1">
-          <a class="nav-link py-3 px-0 px-lg-3 rounded" 
+          <a class="nav-link py-3 px-0 px-lg-3" 
           [routerLink]="['productos']">Producto</a>
-          <!--[routerLink]="[{outlets: {cli: 'productos'}}]-->
         </li>
 
         <li *ngIf="userService.estaLogueado()" class="nav-item mx-0 mx-lg-1">
-          <a class="nav-link py-3 px-0 px-lg-3 rounded " 
+          <a class="nav-link py-3 px-0 px-lg-3 " 
           [routerLink]="['cliente']">Perfil</a>
         </li>
 
@@ -36,7 +35,6 @@
       [routerLink]="['logout']">Salir</a>
       <a *ngIf="!userService.estaLogueado()" class="nav-link text-light" 
       [routerLink]="['login']">Login</a>
-      <!--[routerLink]="[{outlets: {primary: 'login', cli: ''}}]-->
 
     </div>
 
@@ -44,8 +42,7 @@
 </nav>
 
 
-<div class="container my-2">
-  <!--<router-outlet name="cli"></router-outlet>-->
+<div class="container my-5">
   <router-outlet></router-outlet>
 </div>
 

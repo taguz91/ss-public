@@ -7,8 +7,9 @@
 .img-precio {
     width: 120px;
     margin: auto;
-    background-color: #33d9b2;
+    background-color: #f1f2f6;
     padding: 2px 4px;
+    border-bottom: solid 3px #33d9b2;
 }
 
 .recomendacion {

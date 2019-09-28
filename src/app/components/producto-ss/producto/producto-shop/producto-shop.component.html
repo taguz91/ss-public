@@ -1,53 +1,49 @@
-<div class="my-5">
+<div class="row">
 
-    <div class="row">
+    <div class="col-md-6 col-xl-4 mx-auto mt-3" *ngFor="let p of productos; let i = index;">
 
-        <div class="col-md-6 col-xl-4 mx-auto mt-3" *ngFor="let p of productos; let i = index;">
+        <div class="card border-0 d-block">
+            <div class="head-producto">
 
-            <div class="card border-0 d-block">
-                <div class="head-producto">
-
-                    <div class="precio_producto">
-                        <h4 class="mb-0 mt-2 text-white">$</h4>
-                        <h3 class="mb-0 mt-2">1524</h3>
-                    </div>
-                    <a (click)="verProducto(i)">
-                        <img src=" ../../../../../assets/img/noimage.png " class="card-img-top img-producto " alt="... ">
-                    </a>
+                <div class="precio_producto">
+                    <h4 class="mb-0 mt-2 text-white">$</h4>
+                    <h3 class="mb-0 mt-2">1524</h3>
                 </div>
+                <a (click)="verProducto(i)">
+                    <img src=" ../../../../../assets/img/noimage.png " class="card-img-top img-producto " alt="... ">
+                </a>
+            </div>
 
-                <div class="foot-producto ">
-                    <h5>PC MASTER RACE CON I9</h5>
-                    <hr>
-                    <div class="row ">
-                        <div class="col-6 ">
+            <div class="foot-producto ">
+                <h5>PC MASTER RACE CON I9</h5>
+                <hr>
+                <div class="row ">
+                    <div class="col-6 ">
 
-                            <p class="calificacion-general calificacion-total ">
-                                <input type="radio" name="estrella{{i}}" disabled>
-                                <label>&#9733;</label>
-                                <input type="radio" name="estrella{{i}}" checked disabled>
-                                <label>&#9733;</label>
-                                <input type="radio" name="estrella{{i}}" disabled>
-                                <label>&#9733;</label>
-                                <input type="radio" name="estrella{{i}}" disabled>
-                                <label>&#9733;</label>
-                                <input type="radio" name="estrella{{i}}" disabled>
-                                <label>&#9733;</label>
-                            </p>
+                        <p class="calificacion-general calificacion-total ">
+                            <input type="radio" name="estrella{{i}}" disabled>
+                            <label>&#9733;</label>
+                            <input type="radio" name="estrella{{i}}" checked disabled>
+                            <label>&#9733;</label>
+                            <input type="radio" name="estrella{{i}}" disabled>
+                            <label>&#9733;</label>
+                            <input type="radio" name="estrella{{i}}" disabled>
+                            <label>&#9733;</label>
+                            <input type="radio" name="estrella{{i}}" disabled>
+                            <label>&#9733;</label>
+                        </p>
 
-                        </div>
-
-                        <div class="col-6 ">
-                            <button type="button " name="button " class="btn btn-agregar btn-carro ">
-                                    <img src="../../../../../assets/icon/mi-carrito.png "  alt=" ">
-                           </button>
-
-                            <button type="button " name="button " class="btn btn-agregar btn-lista ">
-                                    <img src="../../../../../assets/icon/mi-lista.png "  alt=" ">
-                           </button>
-                        </div>
                     </div>
 
+                    <div class="col-6 ">
+                        <button type="button " name="button " class="btn btn-agregar btn-carro ">
+                                <img src="../../../../../assets/icon/mi-carrito.png "  alt=" ">
+                        </button>
+
+                        <button type="button " name="button " class="btn btn-agregar btn-lista ">
+                                <img src="../../../../../assets/icon/mi-lista.png "  alt=" ">
+                        </button>
+                    </div>
                 </div>
 
             </div>
