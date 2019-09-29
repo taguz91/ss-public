@@ -29,6 +29,8 @@ import { ClienteService } from './services/human-ss/cliente/cliente.service';
 import { CategoriaListComponent } from './components/producto-ss/categoria/categoria-list/categoria-list.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { HomeComponent } from './components/shopshop/home/home.component';
+import { CategoriasComponent } from './components/shopshop/categorias/categorias.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,9 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     FootVeComponent,
     CategoriaListComponent,
     LogoutComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    HomeComponent,
+    CategoriasComponent
   ],
   imports: [
     BrowserModule,

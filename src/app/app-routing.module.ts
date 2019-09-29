@@ -13,6 +13,7 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ClienteComponent } from './components/human-ss/cliente/cliente/cliente.component';
 import { CategoriaListComponent } from './components/producto-ss/categoria/categoria-list/categoria-list.component';
+import { HomeComponent } from './components/shopshop/home/home.component';
 
 
 const routes: Routes = [
@@ -64,7 +65,6 @@ const routes: Routes = [
     path: 'cliente/guardar', 
     component: ClienteFormComponent,
   },
-  // se llama al componente de formulario locales segun yo jjj para ver como va el avanze del form local
   { 
     path: 'locales', 
     component: LocalFormComponent,
@@ -72,7 +72,7 @@ const routes: Routes = [
   },
   { 
     path: '',  
-    component: ProductoShopComponent,
+    component: HomeComponent,
   },
   { 
     path: '**', 

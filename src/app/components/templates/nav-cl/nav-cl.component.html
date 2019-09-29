@@ -16,7 +16,8 @@
       <ul class="navbar-nav mr-auto ml-2">
 
         <li class="nav-item mx-0 mx-lg-1">
-          <a class="nav-link py-3 px-0 px-lg-3">Inicio</a>
+          <a class="nav-link py-3 px-0 px-lg-3" 
+          [routerLink]="['']">Inicio</a>
         </li>
 
         <li class="nav-item mx-0 mx-lg-1">
@@ -41,9 +42,5 @@
   </div>
 </nav>
 
-
-<div class="container my-5">
-  <router-outlet></router-outlet>
-</div>
-
-
+<!-- Rutas -->
+<router-outlet></router-outlet>
