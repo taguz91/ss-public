@@ -1,34 +1,37 @@
 <div class="d-flex" id="wrapper">
 
     <!-- Sidebar -->
-    <div class="accordion shadow-dark" id="sidebar-wrapper">
+    <div class="accordion shadow" id="sidebar-wrapper">
 
-        <div class="nav-head border-right sidebar-heading d-flex">
+        <div class="nav-head sidebar-heading d-flex">
             <h3 class="mb-0 align-middle m-auto">SS - P</h3>
         </div>
 
         <div class="list-group list-group-flush">
 
-            <a [routerLink]="['/']" class=" list-group-item list-group-item-action bg-light">Dashboard</a>
+            <a [routerLink]="['']" class=" list-group-item list-group-item-action bg-light">Dashboard</a>
 
             <a [routerLink]="['productos/']" class=" list-group-item list-group-item-action bg-light">Productos</a>
             <a [routerLink]="['productos/comentarios']" class=" list-group-item list-group-item-action bg-light">Comentarios</a>
 
-            <!-- Boton para desplegar el menu de opciones -->
-            <button class="list-group-item list-group-item-action list-group-item-info" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="headingOne">
-                Opciones <span class="dropdown-toggle float-right"></span>
+            <button class="list-group-item list-group-item-action list-group-item-info bg-light" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="headingOne">
+                Productos <span class="dropdown-toggle float-right"></span>
             </button>
 
             <!-- Opciones del primer menu -->
             <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#sidebar-wrapper">
                 <div class="list-group">
-                    <a [routerLink]="['/']" class=" list-group-item list-group-item-action bg-light">Dashboard</a>
-
-                    <a class="list-group-item list-group-item-action bg-light">Shortcuts</a>
+                    <a [routerLink]="['productos/lista']" class="list-group-item list-group-item-action bg-light">Lista de Productos</a>
+                    <a [routerLink]="['productos/guardar']" class=" list-group-item list-group-item-action bg-light">Ingresar Producto</a>
                 </div>
             </div>
 
-            <!-- / Fin del primer menu -->
+
+
+            <a [routerLink]="['locales']" class=" list-group-item list-group-item-action bg-light">Local</a>
+
+            <a [routerLink]="['cliente/guardar']" class=" list-group-item list-group-item-action bg-light">Cliente</a>
+
 
         </div>
 
@@ -49,9 +52,9 @@
                             Administrador
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Perfil</a>
+                            <a [routerLink]="[{outlets: {ven: 'cliente'}}]" class="dropdown-item">Perfil</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Salir</a>
+                            <a class="dropdown-item" [routerLink]="['logout']">Salir</a>
                         </div>
                     </li>
                 </ul>
@@ -60,7 +63,7 @@
 
 
         <div class="container-fluid">
-
+            <!--<router-outlet name="ven"></router-outlet>-->
             <router-outlet></router-outlet>
 
         </div>

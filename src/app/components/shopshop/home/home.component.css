@@ -1,0 +1,35 @@
+.carousel-img {
+    height: 580px;
+}
+
+@media (max-width: 768px) {
+    .carousel-img {
+        height: 380px;
+    }
+}
+
+.ctn-categoria {
+    border-top: solid 5px black;
+    border-bottom: solid 5px black;
+}
+
+.carrusel-heading {
+    font-size: 1.45rem;
+    border-top: solid 5px black;
+}
+
+.carrusel-subheading {
+    font-size: 1.35rem;
+    color: white;
+    overflow: hidden;
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 0 25px;
+    font-weight: 500;
+}
+
+.carrusel-subheading:hover {
+    text-decoration: none;
+    color: #33d9b2;
+}

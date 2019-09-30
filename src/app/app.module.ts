@@ -24,6 +24,14 @@ import { NavClComponent } from './components/templates/nav-cl/nav-cl.component';
 import { NavVeComponent } from './components/templates/nav-ve/nav-ve.component';
 import { FootClComponent } from './components/templates/foot-cl/foot-cl.component';
 import { FootVeComponent } from './components/templates/foot-ve/foot-ve.component';
+import { TipoIdentificacionService } from './services/human-ss/tipoIdentificacion/tipo-identificacion.service';
+import { ClienteService } from './services/human-ss/cliente/cliente.service';
+import { CategoriaListComponent } from './components/producto-ss/categoria/categoria-list/categoria-list.component';
+import { LogoutComponent } from './components/logout/logout.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { HomeComponent } from './components/shopshop/home/home.component';
+import { CategoriasComponent } from './components/shopshop/categorias/categorias.component';
+import { CategoriasShopComponent } from './components/shopshop/categorias-shop/categorias-shop.component';
 
 import { ComentarioListComponent } from './components/producto-ss/comentario/comentario-list/comentario-list.component';
 import { ComentarioUpdateComponent } from './components/producto-ss/comentario/comentario-update/comentario-update.component';
@@ -49,17 +57,23 @@ import { ComentarioUpdateComponent } from './components/producto-ss/comentario/c
     NavVeComponent,
     FootClComponent,
     FootVeComponent,
-    ComentarioListComponent,
     ComentarioUpdateComponent
+    CategoriaListComponent,
+    NotFoundComponent,
+    HomeComponent,
+    CategoriasComponent,
+    CategoriasShopComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}),
     FormsModule
   ],
-  providers: [],
+  providers: [
+    TipoIdentificacionService,
+    ClienteService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

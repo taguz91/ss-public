@@ -97,7 +97,7 @@ body {
 
 .navbar-white .navbar-toggler {
     color: rgba(241, 242, 246, 1);
-    border-color: rgba(241, 242, 246, 0.75);
+    /*border-color: rgba(241, 242, 246, 0.75);*/
 }
 
 .navbar-white .navbar-toggler-icon {

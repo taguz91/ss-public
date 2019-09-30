@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuarioService } from 'src/app/services/human-ss/usuario/usuario.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-cl',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavClComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private userService: UsuarioService
+  ) { }
 
   ngOnInit() {
+    const NAV = document.querySelector('#main-nav');
+    window.onscroll = function(){
+      if(document.documentElement.scrollTop > 50){
+        NAV.classList.add('navbar-shrink');
+      } else {
+        NAV.classList.remove('navbar-shrink');
+      }
+    }
   }
 
 }

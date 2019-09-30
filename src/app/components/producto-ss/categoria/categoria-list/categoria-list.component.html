@@ -1,0 +1,51 @@
+<div class="container-fluid m-3">
+
+    <h2>Asignar categorías a producto</h2>
+    <hr>
+
+    <div class="col-md-10">
+        <form>
+
+            <table class="table table-hover table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">Seleccione</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nombre de Categoría</th>
+                        <th scope="col">Código de Categoría</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of categorias; let i = index">
+                        <td>
+
+                            <div class="form-check">
+                                <input class="form-check-input cxb" type="checkbox" id="defaultCheck{{i}}" 
+                                (change)="agregarCategoria($event, item)">
+                                <label class="form-check-label" for="defaultCheck{{i}}">
+                                    Agregar
+                                </label>
+                                <!---->
+                            </div>
+
+                        </td>
+                        <td> {{ item.id_categoria }} </td>
+                        <td> {{ item.cat_nombre }} </td>
+                        <td> {{ item.cat_codigo }} </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="form-row">
+
+                <div class="col-md-4 offset-md-5">
+                    <button (click)="guardarCategorias()" type="submit" class="btn btn-primary">Guardar Categorías</button>
+
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+
+</div>
