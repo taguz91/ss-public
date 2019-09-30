@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from 'src/app/services/human-ss/usuario/usuario.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-cl',
@@ -8,7 +9,9 @@ import { UsuarioService } from 'src/app/services/human-ss/usuario/usuario.servic
 })
 export class NavClComponent implements OnInit {
 
-  constructor(private userService: UsuarioService) { }
+  constructor(
+    private userService: UsuarioService
+  ) { }
 
   ngOnInit() {
     const NAV = document.querySelector('#main-nav');

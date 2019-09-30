@@ -14,6 +14,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ClienteComponent } from './components/human-ss/cliente/cliente/cliente.component';
 import { CategoriaListComponent } from './components/producto-ss/categoria/categoria-list/categoria-list.component';
 import { HomeComponent } from './components/shopshop/home/home.component';
+import { CategoriasComponent } from './components/shopshop/categorias/categorias.component';
+import { CategoriasShopComponent } from './components/shopshop/categorias-shop/categorias-shop.component';
 
 
 const routes: Routes = [
@@ -51,6 +53,10 @@ const routes: Routes = [
     path: 'productos/guardar/:idProducto', 
     component: ProductoFormComponent,
     canActivate: [FilterVendedorService],
+  },
+  { 
+    path: 'categorias', 
+    component: CategoriasShopComponent,
   },
   { 
     path: 'cliente', 

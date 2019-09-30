@@ -31,6 +31,7 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HomeComponent } from './components/shopshop/home/home.component';
 import { CategoriasComponent } from './components/shopshop/categorias/categorias.component';
+import { CategoriasShopComponent } from './components/shopshop/categorias-shop/categorias-shop.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { CategoriasComponent } from './components/shopshop/categorias/categorias
     LogoutComponent,
     NotFoundComponent,
     HomeComponent,
-    CategoriasComponent
+    CategoriasComponent,
+    CategoriasShopComponent
   ],
   imports: [
     BrowserModule,

@@ -70,7 +70,15 @@
 </header>
 
 <!--CATEGORIAS-->
-<app-categorias></app-categorias>
+<div class="divider-custom">
+  <div class="divider-custom-line"></div>
+  <div class="divider-custom-icon">
+    <a href="#" class="section-title text-uppercase">CATEGORIAS</a>
+  </div>
+  <div class="divider-custom-line"></div>
+</div>
+
+<app-categorias [tipo]="'home'"></app-categorias>
 
 <!-- PRODUCTOS -->
 <div class="divider-custom">
