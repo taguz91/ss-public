@@ -35,6 +35,7 @@ import { CategoriasShopComponent } from './components/shopshop/categorias-shop/c
 
 import { ComentarioListComponent } from './components/producto-ss/comentario/comentario-list/comentario-list.component';
 import { ComentarioUpdateComponent } from './components/producto-ss/comentario/comentario-update/comentario-update.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import { ComentarioUpdateComponent } from './components/producto-ss/comentario/c
     ComentarioListComponent
   ],
   imports: [
+    BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}),
