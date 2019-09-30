@@ -57,12 +57,15 @@ import { ComentarioUpdateComponent } from './components/producto-ss/comentario/c
     NavVeComponent,
     FootClComponent,
     FootVeComponent,
-    ComentarioUpdateComponent
+    ComentarioUpdateComponent,
     CategoriaListComponent,
     NotFoundComponent,
     HomeComponent,
     CategoriasComponent,
-    CategoriasShopComponent
+    CategoriasShopComponent,
+    LogoutComponent,
+    ComentarioUpdateComponent,
+    ComentarioListComponent
   ],
   imports: [
     AppRoutingModule,
