@@ -25,6 +25,9 @@ import { NavVeComponent } from './components/templates/nav-ve/nav-ve.component';
 import { FootClComponent } from './components/templates/foot-cl/foot-cl.component';
 import { FootVeComponent } from './components/templates/foot-ve/foot-ve.component';
 
+import { ComentarioListComponent } from './components/producto-ss/comentario/comentario-list/comentario-list.component';
+import { ComentarioUpdateComponent } from './components/producto-ss/comentario/comentario-update/comentario-update.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +48,9 @@ import { FootVeComponent } from './components/templates/foot-ve/foot-ve.componen
     NavClComponent,
     NavVeComponent,
     FootClComponent,
-    FootVeComponent
+    FootVeComponent,
+    ComentarioListComponent,
+    ComentarioUpdateComponent
   ],
   imports: [
     BrowserModule,

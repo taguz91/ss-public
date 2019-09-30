@@ -1,40 +1,39 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-12">
+    <div class="row">
+        <div class="col-md-12">
 
-        <table class="table table-striped table-dark">
-            <thead>
-              <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Vendedor</th>
-                <th scope="col">Marca</th>
-                <th scope="col">Producto</th>
-                <th scope="col">Descripción</th>
-                <th scope="col">Fecha</th>
-                <th scope="col">Máximo de Edad</th>
-                <th scope="col">Mínimo de Edad</th>
-                <th scope="col">Stock</th>
-                <th scope="col">Precio</th>
-              </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let producto of listaProductos" class="border-dark">
-                    <td> {{ producto.id_producto }} </td>
-                    <td>{{ producto.vendedor }}</td>
-                    <td>{{ producto.marcas}}</td>
-                    <td> {{ producto.prod_nombre }} </td>
-                    <td> {{ producto.prod_descripcion }} </td>
-                    <td> {{ producto.prod_fecha_ingreso | date:'y - MMMM - dd' }} </td>
-                    <td>{{ producto.prod_restriccion_edad_max}}</td>
-                    <td> {{ producto.prod_restriccion_edad_min}} </td>
-                    <td>{{ producto.prod_stock_total }}</td>
-                    <td>{{ producto.prod_precio_venta}}</td>
-                  </tr>
-            </tbody>
-          </table>
+            <table class="table table-striped table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Vendedor</th>
+                        <th scope="col">Marca</th>
+                        <th scope="col">Producto</th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Máximo de Edad</th>
+                        <th scope="col">Mínimo de Edad</th>
+                        <th scope="col">Stock</th>
+                        <th scope="col">Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let producto of listaProductos" class="border-dark">
+                        <td> {{ producto.id_producto }} </td>
+                        <td>{{ producto.vendedor }}</td>
+                        <td>{{ producto.marcas}}</td>
+                        <td>{{ producto.marcas}}</td>
+                        <td> {{ producto.prod_nombre }} </td>
+                        <td> {{ producto.prod_descripcion }} </td>
+                        <td> {{ producto.prod_fecha_ingreso | date:'y - MMMM - dd' }} </td>
+                        <td>{{ producto.prod_restriccion_edad_max}}</td>
+                        <td> {{ producto.prod_restriccion_edad_min}} </td>
+                        <td>{{ producto.prod_stock_total }}</td>
+                        <td>{{ producto.prod_precio_venta}}</td>
+                    </tr>
+                </tbody>
+            </table>
 
+        </div>
     </div>
-  </div>
 </div>
-
-
