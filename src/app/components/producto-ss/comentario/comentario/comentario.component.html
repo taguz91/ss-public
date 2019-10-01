@@ -1,1 +1,13 @@
-<p>comentario works!</p>
+<div>
+    <form ng-app="myApp" ng-controller="validateCtrl" name="myForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class="col form-group">
+            <label for="comentario">Tu comentario aquí:</label>
+            <textarea class="form-control" name="comentario" id="comentarioPro" placeholder="Escribe algo...." [(ngModel)]="Comentario.comentario"></textarea>
+            <button type="submmit " name="button ">
+       Publicar
+</button>
+
+
+        </div>
+    </form>
+</div>

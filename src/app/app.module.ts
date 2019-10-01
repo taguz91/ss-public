@@ -39,6 +39,10 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import { PreferenciasService } from './services/human-ss/preferencias/preferencias.service';
 
 
+import { ComentarioListComponent } from './components/producto-ss/comentario/comentario-list/comentario-list.component';
+import { ComentarioUpdateComponent } from './components/producto-ss/comentario/comentario-update/comentario-update.component';
+import { CommonModule } from '@angular/common';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,13 +64,16 @@ import { PreferenciasService } from './services/human-ss/preferencias/preferenci
     NavVeComponent,
     FootClComponent,
     FootVeComponent,
+    ComentarioUpdateComponent,
     CategoriaListComponent,
-    LogoutComponent,
     NotFoundComponent,
     HomeComponent,
     CategoriasComponent,
     CategoriasShopComponent,
-    PreferenciasComponent
+    PreferenciasComponent,
+    LogoutComponent,
+    ComentarioUpdateComponent,
+    ComentarioListComponent
   ],
   imports: [
     BrowserModule,

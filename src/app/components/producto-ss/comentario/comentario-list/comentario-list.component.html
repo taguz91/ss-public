@@ -1,0 +1,31 @@
+<div class="container">
+
+    <div class="card">
+        <div class="card header">
+            <h3>Comentarios</h3>
+            <div class="card-body">
+                <table class=" table table-hover">
+                    <thead>
+                        <tr class="text-center">
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let comen of comentarios" class="text-center">
+                            <td>{{comen.comentario}}</td>
+
+                            <td>
+                                <button style="BORDER: NONE; FONT-SIZE: 8pt; FONT-FAMILY: Verdana;
+                                BACKGROUND-COLOR:rgba(138,221,45,0)" (click)="editar(comen)">Actualizar</button>
+                                <button style="BORDER: NONE; FONT-SIZE: 8pt; FONT-FAMILY: Verdana;
+                                BACKGROUND-COLOR:rgba(138,221,45,0)">Eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<app-comentario></app-comentario>

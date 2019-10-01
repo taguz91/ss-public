@@ -1,0 +1,13 @@
+<div>
+    <form ng-app="myApp" ng-controller="validateCtrl" name="myForm" novalidate>
+        <div class="col form-group">
+            <label for="comentario">Tu comentario aquí:</label>
+            <textarea class="form-control" name="comentario" id="comentario" [(ngModel)]="Comentario.comentario"></textarea>
+            <button type="submmit " name="button " (click)="verObjeto(Comentario)">
+       Publicar
+</button>
+
+
+        </div>
+    </form>
+</div>

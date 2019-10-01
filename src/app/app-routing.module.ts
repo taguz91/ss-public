@@ -17,6 +17,9 @@ import { HomeComponent } from './components/shopshop/home/home.component';
 import { CategoriasComponent } from './components/shopshop/categorias/categorias.component';
 import { CategoriasShopComponent } from './components/shopshop/categorias-shop/categorias-shop.component';
 import { PreferenciasComponent } from './components/human-ss/preferencias/preferencias.component';
+import { ComentarioComponent } from './components/producto-ss/comentario/comentario/comentario.component';
+import { ComentarioListComponent } from './components/producto-ss/comentario/comentario-list/comentario-list.component';
+import { ComentarioUpdateComponent } from './components/producto-ss/comentario/comentario-update/comentario-update.component';
 
 
 const routes: Routes = [
@@ -40,20 +43,32 @@ const routes: Routes = [
     path: 'productos', 
     component: ProductoShopComponent,
   },
-  { 
+  {
     path: 'productos/lista', 
     component: ProductoListComponent,
     canActivate: [FilterVendedorService],
   },
-  { 
+  {
     path: 'productos/guardar', 
     component: ProductoFormComponent,
     canActivate: [FilterVendedorService],
   },
-  { 
+  {
     path: 'productos/guardar/:idProducto', 
     component: ProductoFormComponent,
     canActivate: [FilterVendedorService],
+  },
+  {
+    path: 'productos/comentarios', 
+    component: ComentarioComponent 
+  },
+  {
+    path: 'productos/comentariosListar', 
+    component: ComentarioListComponent 
+  },
+  {
+    path: 'productos/ComentarioActualizar',
+    component: ComentarioUpdateComponent
   },
   { 
     path: 'categorias', 
