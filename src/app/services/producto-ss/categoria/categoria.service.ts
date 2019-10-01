@@ -14,4 +14,9 @@ export class CategoriaService {
   public getCategorias(){
     return this.http.get<Categoria[]>(this.url+"/");
   }
+
+  getCategoriasId(id:number) {
+    return this.http.get<Categoria>(this.url+"/"+id);   
+  }
+
 }

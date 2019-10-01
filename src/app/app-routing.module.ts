@@ -16,6 +16,7 @@ import { CategoriaListComponent } from './components/producto-ss/categoria/categ
 import { HomeComponent } from './components/shopshop/home/home.component';
 import { CategoriasComponent } from './components/shopshop/categorias/categorias.component';
 import { CategoriasShopComponent } from './components/shopshop/categorias-shop/categorias-shop.component';
+import { PreferenciasComponent } from './components/human-ss/preferencias/preferencias.component';
 import { ComentarioComponent } from './components/producto-ss/comentario/comentario/comentario.component';
 import { ComentarioListComponent } from './components/producto-ss/comentario/comentario-list/comentario-list.component';
 import { ComentarioUpdateComponent } from './components/producto-ss/comentario/comentario-update/comentario-update.component';
@@ -90,6 +91,10 @@ const routes: Routes = [
     path: 'locales', 
     component: LocalFormComponent,
     canActivate: [FilterVendedorService],
+  },
+  { 
+    path: 'cliente/preferencias', 
+    component: PreferenciasComponent,
   },
   { 
     path: '',  

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
+import {MatCardModule,MatButtonModule} from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -32,6 +33,11 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HomeComponent } from './components/shopshop/home/home.component';
 import { CategoriasComponent } from './components/shopshop/categorias/categorias.component';
 import { CategoriasShopComponent } from './components/shopshop/categorias-shop/categorias-shop.component';
+import { PreferenciasComponent } from './components/human-ss/preferencias/preferencias.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import { PreferenciasService } from './services/human-ss/preferencias/preferencias.service';
+
 
 import { ComentarioListComponent } from './components/producto-ss/comentario/comentario-list/comentario-list.component';
 import { ComentarioUpdateComponent } from './components/producto-ss/comentario/comentario-update/comentario-update.component';
@@ -65,6 +71,7 @@ import { CarroShopComponent } from './components/shopshop/carro-shop/carro-shop.
     HomeComponent,
     CategoriasComponent,
     CategoriasShopComponent,
+    PreferenciasComponent,
     LogoutComponent,
     ComentarioUpdateComponent,
     ComentarioListComponent,
@@ -75,11 +82,16 @@ import { CarroShopComponent } from './components/shopshop/carro-shop/carro-shop.
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}),
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    DragDropModule,
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [
     TipoIdentificacionService,
-    ClienteService
+    ClienteService,
+    PreferenciasService
   ],
   bootstrap: [AppComponent]
 })
