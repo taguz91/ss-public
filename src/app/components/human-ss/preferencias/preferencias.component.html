@@ -1,0 +1,33 @@
+<div class="container">
+    <h1>{{title}}</h1>
+    <p>Escoja sus categorias preferidas</p>
+
+    <div class="list-container">
+
+        <div class="todo-container column-container">
+            <div class="list" cdkDropList #todoList="cdkDropList" [cdkDropListData]="categorias" [cdkDropListConnectedTo]="[doneList]" (cdkDropListDropped)="onDrop($event)">
+                <h2>Categorias</h2>
+                <mat-card *ngFor="let categoria of categorias" cdkDrag>
+                    <mat-card-header>
+                        <mat-card-title>{{categoria.cat_nombre}}</mat-card-title>
+                    </mat-card-header>
+                </mat-card>
+            </div>
+        </div>
+
+        <div class="done-container column-container">
+            <div class="list" cdkDropList #doneList="cdkDropList" [cdkDropListData]="misCategorias" [cdkDropListConnectedTo]="todoList" (cdkDropListDropped)="onDrop($event)">
+                <h2>Categorias Preferidas</h2>
+                <mat-card *ngFor="let miCategoria of misCategorias" cdkDrag>
+                    <mat-card-header>
+                        <mat-card-title>{{miCategoria.cat_nombre}}</mat-card-title>
+                    </mat-card-header>
+                </mat-card>
+            </div>
+        </div>
+
+    </div>
+
+    <button mat-fab color="">Save</button>
+
+</div>
