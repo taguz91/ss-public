@@ -36,6 +36,7 @@ import { CategoriasShopComponent } from './components/shopshop/categorias-shop/c
 import { ComentarioListComponent } from './components/producto-ss/comentario/comentario-list/comentario-list.component';
 import { ComentarioUpdateComponent } from './components/producto-ss/comentario/comentario-update/comentario-update.component';
 import { CommonModule } from '@angular/common';
+import { CarroShopComponent } from './components/shopshop/carro-shop/carro-shop.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { CommonModule } from '@angular/common';
     CategoriasShopComponent,
     LogoutComponent,
     ComentarioUpdateComponent,
-    ComentarioListComponent
+    ComentarioListComponent,
+    CarroShopComponent
   ],
   imports: [
     BrowserModule,

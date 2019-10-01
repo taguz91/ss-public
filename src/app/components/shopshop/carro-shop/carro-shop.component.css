@@ -1,0 +1,71 @@
+#inferior{
+    position: sticky;
+    right: 20px;
+    bottom: 20px;
+    z-index: 10;
+}
+
+.circulo {
+    width: 70px;
+    height: 70px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.img-cart {
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+
+
+/* Para mostrar el modal */
+
+.carro-modal .carro-modal-title {
+    font-size: 2.25rem;
+    line-height: 2rem;
+}
+
+@media (min-width: 992px) {
+    .carro-modal .carro-modal-title {
+        font-size: 3rem;
+        line-height: 2.5rem;
+    }
+}
+
+.carro-modal .close {
+    position: absolute;
+    z-index: 1;
+    right: 1.5rem;
+    top: 1rem;
+    font-size: 3rem;
+    line-height: 3rem;
+    color: #1abc9c;
+    opacity: 1;
+}
+
+.text-title-carro {
+    color: #303952;
+    border-left: solid 5px #33d9b2;
+    padding-left: 10px;
+}
+
+.text-subtitule-carro {
+    padding-left: 15px;
+    color: #303952;
+}
+
+.img-carro {
+    max-width: 100%;
+    height: 120px;
+}
+
+@media (max-width: 768px) {
+    .img-carro {
+        max-width: 100%;
+        height: 90px;
+    }
+}
+  
+  
