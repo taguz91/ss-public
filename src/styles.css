@@ -8,6 +8,15 @@ button.bg-pri:focus {
   background-color: #596275 !important;
 }
 
+.bg-sec {
+  background-color: #33d9b2 !important;
+}
+
+.text-pri {
+  color: #303952 !important;
+  letter-spacing: 5px;
+  font-weight: 500;
+}
 
 /* SEPARADOR */
 
@@ -22,6 +31,13 @@ button.bg-pri:focus {
   padding: 3px 8px;
   border-radius: 4px;
   background-color: #33d9b2;
+}
+
+
+.separador-pri {
+  background-color: #303952;
+  height: 3.5px;
+  border-radius: 5px;
 }
 
 .divider-custom {
