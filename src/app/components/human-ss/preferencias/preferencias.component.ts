@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Categoria } from '../../../models/producto-ss/categoria';
 import { PreferenciasService } from 'src/app/services/human-ss/preferencias/preferencias.service';
 import { Preferencia } from '../../../models/human-ss/cliente/preferencia';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 
 @Component({
@@ -16,19 +17,19 @@ export class PreferenciasComponent implements OnInit {
 
 categorias:Categoria[]=[];
 
-categoria:Categoria;
-
 misCategorias:Categoria[]=[];
 
+misCategoriasAux:Categoria[]=[];
+
 preferencias:Preferencia[]=[];
+
+
 
   constructor(private service:CategoriaService, private service2:PreferenciasService, private router:Router) { }
 
   title = 'Preferencias';
 
   ngOnInit() {
-
-     
 
     this.service2.getMisPreferencias(10)
         .subscribe(data=>{
@@ -67,21 +68,77 @@ preferencias:Preferencia[]=[];
   }
 
   cargarPreferencias(){
+
     for(let preferencia of this.preferencias){
       this.service.getCategoriasId(preferencia.id_categoria)
       .subscribe(data=>{
         this.misCategorias.push(data);
-        
+        this.misCategoriasAux.push(data);
       })
     }
+
+    
+
   }
 
    comparer(otherArray){
     return function(current){
       return otherArray.filter(function(other){
         return other.id_categoria == current.id_categoria
-      }).length == 0;
+      }).length==0;
     }
   }
+
+
+
+  guardarPreferencias(){
+    
+    console.log(this.misCategorias);
+    console.log("x");
+    console.log(this.misCategoriasAux);
+    console.log("x");
+    console.log(this.preferencias);
+    
+    let misCategoriasNuevas:Categoria[]=[];
+    let misPreferenciasEliminadas:Preferencia[]=[];  
+      
+    misPreferenciasEliminadas=this.preferencias.filter(this.comparer(this.misCategorias));
+    misCategoriasNuevas=this.misCategorias.filter(this.comparer(this.misCategoriasAux));
+    
+    console.log("x");
+    console.log(misPreferenciasEliminadas);
+    console.log("x");
+    console.log(misCategoriasNuevas);
+    // console.log(misCategoriasNuevas);
+
+    for (let miPreferenciaEliminada of misPreferenciasEliminadas){
+      miPreferenciaEliminada.pref_activo=false;
+      this.service2.deletePreferencia(miPreferenciaEliminada)
+          .subscribe(data=>{
+            console.log("Eliminamos "+miPreferenciaEliminada.id_categoria);
+      })
+
+    }
+
+      for (let miCategoriaNueva of misCategoriasNuevas){
+        let miPreferencia:Preferencia={ 
+          cliente: {
+            id_persona: 0
+          },
+          id_categoria: 0
+        };
+        miPreferencia.id_categoria=miCategoriaNueva.id_categoria;
+        miPreferencia.cliente.id_persona=10;
+        console.log("x");
+        console.log(miPreferencia);
+        this.service2.insertPreferencia(miPreferencia)
+            .subscribe(data=>{
+              console.log("Agregamos "+miPreferencia.id_categoria);
+        })
+      }
+    
+      alert("Se guardo exitosamente");
+        
+ }
 
 }

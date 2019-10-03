@@ -17,6 +17,17 @@ export class PreferenciasService {
      
   }
 
+  insertPreferencia(preferencia:Preferencia){
+    return this.http.post<Preferencia>(this.Url+"guardar/", preferencia);
+   
+  }
+
+
+  deletePreferencia(preferencia:Preferencia){
+    return this.http.put<Preferencia>(this.Url+"eliminar/"+preferencia.id_preferencia, preferencia);
+   
+  }
+
   
 
 }
