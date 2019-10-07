@@ -43,6 +43,8 @@ import { ComentarioListComponent } from './components/producto-ss/comentario/com
 import { ComentarioUpdateComponent } from './components/producto-ss/comentario/comentario-update/comentario-update.component';
 import { CommonModule } from '@angular/common';
 import { CarroShopComponent } from './components/shopshop/carro-shop/carro-shop.component';
+import { HomeRouteComponent } from './components/templates/home-route/home-route.component';
+import { HomeVenComponent } from './components/human-ss/vendedor/home-ven/home-ven.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +77,9 @@ import { CarroShopComponent } from './components/shopshop/carro-shop/carro-shop.
     LogoutComponent,
     ComentarioUpdateComponent,
     ComentarioListComponent,
-    CarroShopComponent
+    CarroShopComponent,
+    HomeRouteComponent,
+    HomeVenComponent
   ],
   imports: [
     BrowserModule,

@@ -6,7 +6,7 @@
 
 
 <div *ngIf="!esPaginaCompleta()">
-  <!--SI ESTA LOGUEADO Y ES VENDEDOR SE MUETRAESTO -->
+  <!--SI ESTA LOGUEADO Y ES VENDEDOR SE MUESTRA ESTO -->
   <div *ngIf="userService.esVendedor()">
     <app-nav-ve></app-nav-ve>
   </div>
@@ -14,7 +14,9 @@
   <!--SI ESTA LOGUEADO Y ES CLIENTE SE MUETRAESTO -->
   <div *ngIf="!userService.esVendedor()">
     <app-nav-cl></app-nav-cl>
-    <app-carro-shop></app-carro-shop>
+    <div *ngIf="userService.estaLogueado()">
+      <app-carro-shop></app-carro-shop>
+    </div>
     <app-foot-cl></app-foot-cl>
   </div>
 </div>

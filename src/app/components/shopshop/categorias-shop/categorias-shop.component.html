@@ -1,13 +1,18 @@
-<!--CATEGORIAS-->
-<div class="divider-custom">
-  <div class="divider-custom-line"></div>
-  <div class="divider-custom-icon">
-    <a href="#" class="section-title text-uppercase">Mis categorias</a>
-  </div>
-  <div class="divider-custom-line"></div>
+<!--CATEGORIAS DE LOS USUARIOS -->
+<div *ngIf="userService.estaLogueado()">
+
+    <div class="divider-custom">
+      <div class="divider-custom-line"></div>
+      <div class="divider-custom-icon">
+        <a href="#" class="section-title text-uppercase">Mis categorias</a>
+      </div>
+      <div class="divider-custom-line"></div>
+    </div>
+    
+    <app-categorias [tipo]="'usuario'"></app-categorias>
+
 </div>
 
-<app-categorias [tipo]="'usuario'"></app-categorias>
 
   <!--CATEGORIAS-->
 <div class="divider-custom">

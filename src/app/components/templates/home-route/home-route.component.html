@@ -1,0 +1,9 @@
+<!-- HOME DE VENDEDOR -->
+<div *ngIf="userService.esVendedor()">
+  <app-home-ven></app-home-ven>
+</div>
+
+<!-- HOME PAGE DE TODOS MENOS DE VENDEDOR -->
+<div *ngIf="!userService.esVendedor()">
+  <app-home></app-home>
+</div>

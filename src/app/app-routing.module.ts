@@ -13,13 +13,12 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ClienteComponent } from './components/human-ss/cliente/cliente/cliente.component';
 import { CategoriaListComponent } from './components/producto-ss/categoria/categoria-list/categoria-list.component';
-import { HomeComponent } from './components/shopshop/home/home.component';
-import { CategoriasComponent } from './components/shopshop/categorias/categorias.component';
 import { CategoriasShopComponent } from './components/shopshop/categorias-shop/categorias-shop.component';
 import { PreferenciasComponent } from './components/human-ss/preferencias/preferencias.component';
 import { ComentarioComponent } from './components/producto-ss/comentario/comentario/comentario.component';
 import { ComentarioListComponent } from './components/producto-ss/comentario/comentario-list/comentario-list.component';
 import { ComentarioUpdateComponent } from './components/producto-ss/comentario/comentario-update/comentario-update.component';
+import { HomeRouteComponent } from './components/templates/home-route/home-route.component';
 
 
 const routes: Routes = [
@@ -98,20 +97,12 @@ const routes: Routes = [
   },
   { 
     path: '',  
-    component: HomeComponent,
+    component: HomeRouteComponent
   },
   { 
     path: '**', 
     component: NotFoundComponent
-  },
-  { 
-    path: '**', 
-    component: NotFoundComponent,
-  },
-  { 
-    path: '**', 
-    component: NotFoundComponent,
-  },
+  }
 ];
 
 @NgModule({
