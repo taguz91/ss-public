@@ -17,11 +17,16 @@ export class AppComponent implements AfterViewChecked {
   ) { }
 
   esPaginaCompleta(): boolean {
-    if(this.router.url === '/login') {
-      return true;
-    } else {
-      return false;
-    }
+    return this.router.url === '/login' || 
+    this.router.url === '/registrarse';
+  }
+
+  esLogin(): boolean {
+    return this.router.url === '/login';
+  }
+
+  esRegistrarse(): boolean {
+    return this.router.url === '/registrarse';
   }
 
   ngAfterViewChecked() {

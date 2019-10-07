@@ -1,5 +1,9 @@
 <!-- SI NO ESTA LOGUEADO SE ABRITRAN AQUI CUANDO ES PAGINA COMPLETA AQUI -->
-<div *ngIf="esPaginaCompleta()">
+<div *ngIf="esLogin()">
+  <router-outlet></router-outlet>
+</div>
+
+<div *ngIf="esRegistrarse()">
   <router-outlet></router-outlet>
 </div>
 

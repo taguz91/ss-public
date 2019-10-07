@@ -74,16 +74,16 @@ const routes: Routes = [
     component: CategoriasShopComponent,
   },
   { 
-    path: 'cliente', 
+    path: 'perfil', 
     component: ClienteComponent,
   },
   { 
-    path: 'cliente/editar', 
+    path: 'perfil/editar', 
     component: ClienteFormComponent,
     canActivate: [FilterClienteService],
   },
   { 
-    path: 'cliente/guardar', 
+    path: 'registrarse', 
     component: ClienteFormComponent,
   },
   { 
