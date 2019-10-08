@@ -18,9 +18,12 @@
   <!--SI ESTA LOGUEADO Y ES CLIENTE SE MUETRAESTO -->
   <div *ngIf="!userService.esVendedor()">
     <app-nav-cl></app-nav-cl>
+    <!--
     <div *ngIf="userService.estaLogueado()">
       <app-carro-shop></app-carro-shop>
     </div>
+  -->
+    <app-carro-shop *ngIf="userService.estaLogueado()"></app-carro-shop>
     <app-foot-cl></app-foot-cl>
   </div>
 </div>

@@ -19,6 +19,7 @@ import { ComentarioComponent } from './components/producto-ss/comentario/comenta
 import { ComentarioListComponent } from './components/producto-ss/comentario/comentario-list/comentario-list.component';
 import { ComentarioUpdateComponent } from './components/producto-ss/comentario/comentario-update/comentario-update.component';
 import { HomeRouteComponent } from './components/templates/home-route/home-route.component';
+import { PerfilComponent } from './components/shopshop/perfil/perfil.component';
 
 
 const routes: Routes = [
@@ -75,7 +76,8 @@ const routes: Routes = [
   },
   { 
     path: 'perfil', 
-    component: ClienteComponent,
+    component: PerfilComponent,
+    canActivate: [FilterClienteService],
   },
   { 
     path: 'perfil/editar', 

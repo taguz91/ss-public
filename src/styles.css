@@ -23,6 +23,7 @@ button.bg-pri:focus {
 .section-title {
   font-size: 2.2rem;
   color: #33d9b2;
+  cursor: pointer;
 }
 
 .section-title:hover {
