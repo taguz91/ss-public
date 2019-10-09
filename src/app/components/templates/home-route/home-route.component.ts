@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from 'src/app/services/human-ss/usuario/usuario.service';
 
 @Component({
-  selector: 'app-categorias-shop',
-  templateUrl: './categorias-shop.component.html',
-  styleUrls: ['./categorias-shop.component.css']
+  selector: 'app-home-route',
+  templateUrl: './home-route.component.html',
+  styleUrls: ['./home-route.component.css']
 })
-export class CategoriasShopComponent implements OnInit {
+export class HomeRouteComponent implements OnInit {
 
   constructor(
     private userService: UsuarioService

@@ -1,12 +1,16 @@
 <!-- SI NO ESTA LOGUEADO SE ABRITRAN AQUI CUANDO ES PAGINA COMPLETA AQUI -->
-<div *ngIf="esPaginaCompleta()">
+<div *ngIf="esLogin()">
+  <router-outlet></router-outlet>
+</div>
+
+<div *ngIf="esRegistrarse()">
   <router-outlet></router-outlet>
 </div>
 
 
 
 <div *ngIf="!esPaginaCompleta()">
-  <!--SI ESTA LOGUEADO Y ES VENDEDOR SE MUETRAESTO -->
+  <!--SI ESTA LOGUEADO Y ES VENDEDOR SE MUESTRA ESTO -->
   <div *ngIf="userService.esVendedor()">
     <app-nav-ve></app-nav-ve>
   </div>
@@ -14,7 +18,12 @@
   <!--SI ESTA LOGUEADO Y ES CLIENTE SE MUETRAESTO -->
   <div *ngIf="!userService.esVendedor()">
     <app-nav-cl></app-nav-cl>
-    <app-carro-shop></app-carro-shop>
+    <!--
+    <div *ngIf="userService.estaLogueado()">
+      <app-carro-shop></app-carro-shop>
+    </div>
+  -->
+    <app-carro-shop *ngIf="userService.estaLogueado()"></app-carro-shop>
     <app-foot-cl></app-foot-cl>
   </div>
 </div>

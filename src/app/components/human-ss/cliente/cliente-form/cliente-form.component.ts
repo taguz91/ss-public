@@ -40,11 +40,14 @@ export class ClienteFormComponent implements OnInit {
     },
     cli_fecha_nacimiento:null
   };
+ 
 
-  
-    
-
-  constructor(private router:Router, private service:ClienteService, private service2:TipoIdentificacionService, private formBuilder: FormBuilder) { }
+  constructor(
+    private router:Router, 
+    private service:ClienteService, 
+    private service2:TipoIdentificacionService,
+    private formBuilder: FormBuilder
+  ) { }
 
   ngOnInit() {
   
@@ -80,6 +83,9 @@ export class ClienteFormComponent implements OnInit {
     });
   }
 
+  clickCancelar() {
+    this.router.navigate(['']);
+  }
 
   get f() { return this.registerForm.controls; }
 
