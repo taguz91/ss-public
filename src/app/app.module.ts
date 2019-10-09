@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
-import {MatCardModule,MatButtonModule} from '@angular/material';
+import {MatCardModule,MatButtonModule, MatCheckboxModule} from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -86,7 +86,9 @@ import { CarroShopComponent } from './components/shopshop/carro-shop/carro-shop.
     BrowserAnimationsModule,
     DragDropModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule, 
+    MatButtonModule, 
+    MatCheckboxModule
   ],
   providers: [
     TipoIdentificacionService,

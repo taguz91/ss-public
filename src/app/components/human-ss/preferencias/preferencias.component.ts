@@ -23,6 +23,8 @@ misCategoriasAux:Categoria[]=[];
 
 preferencias:Preferencia[]=[];
 
+estadoBoton=false;
+
 
 
   constructor(private service:CategoriaService, private service2:PreferenciasService, private router:Router) { }
@@ -38,16 +40,22 @@ preferencias:Preferencia[]=[];
             this.service.getCategorias()
             .subscribe(data=>{
             this.categorias=data;
-            this.categorias=this.categorias.filter(this.comparer(this.misCategorias))
+            for (let categoria of this.categorias){
+              categoria.cat_activo=false;
+              for (let miCategoria of this.misCategorias){
+                
+              if (categoria.cat_codigo===miCategoria.cat_codigo){
+                console.log("entra");
+                  categoria.cat_activo=true;
+              }
+              }
+            }
+            //this.categorias=this.categorias.filter(this.comparer(this.misCategorias))
             
           })
     })
 
     
-
-    
-    
-
        
   }
 
@@ -138,7 +146,20 @@ preferencias:Preferencia[]=[];
       }
     
       alert("Se guardo exitosamente");
-        
+      this.estadoBoton=false;  
  }
+
+ checkCheckBoxvalue(event, categoria:Categoria){
+
+    this.estadoBoton=true;
+    console.log(event.checked+"-"+categoria.cat_codigo);
+
+    if (event.checked){
+      this.misCategorias.push(categoria);
+    }else{
+      this.misCategorias=this.misCategorias.filter(e => e.cat_codigo !== categoria.cat_codigo)
+    }
+
+  }
 
 }

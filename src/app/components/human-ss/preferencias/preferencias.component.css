@@ -87,3 +87,12 @@ button {
     background-color: #303952;
     color: white
 }
+
+::ng-deep .mat-checkbox-checked .mat-checkbox-background,
+.mat-checkbox-indeterminate .mat-checkbox-background {
+    background: #33d9b2!important;
+}
+
+ ::ng-deep .mat-checkbox:not(.mat-checkbox-disabled) .mat-checkbox-ripple .mat-ripple-element {
+    background: #33d9b2!important;
+}

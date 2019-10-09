@@ -2,7 +2,7 @@
     <h1>{{title}}</h1>
     <p>Escoja sus categorias preferidas</p>
 
-    <div class="list-container">
+    <!-- <div class="list-container">
 
         <div class="todo-container column-container">
             <div class="list" cdkDropList #todoList="cdkDropList" [cdkDropListData]="categorias" [cdkDropListConnectedTo]="[doneList]" (cdkDropListDropped)="onDrop($event)">
@@ -26,8 +26,11 @@
             </div>
         </div>
 
-    </div>
+    </div> -->
 
-    <button (click)="guardarPreferencias()" mat-fab color>Save</button>
+    <mat-checkbox (change)="checkCheckBoxvalue($event,categoria)" *ngFor="let categoria of categorias" [(ngModel)]="categoria.cat_activo">{{categoria.cat_nombre}}</mat-checkbox>
+
+
+    <button (click)="guardarPreferencias()" mat-fab color [disabled]="!estadoBoton" color="primary">Save</button>
 
 </div>
