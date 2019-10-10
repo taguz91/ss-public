@@ -81,6 +81,8 @@
   border: 1px solid #808e9b;
   border-radius: 3px;
   color: #808e9b;
+  cursor: pointer;
+  margin-left: 4px;
 }
 
 .info-categorias a:hover {
@@ -172,7 +174,7 @@
   color: #ffc048;
 }
 
-.calificacion-general label:hover ~ label {
+.calificacion-general label:hover, label:hover ~ label {
   color: #ffc048;
 }
 

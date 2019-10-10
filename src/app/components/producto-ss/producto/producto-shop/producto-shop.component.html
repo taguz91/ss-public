@@ -2,7 +2,7 @@
 <div class="container my-4">
     <div class="row">
 
-        <div class="col-md-5 col-lg-4 mb-3" *ngFor="let p of productos; let i = index;">
+        <div class="col-md-5 col-lg-4 mb-4 mx-auto" *ngFor="let p of productos; let i = index;">
     
             <div class="card border-0 d-block mx-auto">
                 <div class="head-producto mx-auto">
@@ -11,7 +11,7 @@
 
                         <div class="mt-2 mr-2 d-block">
         
-                            <button type="button" name="button" class="btn btn-agregar btn-lista">
+                            <button (click)="agregarMiLista()" class="btn btn-agregar btn-lista">
                                 <img src="../../../../../assets/icon/mi-lista.png" alt="" class="img-icon">
                             </button>
         
@@ -31,18 +31,18 @@
     
                         <div class="col">
     
-                        <p class="calificacion-general calificacion-total mb-0">
-                            <input type="radio" name="estrella{{i}}" disabled>
-                            <label >&#9733;</label>
-                            <input type="radio" name="estrella{{i}}" checked disabled>
-                            <label >&#9733;</label>
-                            <input type="radio" name="estrella{{i}}" disabled>
-                            <label >&#9733;</label>
-                            <input type="radio" name="estrella{{i}}" disabled>
-                            <label >&#9733;</label>
-                            <input type="radio" name="estrella{{i}}" disabled>
-                            <label >&#9733;</label>
-                        </p>
+                            <p class="calificacion-general calificacion-total mb-0">
+                                <input type="radio" name="estrella{{i}}" disabled>
+                                <label >&#9733;</label>
+                                <input type="radio" name="estrella{{i}}" checked disabled>
+                                <label >&#9733;</label>
+                                <input type="radio" name="estrella{{i}}" disabled>
+                                <label >&#9733;</label>
+                                <input type="radio" name="estrella{{i}}" disabled>
+                                <label >&#9733;</label>
+                                <input type="radio" name="estrella{{i}}" disabled>
+                                <label >&#9733;</label>
+                            </p>
     
                         </div>
     
@@ -53,64 +53,28 @@
     
     
                         <div class="col-7 d-flex">
-                        <h5 class="mb-0 my-auto precio-general" >$ 12321</h5>
+                            <h5 class="mb-0 my-auto precio-general" >$ 12321</h5>
                         </div>
     
     
                         <div class="col-5 ">
     
-                        <div class="input-group">
-                            <input type="text" class="form-control num-producto" value="1">
-                            <div class="input-group-append">
-                            <button type="button" name="button" class="btn btn-agregar btn-carro">
-                                <img src="../../../../../assets/icon/mi-carrito.png" alt="" class="img-icon">
-                            </button>
+                            <div class="input-group">
+                                <input type="text" class="form-control num-producto" value="1">
+                                <div class="input-group-append">
+                                <button type="button" name="button" class="btn btn-agregar btn-carro">
+                                    <img src="../../../../../assets/icon/mi-carrito.png" alt="" class="img-icon">
+                                </button>
+                                </div>
                             </div>
-                        </div>
     
                         </div>
     
                     </div>
     
-    
                 </div>
+                
 
-
-                <!--
-                <div class="foot-producto ">
-                    <h5>PC MASTER RACE CON I9</h5>
-                    <hr>
-                    <div class="row ">
-                        <div class="col-6 ">
-    
-                            <p class="calificacion-general calificacion-total ">
-                                <input type="radio" name="estrella{{i}}" disabled>
-                                <label>&#9733;</label>
-                                <input type="radio" name="estrella{{i}}" checked disabled>
-                                <label>&#9733;</label>
-                                <input type="radio" name="estrella{{i}}" disabled>
-                                <label>&#9733;</label>
-                                <input type="radio" name="estrella{{i}}" disabled>
-                                <label>&#9733;</label>
-                                <input type="radio" name="estrella{{i}}" disabled>
-                                <label>&#9733;</label>
-                            </p>
-    
-                        </div>
-    
-                        <div class="col-6 ">
-                            <button type="button " name="button " class="btn btn-agregar btn-carro ">
-                                    <img src="../../../../../assets/icon/mi-carrito.png "  alt=" ">
-                            </button>
-    
-                            <button type="button " name="button " class="btn btn-agregar btn-lista ">
-                                    <img src="../../../../../assets/icon/mi-lista.png "  alt=" ">
-                            </button>
-                        </div>
-                    </div>
-    
-                </div>
-            -->
             </div>
     
         </div>

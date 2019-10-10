@@ -30,10 +30,20 @@ export class ProductoShopComponent implements OnInit {
     }
   ];
 
+  // Para saber si solo estamos agregando 
+  agregando = false;
+
   constructor(private ruter: Router) { }
 
   verProducto(id: number): void {
-    this.ruter.navigate(['producto', id]);
+    if(!this.agregando){
+      this.ruter.navigate(['producto', id]);
+    }
+    this.agregando = false;
+  }
+
+  agregarMiLista(){
+    this.agregando = true;
   }
 
   ngOnInit() {
