@@ -3,7 +3,7 @@
     <div class="row">
 
         <!--IMG DEL PRODUCTO-->
-        <div class="col-md-6 col-lg-6 col-xl-4">
+        <div class="col-md-6 col-xl-4">
 
             <div class="head-producto mx-auto">
 
@@ -49,7 +49,7 @@
 
 
         <!--INFORMACION PRODUCTO-->
-        <div class="col-10 col-md-6 col-lg-6 col-xl-4 info-producto mt-2 mt-md-0 mx-auto">
+        <div class="col-10 col-md-6 col-xl-4 info-producto mt-2 mt-md-0 mx-auto">
 
             <div class="row">
                 <div class="col-12 col-sm-6 col-md-12">
@@ -101,32 +101,28 @@
         </div>
 
 
-        <!--RECOMENDACIONES DE PRODUCTOS-->
-        <div class="col-12 col-xl-4">
+        <!-- COMENTARIOS DE PRODUCTOS -->
+        <div class="col-10 col-md-11 col-xl-4 mx-auto">
+        
+            <div class="input-group mt-3 mt-xl-0">
+                
+                <textarea class="form-control" name="comentario" id="" cols="10" rows="2" placeholder="Ingrese su comentario aquí" ></textarea>
+                <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" id="btn-comentar">Comentar</button>
+                </div>
+            </div>        
+
+        </div>
+        <!-- /COMENTARIOS DE PRODUCTOS -->
+        
+    </div>
+
+    <!--RECOMENDACIONES DE PRODUCTOS-->
+    <div class="row mt-4">
+        <div class="col-12">
             <app-producto-recom></app-producto-recom>
         </div>
-        <!--/RECOMENDACIONES DE PRODUCTOS-->
-
     </div>
-
-
-    <div class="row">
-
-        <div class="col-md-8">
-
-            <div class="my-2">
-                <div class="input-group">
-                    
-                    <textarea class="form-control" name="comentario" id="" cols="10" rows="2" placeholder="Ingrese su comentario aquí" ></textarea>
-                    <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button" id="btn-comentar">Comentar</button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
+    <!--/RECOMENDACIONES DE PRODUCTOS-->
 
 </div>

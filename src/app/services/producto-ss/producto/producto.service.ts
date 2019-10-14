@@ -47,6 +47,24 @@ export class ProductoService {
     return this.http.get<ProductoPage[]>(this.url + '/home/all');
   }
 
+  // Consultamos para la pagina 
+  public getForPage() {
+    return this.http.get<ProductoPage[]>(this.url + '/home/all', {
+      params: {
+        limit: '10',
+        offset: '0'
+      }
+    });
+  }
+
+  // Obtenemos la imagen del producto 
+  getImgProd(url: string){
+    if(url === null){
+      url = ' ../../../../../assets/img/noimage.png';
+    }
+    return url;
+  }
+
 }
 
 

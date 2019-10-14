@@ -44,7 +44,8 @@ export class ProductoShopComponent implements OnInit {
       case('home'):
         this.loadForHome();
       break;
-      case('todas'):
+      default:
+        this.loadForPage();
       break;
     }
     
@@ -59,13 +60,6 @@ export class ProductoShopComponent implements OnInit {
     }
   }
 
-  getImgProd(url: string){
-    if(url === null){
-      url = '../../../../../assets/icon/mi-lista.png';
-    }
-    return url;
-  }
-
   private loadForHome(){
     this.PS.getForHome().subscribe(
       res => {
@@ -74,6 +68,18 @@ export class ProductoShopComponent implements OnInit {
       err => {
         console.log('Error al buscar para home page.');
         console.log(err);
+      }
+    );
+  }
+
+  private loadForPage() {
+    this.PS.getForPage().subscribe(
+      res => {
+        this.productos = res;
+      }, 
+      err => {
+        console.log('No logramos cargar los productos.');
+        console.log(err);        
       }
     );
   }
