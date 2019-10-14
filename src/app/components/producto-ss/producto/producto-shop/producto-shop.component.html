@@ -11,7 +11,7 @@
 
                         <div class="mt-2 mr-2 d-block">
         
-                            <button (click)="agregarMiLista()" class="btn btn-agregar btn-lista">
+                            <button (click)="agregarMiLista()" class="btn btn-agregar btn-lista" *ngIf="userService.estaLogueado()">
                                 <img src="../../../../../assets/icon/mi-lista.png" alt="Producto imagen" class="img-icon">
                             </button>
         
@@ -61,7 +61,7 @@
     
                         <div class="col-5 ">
     
-                            <div class="input-group">
+                            <div class="input-group" *ngIf="userService.estaLogueado()">
                                 <input type="text" class="form-control num-producto" value="1">
                                 <div class="input-group-append">
                                 <button type="button" name="button" class="btn btn-agregar btn-carro">

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CategoriaService } from 'src/app/services/producto-ss/categoria/categoria.service';
 import { CategoriaPage } from 'src/app/models/shopshop/categoria-page';
 
@@ -14,7 +14,8 @@ export class CategoriasComponent implements OnInit {
   categorias: Array<CategoriaPage>;
 
   constructor(
-    private CS: CategoriaService
+    private CS: CategoriaService,
+    private ruter: Router
   ) { 
   }
 
@@ -42,6 +43,10 @@ export class CategoriasComponent implements OnInit {
         console.log(err);
       }
     );
+  }
+
+  verProductosPorCategoria(idCategoria: number) {
+    this.ruter.navigate(['productos', 'categoria', idCategoria]);
   }
 
 }

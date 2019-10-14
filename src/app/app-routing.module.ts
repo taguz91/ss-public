@@ -43,6 +43,10 @@ const routes: Routes = [
     path: 'productos', 
     component: ProductoShopComponent,
   },
+  { 
+    path: 'productos/categoria/:idCategoria', 
+    component: ProductoShopComponent,
+  },
   {
     path: 'productos/lista', 
     component: ProductoListComponent,

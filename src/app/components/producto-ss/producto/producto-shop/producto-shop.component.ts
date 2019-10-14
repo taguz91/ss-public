@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ProductoService } from 'src/app/services/producto-ss/producto/producto.service';
 import { ProductoPage } from 'src/app/models/shopshop/producto-page';
-import { query } from '@angular/animations';
+import { UsuarioService } from 'src/app/services/human-ss/usuario/usuario.service';
 
 @Component({
   selector: 'app-producto-shop',
@@ -21,11 +21,19 @@ export class ProductoShopComponent implements OnInit {
 
   // Para saber si solo estamos agregando 
   agregando = false;
+  // IdCategoria 
+  private idCategoria = 0;
 
   constructor(
     private PS: ProductoService,
-    private ruter: Router
-  ) { }
+    private ruter: Router,
+    private userService: UsuarioService,
+    private activatedRoute: ActivatedRoute
+  ) {
+    this.activatedRoute.params.subscribe(params => {
+      this.idCategoria = params.idCategoria;
+    });
+  }
 
   verProducto(id: number): void {
     if(!this.agregando){
@@ -40,13 +48,17 @@ export class ProductoShopComponent implements OnInit {
 
   ngOnInit() {
 
-    switch(this.tipo){
-      case('home'):
-        this.loadForHome();
-      break;
-      default:
-        this.loadForPage();
-      break;
+    if(this.idCategoria == null){   
+      switch(this.tipo){
+        case('home'):
+          this.loadForHome();
+        break;
+        default:
+          this.loadForPage();
+        break;
+      }
+    } else {
+      this.loadForCategoria();
     }
     
   }
@@ -80,6 +92,18 @@ export class ProductoShopComponent implements OnInit {
       err => {
         console.log('No logramos cargar los productos.');
         console.log(err);        
+      }
+    );
+  }
+
+  private loadForCategoria() {
+    this.PS.getForCategoria(this.idCategoria).subscribe(
+      res => {
+        this.productos = res;
+      },
+      err => {
+        console.log('No cargamos por categoria');
+        console.log(err);
       }
     );
   }

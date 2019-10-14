@@ -12,8 +12,8 @@
 
                         <h5 class="mb-0 py-3 text-center"> {{ c.cat_nombre }} </h5>
 
-                        <div class="categoria-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="categoria-item-caption-content text-center text-white">
+                        <div class="categoria-item-caption d-flex align-items-center justify-content-center h-100 w-100" (click)="verProductosPorCategoria(c.id_categoria);">
+                            <div class="categoria-item-caption-content text-center text-white" >
                                 <a class="big-plus my-auto">+</a>
                             </div>
                         </div>

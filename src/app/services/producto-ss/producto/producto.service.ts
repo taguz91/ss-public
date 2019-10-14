@@ -57,6 +57,15 @@ export class ProductoService {
     });
   }
 
+  public getForCategoria(idCategoria) {
+    return this.http.get<ProductoPage[]>(this.url + '/categoria/' + idCategoria, {
+      params: {
+        limit: '10',
+        offset: '0'
+      }
+    });
+  }
+
   // Obtenemos la imagen del producto 
   getImgProd(url: string){
     if(url === null){
