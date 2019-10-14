@@ -61,10 +61,10 @@
     
                         <div class="col-5 ">
     
-                            <div class="input-group" *ngIf="userService.estaLogueado()">
-                                <input type="text" class="form-control num-producto" value="1">
+                            <div class="input-group">
+                                <input #cat type="text" class="form-control num-producto" value="1">
                                 <div class="input-group-append">
-                                <button type="button" name="button" class="btn btn-agregar btn-carro">
+                                <button type="button" name="button" class="btn btn-agregar btn-carro" (click)="agregarAlCarro(p.id_producto, cat.value);">
                                     <img src="../../../../../assets/icon/mi-carrito.png" alt="" class="img-icon">
                                 </button>
                                 </div>

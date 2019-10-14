@@ -63,6 +63,15 @@ export class ProductoShopComponent implements OnInit {
     
   }
 
+  agregarAlCarro(idProducto: number, cantidad: number) {
+    console.log(cantidad);
+    if(this.userService.estaLogueado()) {
+      
+    } else {
+      // this.ruter.navigate(['login']);
+    }
+  }
+
   seleccionarEstrella(i, calificacion: number) {
     let newCal = Math.round(calificacion);
     
