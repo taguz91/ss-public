@@ -27,8 +27,6 @@ export class CategoriasComponent implements OnInit {
         this.maximo = 10;
       break;
     }
-    
-    
   }
 
 }

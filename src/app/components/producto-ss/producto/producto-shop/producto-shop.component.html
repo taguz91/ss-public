@@ -12,7 +12,7 @@
                         <div class="mt-2 mr-2 d-block">
         
                             <button (click)="agregarMiLista()" class="btn btn-agregar btn-lista">
-                                <img src="../../../../../assets/icon/mi-lista.png" alt="" class="img-icon">
+                                <img src="{{ getImgProd(p.ima_url)}}" alt="" class="img-icon">
                             </button>
         
                         </div>
@@ -25,23 +25,25 @@
 
 
                 <div class="foot-producto mx-auto">
-                    <h5 class="mb-0">PC MASTER RACE CON I9</h5>
+                    <h5 class="mb-0">{{ p.prod_nombre }}</h5>
     
                     <div class="row">
     
                         <div class="col">
     
                             <p class="calificacion-general calificacion-total mb-0">
-                                <input type="radio" name="estrella{{i}}" disabled>
+                                <input id="est{{i}}-5" type="radio" name="estrella{{i}}" disabled>
                                 <label >&#9733;</label>
-                                <input type="radio" name="estrella{{i}}" checked disabled>
+                                <input id="est{{i}}-4" type="radio" name="estrella{{i}}" disabled>
                                 <label >&#9733;</label>
-                                <input type="radio" name="estrella{{i}}" disabled>
+                                <input id="est{{i}}-3" type="radio" name="estrella{{i}}" disabled>
                                 <label >&#9733;</label>
-                                <input type="radio" name="estrella{{i}}" disabled>
+                                <input id="est{{i}}-2" type="radio" name="estrella{{i}}" disabled>
                                 <label >&#9733;</label>
-                                <input type="radio" name="estrella{{i}}" disabled>
+                                <input id="est{{i}}-1" type="radio" name="estrella{{i}}" disabled>
                                 <label >&#9733;</label>
+                                <!-- ESTO SE REPITE CADA QUE HAGO SCROLL -->
+                                {{ seleccionarEstrella(i, p.calificacion) }}
                             </p>
     
                         </div>
@@ -53,7 +55,7 @@
     
     
                         <div class="col-7 d-flex">
-                            <h5 class="mb-0 my-auto precio-general" >$ 12321</h5>
+                            <h5 class="mb-0 my-auto precio-general" >$ {{ p.prod_precio_venta }}</h5>
                         </div>
     
     
