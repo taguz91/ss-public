@@ -16,7 +16,7 @@ export class FilterClienteService implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ) {
-    if(!this.usuarioService.esVendedor()){
+    if(this.usuarioService.esCliente()){
       return true;
     } else {
       this.router.navigate(['/']);

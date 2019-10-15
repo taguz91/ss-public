@@ -76,7 +76,11 @@ export class UsuarioService {
 
   esVendedor(): boolean {
     let vendedor = sessionStorage.getItem('ven');
-    return !(vendedor === null);
+      return !(vendedor === null);
+  }
+
+  esCliente(): boolean {
+    return !(sessionStorage.getItem('cli') === null);
   }
 
   salir() {
