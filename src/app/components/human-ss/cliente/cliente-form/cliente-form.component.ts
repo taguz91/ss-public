@@ -54,7 +54,7 @@ export class ClienteFormComponent implements OnInit {
 
     //Solo para pruebas
     console.log(this.router.url); 
-      if (this.router.url === '/cliente/editar'){
+      if (this.router.url === '/perfil/editar'){
 
         this.editar();
       }
@@ -116,7 +116,8 @@ export class ClienteFormComponent implements OnInit {
     }
   
     guardar(){
-
+    
+      this.onSubmit();
       if (this.submitted){
         console.log(this.cliente);
         this.service.insertCliente(this.cliente)
@@ -132,8 +133,7 @@ export class ClienteFormComponent implements OnInit {
 
 
     editar(){
-
-     
+      
       console.log(this.cliente);
       let id_cliente=9;
       console.log(id_cliente);
@@ -150,8 +150,9 @@ export class ClienteFormComponent implements OnInit {
 
     actualizar(cliente:Cliente){
     
-
+      this.onSubmit();
       if (this.submitted){
+        console.log("aqui");
         this.service.updateCliente(cliente)
         .subscribe(data=>{
           this.cliente=data;
