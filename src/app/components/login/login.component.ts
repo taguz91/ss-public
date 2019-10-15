@@ -42,7 +42,6 @@ export class LoginComponent implements OnInit {
 
   clickRegistrarse() {
     this.router.navigate(['registrarse']);
-    console.log('Registrarseeeee ');
   }
 
 }

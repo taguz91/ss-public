@@ -20,6 +20,7 @@ import { ComentarioListComponent } from './components/producto-ss/comentario/com
 import { ComentarioUpdateComponent } from './components/producto-ss/comentario/comentario-update/comentario-update.component';
 import { HomeRouteComponent } from './components/templates/home-route/home-route.component';
 import { PerfilComponent } from './components/shopshop/perfil/perfil.component';
+import { FilterNoExisteService } from './services/filter-nav/filter-no-existe/filter-no-existe.service';
 
 
 const routes: Routes = [
@@ -29,7 +30,8 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+    canActivate: [FilterNoExisteService]
   },
   {
     path: 'logout',
@@ -41,6 +43,10 @@ const routes: Routes = [
   },
   { 
     path: 'productos', 
+    component: ProductoShopComponent,
+  },
+  { 
+    path: 'productos/categoria/:idCategoria', 
     component: ProductoShopComponent,
   },
   {
@@ -87,6 +93,7 @@ const routes: Routes = [
   { 
     path: 'registrarse', 
     component: ClienteFormComponent,
+    canActivate: [FilterNoExisteService]
   },
   { 
     path: 'locales', 

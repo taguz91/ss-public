@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CategoriaService } from 'src/app/services/producto-ss/categoria/categoria.service';
+import { CategoriaPage } from 'src/app/models/shopshop/categoria-page';
 
 @Component({
   selector: 'app-categorias',
@@ -9,26 +11,42 @@ import { ActivatedRoute } from '@angular/router';
 export class CategoriasComponent implements OnInit {
 
   @Input('tipo') public tipo: string = 'h';
-  private maximo: number = 1;
-  categorias = Array;
+  categorias: Array<CategoriaPage>;
 
-  constructor() { 
+  constructor(
+    private CS: CategoriaService,
+    private ruter: Router
+  ) { 
   }
 
   ngOnInit() {
     switch(this.tipo){
       case('home'):
-        this.maximo = 4;
+        this.getFor('home');    
       break;
       case('usuario'):
-        this.maximo = 3;
+        
       break;
       case('todas'):
-        this.maximo = 10;
+        this.getFor('page');
       break;
     }
-    
-    
+  }
+
+  private getFor(url: string) {
+    this.CS.getFor(url).subscribe(
+      res => {
+        this.categorias = res;
+      },
+      err => {
+        console.log('No obtuvimos categorias');
+        console.log(err);
+      }
+    );
+  }
+
+  verProductosPorCategoria(idCategoria: number) {
+    this.ruter.navigate(['productos', 'categoria', idCategoria]);
   }
 
 }

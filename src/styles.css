@@ -24,6 +24,7 @@ button.bg-pri:focus {
   font-size: 2.2rem;
   color: #33d9b2;
   cursor: pointer;
+  text-align: center;
 }
 
 .section-title:hover {
