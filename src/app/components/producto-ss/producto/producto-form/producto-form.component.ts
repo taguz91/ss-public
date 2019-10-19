@@ -20,7 +20,7 @@ export class ProductoFormComponent implements OnInit {
 
   registerForm: FormGroup;
   submitted = false;
-  idProducto: string;
+  idProducto: number;
   idMarca: number;
   idUnidad: number;
   idLinea: number;
@@ -33,6 +33,7 @@ export class ProductoFormComponent implements OnInit {
   unidades: Unidad[];
   mostrar: boolean = false;
   mostrar2: boolean = false;
+  imagenCapturada;
 
   constructor(private formBuilder: FormBuilder,
     private productoService: ProductoService,
@@ -43,22 +44,39 @@ export class ProductoFormComponent implements OnInit {
     private marcaService: MarcaService) {
 
     this.guardado = false;
+    this.mostrar=false;
+    this.mostrar2=false;
 
-    this.idProducto = this.route.snapshot.params.idProducto || this.palabraReservada;
-    console.log(this.idProducto);
-    if (this.idProducto != this.palabraReservada) {
-      let id: number = Number(this.idProducto);
-      this.productoService.getProductoById(id).subscribe(
-        data => {
-          console.log(data);
-          this.producto2 = data;
-        }
-      );
-    }
+    this.idProducto = this.route.snapshot.params.idProducto;
+    console.log( this.idProducto);
+    
+
+    // this.idProducto = this.route.snapshot.params.idProducto || this.palabraReservada;
+    // console.log(this.idProducto);
+    // if (this.idProducto != this.palabraReservada) {
+    //   let id: number = Number(this.idProducto);
+    //   this.productoService.getProductoById(id).subscribe(
+    //     data => {
+    //       console.log(data);
+    //       this.producto2 = data;
+    //     }
+    //   );
+    // }
 
   }
 
   ngOnInit() {
+
+    if(this.idProducto){
+      // let id: number = Number(this.idProducto);
+      this.productoService.getProductoById(this.idProducto).subscribe(
+        data => {
+          console.log(data);
+          this.producto = data;
+        }
+      );
+      this.mostrar=true;
+    }
 
     this.registerForm = this.formBuilder.group({
       nombreUnidad: ['', Validators.required],
@@ -106,6 +124,7 @@ export class ProductoFormComponent implements OnInit {
       prod_tiene_iva: true,
       prod_activo: true
     }
+
   }
 
 
@@ -234,6 +253,21 @@ export class ProductoFormComponent implements OnInit {
   onReset() {
     this.submitted = false;
     this.registerForm.reset();
+  }
+
+  cargarImagenes(imagen:any){
+
+    if(imagen.target.files && imagen.target.files[0]){
+      const reader = new FileReader();
+      reader.onload = (
+        (e) => {
+          this.imagenCapturada = e.target["result"];
+        }
+      );
+
+      reader.readAsDataURL(imagen.target.files[0]);
+    }
+
   }
 
 }

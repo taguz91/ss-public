@@ -178,6 +178,8 @@
             <h2 class="mr-sm-2">Asignar imágenes al producto</h2>
             <button (click)="mostrar2 = !mostrar2" class="btn btn-outline-dark" id="mostrar">Click Aquí</button>
 
+            <img [src]="imagenCapturada" alt="" width="200px" height="150px">
+
         </div>
         
         <hr>
@@ -186,7 +188,7 @@
 
             <div class="col-md-9 form-group">
                 <label for="exampleFormControlFile1">Selecciona una imagen</label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1" multiple>
+                <input type="file" class="form-control-file" id="exampleFormControlFile1" multiple (change)="cargarImagenes($event)">
               </div>
 
         </form>
