@@ -21,6 +21,7 @@ import { ComentarioUpdateComponent } from './components/producto-ss/comentario/c
 import { HomeRouteComponent } from './components/templates/home-route/home-route.component';
 import { PerfilComponent } from './components/shopshop/perfil/perfil.component';
 import { FilterNoExisteService } from './services/filter-nav/filter-no-existe/filter-no-existe.service';
+import { CambioPassComponent } from './components/cambio-pass/cambio-pass.component';
 
 
 const routes: Routes = [
@@ -103,6 +104,10 @@ const routes: Routes = [
   { 
     path: 'cliente/preferencias', 
     component: PreferenciasComponent,
+  },
+  { 
+    path: 'perfil/contrasena', 
+    component: CambioPassComponent,
   },
   { 
     path: '',  

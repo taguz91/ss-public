@@ -28,9 +28,9 @@
 
     </div> -->
 
-    <mat-checkbox (change)="checkCheckBoxvalue($event,categoria)" *ngFor="let categoria of categorias" [(ngModel)]="categoria.cat_activo">{{categoria.cat_nombre}}</mat-checkbox>
-
-
-    <button (click)="guardarPreferencias()" mat-fab color [disabled]="!estadoBoton" color="primary">Guardar</button>
-
+        <mat-checkbox (change)="checkCheckBoxvalue($event,categoria)" *ngFor="let categoria of categorias" [(ngModel)]="categoria.cat_activo">{{categoria.cat_nombre}}</mat-checkbox>
+        
+        <button (click)="guardarPreferencias()" mat-fab color [disabled]="!estadoBoton" color="primary">Guardar</button>
+    
+    
 </div>

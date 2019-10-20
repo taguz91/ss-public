@@ -95,4 +95,6 @@ button {
 
  ::ng-deep .mat-checkbox:not(.mat-checkbox-disabled) .mat-checkbox-ripple .mat-ripple-element {
     background: #33d9b2!important;
+    
 }
+

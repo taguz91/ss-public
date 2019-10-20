@@ -2,15 +2,23 @@
 
   <div class="row">
 
-    <div class="col-6">
+    <div class="col-5">
       <h3 class="d-inline-block">Nombre:</h3>
       <h4  class="d-inline-block ml-2">{{cliente.per_primer_nombre}} {{cliente.per_primer_apellido}}</h4>
     </div>
 
-    <div class="col-6">
+    <div class="col-5">
       <h3 class="d-inline-block">Usuario:</h3>
       <h4 class="d-inline-block ml-2">{{cliente.usuario.user_nick}}</h4>
     </div>
+
+    <div class="col-2">
+        <button (click)="cambiarContrasena()" class="btn bg-pri text-white text-center btn-block">
+            Seguridad
+        </button>
+    </div>
+
+    
 
   </div>
 
@@ -41,7 +49,8 @@
         Mis datos
       </button>
     </div>
-
   </div>
+
+ 
 
 </div>

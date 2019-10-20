@@ -35,7 +35,7 @@ export class PerfilComponent implements OnInit {
     private service:ClienteService, ) { }
 
   ngOnInit() {
-    this.service.getClienteId(10)
+    this.service.getClienteId(20)
     .subscribe(data=>{
       this.cliente=data;
       
@@ -49,6 +49,10 @@ export class PerfilComponent implements OnInit {
 
   misDatos(){
     this.router.navigate(["/perfil/editar"],{ state: { id: this.cliente.id_persona  } });
+  }
+
+  cambiarContrasena(){
+    this.router.navigate(["/perfil/contrasena"],{ state: { id: this.cliente.id_persona } });
   }
 
 }
