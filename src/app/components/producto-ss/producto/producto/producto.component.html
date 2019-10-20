@@ -7,16 +7,16 @@
 
             <div class="head-producto mx-auto">
 
-                <div class="acciones-principal h-100 w-100" >
+                <div class="acciones-principal h-100 w-100">
 
                     <div class="mt-2 mr-2 d-block">
-    
+
                         <button type="button" name="button" class="btn btn-agregar btn-lista" *ngIf="userService.estaLogueado()">
                             <img src="../../../../../assets/icon/mi-lista.png" alt="" class="img-icon">
                         </button>
-    
+
                     </div>
-    
+
                 </div>
 
                 <img src="{{ PS.getImgProd(producto.producto.ima_url)}}" class="card-img-top img-producto d-block" alt="...">
@@ -27,14 +27,14 @@
                 <div class="row py-2 mr-1">
 
                     <div class="col-7 d-flex">
-                        <h5 class="ml-3 mb-0 my-auto precio-general" >$ {{ producto.producto.prod_precio_venta }} </h5>
+                        <h5 class="ml-3 mb-0 my-auto precio-general">$ {{ producto.producto.prod_precio_venta }} </h5>
                     </div>
 
                     <div class="col-5">
                         <div class="input-group" *ngIf="userService.estaLogueado()">
                             <input type="text" class="form-control num-producto" value="1">
                             <div class="input-group-append">
-                            <button type="button" name="button" class="btn btn-agregar btn-carro">
+                                <button type="button" name="button" class="btn btn-agregar btn-carro">
                                 <img src="../../../../../assets/icon/mi-carrito.png" alt="" class="img-icon">
                             </button>
                             </div>
@@ -68,23 +68,23 @@
 
                             <input id="est1" type="radio" name="estrella" value="5">
                             <label for="est1">&#9733;</label>
-                            
+
                             <input id="est2" type="radio" name="estrella" value="4">
                             <label for="est2">&#9733;</label>
-                            
+
                             <input id="est3" type="radio" name="estrella" value="3">
                             <label for="est3">&#9733;</label>
-                            
+
                             <input id="est4" type="radio" name="estrella" value="2">
                             <label for="est4">&#9733;</label>
-                            
+
                             <input id="est5" type="radio" name="estrella" value="1">
                             <label for="est5">&#9733;</label>
-    
+
                         </p>
 
                     </form>
-                    
+
                 </div>
 
             </div>
@@ -105,26 +105,29 @@
 
         <!-- COMENTARIOS DE PRODUCTOS -->
         <div class="col-10 col-md-11 col-xl-4 mx-auto">
-        
-            <div class="input-group mt-3 mt-xl-0">
-                
-                <textarea class="form-control" name="comentario" id="" cols="10" rows="2" placeholder="Ingrese su comentario aquí" ></textarea>
+            <app-comentario-list></app-comentario-list>
+            <app-comentario></app-comentario>
+
+            <!-- <div class="input-group mt-3 mt-xl-0">
+
+                <textarea class="form-control" name="comentario" id="" cols="10" rows="2" placeholder="Ingrese su comentario aquí"></textarea>
                 <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button" id="btn-comentar">Comentar</button>
+                    <button class="btn btn-outline-secondary" type="button" id="btn-comentar">Comentar</button>
                 </div>
-            </div>        
+            </div>
+
+        </div>-->
+            <!-- /COMENTARIOS DE PRODUCTOS -->
 
         </div>
-        <!-- /COMENTARIOS DE PRODUCTOS -->
-        
-    </div>
 
-    <!--RECOMENDACIONES DE PRODUCTOS-->
-    <div class="row mt-4">
-        <div class="col-12">
-            <app-producto-recom [idProducto]="idProducto"></app-producto-recom>
+
+        <!--RECOMENDACIONES DE PRODUCTOS-->
+        <div class="row mt-4">
+            <div class="col-12">
+                <app-producto-recom [idProducto]="idProducto"></app-producto-recom>
+            </div>
         </div>
-    </div>
-    <!--/RECOMENDACIONES DE PRODUCTOS-->
+        <!--/RECOMENDACIONES DE PRODUCTOS-->
 
-</div>
+    </div>

@@ -110,6 +110,7 @@ export class ProductoShopComponent implements OnInit {
     if(IE != null){
       IE.setAttribute('checked', '');
     }
+    
   }
 
   private loadForHome(){
