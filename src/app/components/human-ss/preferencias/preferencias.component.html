@@ -1,7 +1,9 @@
 <div class="container">
-    <h1>{{title}}</h1>
-    <p>Escoja sus categorias preferidas:</p>
-
+    <br>
+    <h2>{{title}}</h2>
+    <br>
+    <h4>Escoja sus categorias preferidas:</h4>
+    <br>
     <!-- <div class="list-container">
 
         <div class="todo-container column-container">
@@ -28,9 +30,15 @@
 
     </div> -->
 
-        <mat-checkbox (change)="checkCheckBoxvalue($event,categoria)" *ngFor="let categoria of categorias" [(ngModel)]="categoria.cat_activo">{{categoria.cat_nombre}}</mat-checkbox>
+    <mat-list role="list"> 
+            <mat-list-item role="listitem" *ngFor="let categoria of categorias"  >
+                    <mat-checkbox (change)="checkCheckBoxvalue($event,categoria)" [(ngModel)]="categoria.cat_activo">{{categoria.cat_nombre}}</mat-checkbox>
+            </mat-list-item>       
+    </mat-list>
         
-        <button (click)="guardarPreferencias()" mat-fab color [disabled]="!estadoBoton" color="primary">Guardar</button>
+        <button (click)="guardarPreferencias()" mat-fab color [disabled]="!estadoBoton" ><mat-icon class="icon-display">favorite</mat-icon></button>
     
+        
     
+
 </div>

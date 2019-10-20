@@ -17,6 +17,7 @@ export class ClienteFormComponent implements OnInit {
   
   registerForm: FormGroup;
   submitted = false;
+  registro=true;
   
   tiposIdentificacion:TipoIdentificacion[];
 
@@ -52,10 +53,26 @@ export class ClienteFormComponent implements OnInit {
   ngOnInit() {
   
 
+    this.registerForm = this.formBuilder.group({
+      tipoIdentificacion: ['', Validators.required],
+      identificacion: ['', Validators.required],
+      primerNombre: ['', Validators.required],
+      segundoNombre: [''],
+      primerApellido: ['', Validators.required],
+      segundoApellido: [''],
+      correoElectronico: ['', Validators.required],
+      sexo: ['', Validators.required],
+      nick: ['', Validators.required],
+      contrasena: ['', Validators.required ],
+      fechaNacimiento: ['', Validators.required],
+      acceptTerms: [false, Validators.requiredTrue ]
+      
+    });
+
     //Solo para pruebas
     console.log(this.router.url); 
       if (this.router.url === '/perfil/editar'){
-
+        this.registro=false;
         this.editar();
       }
     
@@ -67,20 +84,7 @@ export class ClienteFormComponent implements OnInit {
       
     })
 
-    this.registerForm = this.formBuilder.group({
-      tipoIdentificacion: ['', Validators.required],
-      identificacion: ['', Validators.required],
-      primerNombre: ['', Validators.required],
-      segundoNombre: ['', Validators.required],
-      primerApellido: ['', Validators.required],
-      segundoApellido: ['', Validators.required],
-      correoElectronico: ['', Validators.required],
-      sexo: ['', Validators.required],
-      nick: ['', Validators.required],
-      contrasena: ['', Validators.required],
-      fechaNacimiento: ['', Validators.required],
-      
-    });
+    
   }
 
   clickCancelar() {
@@ -89,13 +93,18 @@ export class ClienteFormComponent implements OnInit {
 
   get f() { return this.registerForm.controls; }
 
-    onSubmit() {
+    onSubmit(cliente:Cliente) {
+        
+        console.log(cliente)
         this.submitted = true;
-
+        console.log("no pasa")
         // stop here if form is invalid
         if (this.registerForm.invalid) {
+          
             return;
         }
+        console.log("pasa")
+        this.enviar(cliente)
 
     }
 
@@ -105,7 +114,7 @@ export class ClienteFormComponent implements OnInit {
     }
 
     enviar(cliente:Cliente){
-      
+     
       if (cliente.id_persona){
        
         this.actualizar(cliente);
@@ -116,8 +125,9 @@ export class ClienteFormComponent implements OnInit {
     }
   
     guardar(){
+      
     
-      this.onSubmit();
+      console.log(this.submitted);
       if (this.submitted){
         console.log(this.cliente);
         this.service.insertCliente(this.cliente)
@@ -140,7 +150,6 @@ export class ClienteFormComponent implements OnInit {
         this.service.getClienteId(+window.history.state.id)
         .subscribe(data=>{
           console.log(data);
-          data.usuario.user_pass=null;
           this.cliente=data;
         })
     }
@@ -149,8 +158,9 @@ export class ClienteFormComponent implements OnInit {
     
 
     actualizar(cliente:Cliente){
-    
-      this.onSubmit();
+      
+     
+      console.log(this.submitted);
       if (this.submitted){
         console.log("aqui");
         this.service.updateCliente(cliente)

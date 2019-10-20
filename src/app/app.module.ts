@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
-import {MatCardModule,MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {MatCardModule,MatButtonModule, MatCheckboxModule, MatListModule, MatIconModule} from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -96,7 +96,9 @@ import { CambioPassComponent } from './components/cambio-pass/cambio-pass.compon
     MatCardModule,
     MatButtonModule, 
     MatButtonModule, 
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatListModule,
+    MatIconModule
   ],
   providers: [
     TipoIdentificacionService,
