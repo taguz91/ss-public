@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Comentario } from '../../../../models/producto-ss/comentario';
 import { ComentarioService } from '../../../../services/producto-ss/producto/comentario.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-comentario-list',
@@ -10,10 +10,15 @@ import { Router } from '@angular/router';
 })
 export class ComentarioListComponent implements OnInit {
   comentarios: Comentario[];
-  constructor(private service: ComentarioService, private router:Router) { }
+  private idProducto:number;
+  constructor(private service: ComentarioService, private router:Router,private activatedRoute: ActivatedRoute) { 
+    this.activatedRoute.params.subscribe(params => {
+      this.idProducto = params.id;
+    });
+  }
 
   ngOnInit() {
-    this.service.getcomentariosLista()
+    this.service.getComentarioIdPro(this.idProducto)
     .subscribe(data => {
       this.comentarios = data;
     } );

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Comentario } from '../../../../models/producto-ss/comentario';
 import { ComentarioService } from '../../../../services/producto-ss/producto/comentario.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-comentario-update',
@@ -10,7 +10,12 @@ import { Router } from '@angular/router';
 })
 export class ComentarioUpdateComponent implements OnInit {
  Comentario: Comentario = new Comentario();
-  constructor(private router: Router, private service: ComentarioService ) { }
+ private idProducto:number;
+  constructor(private activatedRoute: ActivatedRoute, private service: ComentarioService, private ruter: Router ) {
+    this.activatedRoute.params.subscribe(params => {
+      this.idProducto = params.id;
+    });
+   }
 
   ngOnInit() {
   this.editar();
@@ -26,11 +31,12 @@ export class ComentarioUpdateComponent implements OnInit {
         this.Comentario=data;})
   }
   verObjeto(comentario:Comentario){
-    comentario.id_producto =5;
+    console.log(this.idProducto);
+    comentario.id_producto =2;
     console.log(comentario.id_comentario +' '+comentario.comentario +' '+comentario.id_producto+' '+comentario.id_cliente);
     this.service.createcomentario(comentario);
       alert("Se actualizó exitosamente");
-      this.router.navigate(["productos/comentariosListar"]);
+      this.ruter.navigate(["productos"]);
    
   }
 

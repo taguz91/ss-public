@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Comentario } from '../../../../models/producto-ss/comentario';
 import { ComentarioService } from '../../../../services/producto-ss/producto/comentario.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-comentario',
@@ -9,20 +9,25 @@ import { Router } from '@angular/router';
   styleUrls: ['./comentario.component.css']
 })
 export class ComentarioComponent implements OnInit {
+  private idProducto: number;
   Comentario: Comentario = new Comentario();
 submited = false;
    textocomentario: string;
-  constructor(private comentarioServic: ComentarioService, private router: Router) { }
+  constructor( private activatedRoute: ActivatedRoute,private comentarioServic: ComentarioService, private router: Router) {
+    this.activatedRoute.params.subscribe(params => {
+    this.idProducto = params.id;
+  }); }
 
   ngOnInit() {
-    this.router.navigate(['productos/comentariosListar']);
+   
   }
   newComentario(): void{
     this.submited = false;
     this.Comentario = new Comentario();
       }
       save() {
-        this.Comentario.id_producto = 5;
+        console.log(this.idProducto);
+        this.Comentario.id_producto = this.idProducto;
         this.Comentario.id_cliente = 12;
 
         console.log(this.Comentario);

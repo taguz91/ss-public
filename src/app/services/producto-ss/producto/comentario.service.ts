@@ -30,5 +30,9 @@ export class ComentarioService {
     return this.http.get<Comentario>(this.baseUrl + '/' + id_comentario);
    
   }
+  getComentarioIdPro( id_producto : number) {
+    return this.http.get<Comentario[]>(this.baseUrl + '/comentarioPro/' + id_producto);
+   
+  }
 
 }
