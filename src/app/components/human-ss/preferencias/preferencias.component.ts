@@ -33,7 +33,7 @@ estadoBoton=false;
 
   ngOnInit() {
 
-    this.service2.getMisPreferencias(10)
+    this.service2.getMisPreferencias(+window.history.state.id)
         .subscribe(data=>{
           this.preferencias=data;
           this.cargarPreferencias();     
