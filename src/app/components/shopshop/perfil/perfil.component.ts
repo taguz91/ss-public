@@ -47,4 +47,8 @@ export class PerfilComponent implements OnInit {
     this.router.navigate(["cliente/preferencias"],{ state: { id: this.cliente.id_persona  } });
   }
 
+  misDatos(){
+    this.router.navigate(["/perfil/editar"],{ state: { id: this.cliente.id_persona  } });
+  }
+
 }

@@ -1,6 +1,6 @@
 <div class="container">
     <h1>{{title}}</h1>
-    <p>Escoja sus categorias preferidas</p>
+    <p>Escoja sus categorias preferidas:</p>
 
     <!-- <div class="list-container">
 
@@ -31,6 +31,6 @@
     <mat-checkbox (change)="checkCheckBoxvalue($event,categoria)" *ngFor="let categoria of categorias" [(ngModel)]="categoria.cat_activo">{{categoria.cat_nombre}}</mat-checkbox>
 
 
-    <button (click)="guardarPreferencias()" mat-fab color [disabled]="!estadoBoton" color="primary">Save</button>
+    <button (click)="guardarPreferencias()" mat-fab color [disabled]="!estadoBoton" color="primary">Guardar</button>
 
 </div>
