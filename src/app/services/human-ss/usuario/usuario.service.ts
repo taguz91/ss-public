@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { UsuarioLog } from 'src/app/models/human-ss/usuario-log';
+import { LoginRP } from 'src/app/models/shopshop/login-rp';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -31,42 +33,13 @@ export class UsuarioService {
 
 
   login(username: string, password: string) {
-    // Un Login en memoria, solo para que sea rapido ya que no tenemos tiempo
-    let existe = false;
-    if(password === 'pass'){
-      if(username === 'cli'){
-        console.log(this.usuarios[0]);
-        
-        sessionStorage.setItem('userssp', this.usuarios[0].username);
-        sessionStorage.setItem('cli', this.usuarios[0].id_cliente.toString());
-        existe = true;
-      }
-
-      if(username === 'ven'){
-        sessionStorage.setItem('userssp', this.usuarios[1].username);
-        sessionStorage.setItem('ven', this.usuarios[1].id_vendedor.toString());
-        existe = true;
-      }
-    }
-
-    return existe;
-
-    /*let res = this.http
-    .post<any>(
-      '', {
+    return this.http
+    .post<LoginRP>(
+      'http://localhost:1313/login', {
         username,
         password
       }
-    ).pipe(
-      map(
-        user => {
-          sessionStorage.setItem('userssp', username);
-
-          return user;
-        }
-      )
-    ).subscribe();
-    return res;*/
+    );
   }
 
   estaLogueado(): boolean {
@@ -83,8 +56,17 @@ export class UsuarioService {
     return !(sessionStorage.getItem('cli') === null);
   }
 
+  getToken(): string {
+    if (this.estaLogueado()) {
+      return sessionStorage.getItem('usertokenss');
+    } else {
+      return '';
+    }
+  }
+
   salir() {
     sessionStorage.removeItem('userssp');
+    sessionStorage.removeItem('usertokenss');
     if(this.esVendedor){
       sessionStorage.removeItem('ven');
     } else {

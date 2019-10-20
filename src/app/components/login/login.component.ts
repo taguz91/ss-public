@@ -11,7 +11,7 @@ export class LoginComponent implements OnInit {
 
   username: string = '';
   password = '';
-  esValido = false;
+  esValido = true;
 
   constructor(
     private router: Router,
@@ -29,19 +29,37 @@ export class LoginComponent implements OnInit {
   }
 
   checkLogin() {
-    if(this.userService.login(
+    let res = this.userService.login(
       this.username, 
       this.password
-    )) {
-      this.router.navigate(['']);
-      this.esValido = true;
-    } else {
-      this.esValido = false;
-    }
+    );
+
+    res.subscribe(
+      user => {
+        sessionStorage.setItem('userssp', user.user_nick);
+        sessionStorage.setItem('usertokenss', user.jwttoken);
+
+        if (user.user_tipo == 'C') {
+          sessionStorage.setItem('cli', user.id_persona.toString());
+        } else {
+          sessionStorage.setItem('ven', user.id_persona.toString());
+        }
+        this.router.navigate(['']);
+      },
+      err => {
+        console.log('No nos logueamos');
+        console.log(err);
+        this.esValido = false;
+      }
+    );
   }
 
   clickRegistrarse() {
     this.router.navigate(['registrarse']);
+  }
+
+  cerrarError() {
+    this.esValido = true;
   }
 
 }
