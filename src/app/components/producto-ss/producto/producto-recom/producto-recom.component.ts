@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ProductoPage } from 'src/app/models/shopshop/producto-page';
 import { ProductoService } from 'src/app/services/producto-ss/producto/producto.service';
 
@@ -9,6 +9,9 @@ import { ProductoService } from 'src/app/services/producto-ss/producto/producto.
 })
 export class ProductoRecomComponent implements OnInit {
 
+  // Para obtener el idproducto que tenemos en nuestra ruta 
+  @Input('idProducto') public idProducto: number = 1;
+
   productos: Array<ProductoPage> = [];
 
   constructor(
@@ -16,7 +19,7 @@ export class ProductoRecomComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.PS.getForHome().subscribe(
+    this.PS.getForRecomendacion(this.idProducto).subscribe(
       res => {
         this.productos = res;
       },

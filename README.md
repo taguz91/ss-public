@@ -12,9 +12,18 @@ FrondEnd de ShopShop para clientes y vendedores.
 
 ### Servicios
 
+- gateway-ss 
+
+### Gateway-SS 
+
+Es el servicio que controla nuestro login, y el ruteo de la aplicacion. 
+
+### Producto-SS 
+
+Es el servicio encargado de enlistar los productos, categorias, lineas, buscar productos de nuestra tienda. 
 
 
-##Entregables 
+## Entregables 
 
 ### Primer Entregable  
  

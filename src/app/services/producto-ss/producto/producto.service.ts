@@ -66,6 +66,11 @@ export class ProductoService {
     });
   }
 
+  // Obtenemos para recomendacion  
+  public getForRecomendacion(idProducto: number) {
+    return this.http.get<ProductoPage[]>(this.url + '/recomendacion/' + idProducto);
+  }
+
   // Obtenemos la imagen del producto 
   getImgProd(url: string){
     if(url === null){
