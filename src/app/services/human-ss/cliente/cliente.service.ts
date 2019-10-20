@@ -10,6 +10,7 @@ export class ClienteService {
   constructor(private http:HttpClient) { }
 
   Url="http://localhost:2020/api/v1/cliente/";
+  Url2="http://localhost:2020/api/v1/persona/";
 
   getClientes(){
     return this.http.get<Cliente[]>(this.Url);
@@ -34,5 +35,10 @@ export class ClienteService {
   deleteCliente(cliente:Cliente){
     return this.http.put<Cliente>(this.Url+"eliminar/"+cliente.id_persona, cliente);
    
+  }
+
+  getClienteLogueado(id_cliente:number){
+    return this.http.get<Cliente[]>(this.Url2+"buscar/"+id_cliente);
+    
   }
 }

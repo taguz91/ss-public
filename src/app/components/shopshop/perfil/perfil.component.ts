@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ClienteService } from 'src/app/services/human-ss/cliente/cliente.service';
 import { Cliente } from 'src/app/models/human-ss/cliente/cliente';
+import { UsuarioService } from 'src/app/services/human-ss/usuario/usuario.service';
 
 @Component({
   selector: 'app-perfil',
@@ -9,6 +10,9 @@ import { Cliente } from 'src/app/models/human-ss/cliente/cliente';
   styleUrls: ['./perfil.component.css']
 })
 export class PerfilComponent implements OnInit {
+
+  nick:string;
+  
 
   cliente:Cliente={
     id_persona: 0,
@@ -32,14 +36,32 @@ export class PerfilComponent implements OnInit {
   };
  
   constructor(private router:Router, 
-    private service:ClienteService, ) { }
+    private service:ClienteService,
+    private service2:UsuarioService, ) { }
 
   ngOnInit() {
-    this.service.getClienteId(20)
-    .subscribe(data=>{
-      this.cliente=data;
-      
+    
+    
+    this.nick=sessionStorage.getItem('userssp');
+
+    this.service2.getUserXnick(this.nick)
+    .subscribe(data1=>{
+      this.cliente.usuario.user_nick=data1[0].user_nick; 
+      this.cliente.usuario.id_usuario=data1[0].id_usuario;
+        this.service.getClienteLogueado(this.cliente.usuario.id_usuario)
+          .subscribe(data2=>{
+          this.cliente.id_persona=data2[0].id_persona;
+          this.service.getClienteId(this.cliente.id_persona)
+            .subscribe(data3=>{
+              this.cliente=data3;          
+            })
+    
+        })     
     })
+
+    
+
+    
   }
 
   misCategorias(){

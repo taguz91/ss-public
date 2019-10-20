@@ -4,11 +4,14 @@ import { map } from 'rxjs/operators';
 import { UsuarioLog } from 'src/app/models/human-ss/usuario-log';
 import { LoginRP } from 'src/app/models/shopshop/login-rp';
 import { Observable } from 'rxjs';
+import { Usuario } from 'src/app/models/human-ss/usuario';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
+
+  
 
   private usuarios: Array<UsuarioLog> = [
     {
@@ -30,6 +33,8 @@ export class UsuarioService {
   constructor(
     private http: HttpClient
   ) { }
+
+  Url="http://localhost:2020/api/v1/usuario/";
 
 
   login(username: string, password: string) {
@@ -72,6 +77,11 @@ export class UsuarioService {
     } else {
       sessionStorage.removeItem('cli');
     }
+    
+  }
+
+  getUserXnick(nick:string){
+    return this.http.get<Usuario[]>(this.Url+"buscar/"+nick);
     
   }
 

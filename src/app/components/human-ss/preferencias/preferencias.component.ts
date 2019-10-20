@@ -32,7 +32,7 @@ estadoBoton=false;
   title = 'Preferencias';
 
   ngOnInit() {
-
+    console.log(window.history.state.id);
     this.service2.getMisPreferencias(+window.history.state.id)
         .subscribe(data=>{
           this.preferencias=data;
@@ -136,7 +136,7 @@ estadoBoton=false;
           id_categoria: 0
         };
         miPreferencia.id_categoria=miCategoriaNueva.id_categoria;
-        miPreferencia.cliente.id_persona=10;
+        miPreferencia.cliente.id_persona=window.history.state.id;
         console.log("x");
         console.log(miPreferencia);
         this.service2.insertPreferencia(miPreferencia)
