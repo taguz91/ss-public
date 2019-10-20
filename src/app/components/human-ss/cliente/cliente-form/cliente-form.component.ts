@@ -135,9 +135,9 @@ export class ClienteFormComponent implements OnInit {
     editar(){
       
       console.log(this.cliente);
-      let id_cliente=9;
-      console.log(id_cliente);
-        this.service.getClienteId(+id_cliente)
+      // let id_cliente=;
+      // console.log(id_cliente);
+        this.service.getClienteId(+window.history.state.id)
         .subscribe(data=>{
           console.log(data);
           data.usuario.user_pass=null;
