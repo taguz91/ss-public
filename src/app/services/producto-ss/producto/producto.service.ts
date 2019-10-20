@@ -58,7 +58,23 @@ export class ProductoService {
   }
 
   public getForCategoria(idCategoria) {
-    return this.http.get<ProductoPage[]>(this.url + '/categoria/' + idCategoria, {
+    return this.getForPeticion('categoria', idCategoria);
+  }
+
+  public getForLinea(idLinea) {
+    return this.getForPeticion('linea', idLinea);
+  }
+
+  public getForMarca(idMarca) {
+    return this.getForPeticion('marca', idMarca);
+  }
+
+  public getForVendedor(idVendedor) {
+    return this.getForPeticion('vendedor', idVendedor);
+  }
+
+  getForPeticion(url, param: number): Observable<ProductoPage[]> {
+    return this.http.get<ProductoPage[]>(this.url + '/'+url+'/' + param, {
       params: {
         limit: '10',
         offset: '0'
@@ -74,7 +90,7 @@ export class ProductoService {
   // Obtenemos la imagen del producto 
   getImgProd(url: string){
     if(url === null){
-      url = ' ../../../../../assets/img/noimage.png';
+      url = '../../../../../assets/img/noimage.png';
     }
     return url;
   }

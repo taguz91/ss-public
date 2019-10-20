@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { ProductoService } from 'src/app/services/producto-ss/producto/producto.service';
 import { ProductoPage } from 'src/app/models/shopshop/producto-page';
 import { UsuarioService } from 'src/app/services/human-ss/usuario/usuario.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-producto-shop',
@@ -23,6 +24,13 @@ export class ProductoShopComponent implements OnInit {
   agregando = false;
   // IdCategoria 
   private idCategoria = 0;
+  // Para buscar por linea 
+  private idLinea;
+  // Para buscar por marca 
+  private idMarca;
+  // Para buscar por vendedor 
+  private idVendedor; 
+
 
   constructor(
     private PS: ProductoService,
@@ -32,6 +40,9 @@ export class ProductoShopComponent implements OnInit {
   ) {
     this.activatedRoute.params.subscribe(params => {
       this.idCategoria = params.idCategoria;
+      this.idLinea = params.idLinea;
+      this.idMarca = params.idMarca;
+      this.idVendedor = params.idVendedor;
     });
   }
 
@@ -48,7 +59,12 @@ export class ProductoShopComponent implements OnInit {
 
   ngOnInit() {
 
-    if(this.idCategoria == null){   
+    if(
+      this.idCategoria == null && 
+      this.idLinea == null && 
+      this.idMarca == null && 
+      this.idVendedor == null
+      ){   
       switch(this.tipo){
         case('home'):
           this.loadForHome();
@@ -58,7 +74,22 @@ export class ProductoShopComponent implements OnInit {
         break;
       }
     } else {
-      this.loadForCategoria();
+      if (this.idCategoria != null) {
+        this.loadForCategoria();
+      }
+
+      if(this.idLinea != null) {
+        this.loadForLinea();
+      }
+
+      if (this.idMarca != null) {
+        this.loadForMarca();
+      }
+
+      if(this.idVendedor != null) {
+        this.loadForVendedor();
+      }
+      
     }
     
   }
@@ -82,36 +113,35 @@ export class ProductoShopComponent implements OnInit {
   }
 
   private loadForHome(){
-    this.PS.getForHome().subscribe(
-      res => {
-        this.productos = res;
-      },
-      err => {
-        console.log('Error al buscar para home page.');
-        console.log(err);
-      }
-    );
+    this.loadProducto( this.PS.getForHome());
   }
 
   private loadForPage() {
-    this.PS.getForPage().subscribe(
-      res => {
-        this.productos = res;
-      }, 
-      err => {
-        console.log('No logramos cargar los productos.');
-        console.log(err);        
-      }
-    );
+    this.loadProducto(this.PS.getForPage());
   }
 
   private loadForCategoria() {
-    this.PS.getForCategoria(this.idCategoria).subscribe(
+    this.loadProducto(this.PS.getForCategoria(this.idCategoria));
+  }
+
+  private loadForLinea() {
+    this.loadProducto(this.PS.getForLinea(this.idLinea));
+  }
+
+  private loadForMarca() {
+    this.loadProducto(this.PS.getForMarca(this.idMarca));
+  }
+
+  private loadForVendedor() {
+    this.loadProducto(this.PS.getForVendedor(this.idVendedor));
+  }
+
+  private loadProducto(peticion: Observable<ProductoPage[]>) {
+    peticion.subscribe(
       res => {
         this.productos = res;
       },
       err => {
-        console.log('No cargamos por categoria');
         console.log(err);
       }
     );
