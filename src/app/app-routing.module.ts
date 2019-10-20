@@ -49,6 +49,18 @@ const routes: Routes = [
     path: 'productos/categoria/:idCategoria', 
     component: ProductoShopComponent,
   },
+  { 
+    path: 'productos/linea/:idLinea', 
+    component: ProductoShopComponent,
+  },
+  { 
+    path: 'productos/vendedor/:idVendedor', 
+    component: ProductoShopComponent,
+  },
+  { 
+    path: 'productos/marca/:idMarca', 
+    component: ProductoShopComponent,
+  },
   {
     path: 'productos/lista', 
     component: ProductoListComponent,
