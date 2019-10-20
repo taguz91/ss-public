@@ -26,6 +26,7 @@ export class ComentarioListComponent implements OnInit {
   editar(comen: Comentario): void {
     console.log(comen.id_comentario);
     localStorage.setItem('idComentario', String(comen.id_comentario));
+    localStorage.setItem('idProducto1', String(this.idProducto));
     this.router.navigate(['productos/ComentarioActualizar']);
 
   }

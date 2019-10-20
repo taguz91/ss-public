@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { UsuarioService } from 'src/app/services/human-ss/usuario/usuario.service';
 import { ProductoDetalle } from 'src/app/models/shopshop/producto-detalle';
 import { ProductoService } from 'src/app/services/producto-ss/producto/producto.service';
+import { Calificaciones } from '../../../../models/producto-ss/calificaciones';
 
 @Component({
   selector: 'app-producto',
@@ -37,6 +38,7 @@ export class ProductoComponent implements OnInit {
       vendedor: 'SV'
     }
   };
+  private Calificacion:Calificaciones;
 
   constructor(
     private activatedRoute: ActivatedRoute,

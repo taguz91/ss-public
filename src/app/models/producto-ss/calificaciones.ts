@@ -1,4 +1,4 @@
-export interface Calificaciones{
+export class Calificaciones{
     id_calificacion: number;
     id_producto: number;
     id_cliente: number;
