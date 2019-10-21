@@ -31,6 +31,8 @@ export class ProductoShopComponent implements OnInit {
   private idMarca;
   // Para buscar por vendedor 
   private idVendedor; 
+  // Para buscar  
+  private aguja: string = '';
 
 
   constructor(
@@ -57,6 +59,17 @@ export class ProductoShopComponent implements OnInit {
 
   agregarMiLista(){
     this.agregando = true;
+  }
+
+  buscar() {
+    if (this.aguja != '') {
+      this.PS.getForAguja(this.aguja).subscribe(
+        data => {
+          this.productos = data;
+        }
+      );
+    }
+    
   }
 
   ngOnInit() {

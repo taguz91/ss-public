@@ -97,6 +97,17 @@ export class ProductoService {
     return this.http.get<ProductoPage>(this.url + '/page/' + idProducto);
   }
 
+  // Buscamos por aguja 
+  getForAguja(aguja: string): Observable<ProductoPage[]> {
+    return this.http.get<ProductoPage[]>(this.url + '/buscar/', {
+      params: {
+        aguja: aguja,
+        limit: '10',
+        offset: '0'
+      }
+    });
+  }
+
   // Obtenemos la imagen del producto 
   getImgProd(url: string){
     if(url === null){
