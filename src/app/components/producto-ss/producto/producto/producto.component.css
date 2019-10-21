@@ -174,7 +174,7 @@
   color: #ffc048;
 }
 
-.calificacion-general label:hover, label:hover ~ label {
+.calificacion-general label:hover, label:hover:not("disabled") ~ label {
   color: #ffc048;
 }
 
