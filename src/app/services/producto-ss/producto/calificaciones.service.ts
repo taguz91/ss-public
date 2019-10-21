@@ -6,7 +6,7 @@ import { Calificaciones } from '../../../models/producto-ss/calificaciones';
   providedIn: 'root'
 })
 export class CalificacionesService {
-  baseUrl = 'http://localhost:6060/api/v1/calificacion';
+  baseUrl = 'http://localhost:6060/api/v1/producto/calificacion';
   constructor(private http: HttpClient) { }
  guardarCalificacion(calificaciones:Calificaciones) {
   return this.http.post<Calificaciones>(this.baseUrl + '/guardar', calificaciones).subscribe();

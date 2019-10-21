@@ -55,17 +55,17 @@ export class ClienteFormComponent implements OnInit {
 
     this.registerForm = this.formBuilder.group({
       tipoIdentificacion: ['', Validators.required],
-      identificacion: ['', Validators.required],
+      identificacion: ['', Validators.required  ],
       primerNombre: ['', Validators.required],
       segundoNombre: [''],
       primerApellido: ['', Validators.required],
-      segundoApellido: [''],
+      segundoApellido: ['' ],
       correoElectronico: ['', Validators.required],
       sexo: ['', Validators.required],
       nick: ['', Validators.required],
       contrasena: ['', Validators.required ],
       fechaNacimiento: ['', Validators.required],
-      acceptTerms: [false, Validators.requiredTrue ]
+      acceptTerms: [false, Validators.required ]
       
     });
 
