@@ -50,11 +50,9 @@ export class PerfilComponent implements OnInit {
       this.cliente.usuario.id_usuario=data1[0].id_usuario;
         this.service.getClienteLogueado(this.cliente.usuario.id_usuario)
           .subscribe(data2=>{
-          this.cliente.id_persona=data2[0].id_persona;
-          this.service.getClienteId(this.cliente.id_persona)
-            .subscribe(data3=>{
-              this.cliente=data3;          
-            })
+          
+              this.cliente=data2[0];          
+            
     
         })     
     })
