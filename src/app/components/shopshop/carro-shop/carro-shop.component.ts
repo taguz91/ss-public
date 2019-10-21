@@ -16,32 +16,13 @@ export class CarroShopComponent implements OnInit {
   private subTotalI = 0;
   private iva = 0;
 
-  private productos: ProductoCarro[] = [
-    {
-      cantidad: 2,
-      total: 30,
-      ima_url: 'https://images.goodsmile.info/cgm/images/product/20120611/3575/18809/large/f2b278e93c215d999e5a694bae6cea2f.jpg', 
-      prod_nombre: 'Link',
-      prod_precio: 15,
-      tiene_iva: false
-    },
-    {
-      cantidad: 15,
-      total: 300,
-      ima_url: 'https://images.goodsmile.info/cgm/images/product/20180410/7197/51359/large/0392e410e9b5d0b0fd2f834a835ed629.jpg', 
-      prod_nombre: 'Geralt de Rivia',
-      prod_precio: 20,
-      tiene_iva: true
-    }
-  ];
+  private productos: ProductoCarro[];
 
   constructor(
     private CS: CarritoService,
     private PS: ProductoService
   ) {
-    this.productos.forEach(p => {
-      this.actualizarPrecio(p);
-    });
+    this.productos = CS.getProductos();
   }
 
   ngOnInit() {
@@ -63,6 +44,14 @@ export class CarroShopComponent implements OnInit {
     }
     this.iva = this.subTotalI * 0.12;
     this.total = this.subTotalSI + this.subTotalI + this.iva; 
+  }
+
+  actualizarCarro() {
+    this.productos = this.CS.getProductos();
+
+    this.productos.forEach(p => {
+      this.actualizarPrecio(p);
+    });
   }
 
 

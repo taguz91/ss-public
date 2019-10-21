@@ -61,6 +61,13 @@ export class ProductoComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (this.idProducto != null) {
+      this.PS.getForDetalle(this.idProducto).subscribe(
+        data => {
+          this.producto = data;
+        }
+      );
+    }
   }
 
   verProductosPorLinea(idLinea) {
