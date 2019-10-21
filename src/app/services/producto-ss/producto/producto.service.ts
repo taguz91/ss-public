@@ -3,6 +3,7 @@ import { Producto } from 'src/app/models/producto-ss/producto';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ProductoPage } from 'src/app/models/shopshop/producto-page';
+import { ProductoDetalle } from 'src/app/models/shopshop/producto-detalle';
 
 @Injectable({
   providedIn: 'root'
@@ -85,6 +86,15 @@ export class ProductoService {
   // Obtenemos para recomendacion  
   public getForRecomendacion(idProducto: number) {
     return this.http.get<ProductoPage[]>(this.url + '/recomendacion/' + idProducto);
+  }
+
+  // Obtenemos para mostrarlo en su pagina  
+  public getForDetalle(idProducto: number) {
+    return this.http.get<ProductoDetalle>(this.url + '/detalle/' + idProducto);
+  }
+
+  public getForCarro(idProducto: number) {
+    return this.http.get<ProductoPage>(this.url + '/page/' + idProducto);
   }
 
   // Obtenemos la imagen del producto 
