@@ -4,6 +4,7 @@ import { ProductoService } from 'src/app/services/producto-ss/producto/producto.
 import { ProductoPage } from 'src/app/models/shopshop/producto-page';
 import { UsuarioService } from 'src/app/services/human-ss/usuario/usuario.service';
 import { Observable } from 'rxjs';
+import { CarritoService } from 'src/app/services/carrito-ss/carrito/carrito.service';
 
 @Component({
   selector: 'app-producto-shop',
@@ -36,7 +37,8 @@ export class ProductoShopComponent implements OnInit {
     private PS: ProductoService,
     private ruter: Router,
     private userService: UsuarioService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private CS: CarritoService
   ) {
     this.activatedRoute.params.subscribe(params => {
       this.idCategoria = params.idCategoria;
@@ -97,7 +99,11 @@ export class ProductoShopComponent implements OnInit {
   agregarAlCarro(idProducto: number, cantidad: number) {
     console.log(cantidad);
     if(this.userService.estaLogueado()) {
-      
+      this.PS.getForCarro(idProducto).subscribe(
+        data => {
+          this.CS.agregar(data, cantidad);
+        }
+      );
     } else {
       // this.ruter.navigate(['login']);
     }

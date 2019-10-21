@@ -5,4 +5,5 @@ export interface ProductoPage {
   prod_precio_venta: number;
   calificacion: number;
   ima_url: string;
+  tiene_iva: boolean;
 }

@@ -5,4 +5,5 @@ export interface ProductoCarro {
   prod_nombre: string;
   prod_precio: number; 
   tiene_iva: boolean;
+  id_producto: number;
 }
