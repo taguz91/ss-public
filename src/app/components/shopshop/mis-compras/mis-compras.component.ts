@@ -30,22 +30,20 @@ export class MisComprasComponent implements OnInit {
     console.log('Imprimeee');
     const doc = new JSPDF('', 'pt', 'letter'); 
 
-    // Generamos una tabla automaticamente  
-    
     doc.cellInitialize();
     let col = 0;
 
-    doc.cell(0, col, 20, 20, '#', col, 'center');
-    doc.cell(1, col, 80, 20, 'Cantidad', col, 'center');
-    doc.cell(3, col, 120, 20, 'Fecha Ingres', col, 'center');
-    doc.cell(4, col, 70, 20, 'Sub I', col, 'center');
-    doc.cell(5, col, 70, 20, 'Sub SI', col, 'center');
-    doc.cell(6, col, 70, 20, 'Iva', col, 'center');
-    doc.cell(7, col, 70, 20, 'Total', col, 'center');
+    doc.cell(0, col, 30, 30, '#', col, 'center');
+    doc.cell(1, col, 80, 30, 'Cantidad', col, 'center');
+    doc.cell(3, col, 120, 30, 'Fecha Ingreso', col, 'center');
+    doc.cell(4, col, 70, 30, 'Sub I', col, 'center');
+    doc.cell(5, col, 70, 30, 'Sub SI', col, 'center');
+    doc.cell(6, col, 70, 30, 'Iva', col, 'center');
+    doc.cell(7, col, 70, 30, 'Total', col, 'center');
     col = 1;
 
     this.ventas.forEach(v => {
-      doc.cell(0, col, 20, 20, v.id_venta.toString(), col, 'center');
+      doc.cell(0, col, 30, 20, v.id_venta.toString(), col, 'center');
       doc.cell(1, col, 80, 20, v.num_productos.toString(), col, 'center');
       doc.cell(3, col, 120, 20, v.vent_fecha_ingreso.toString().substring(0, 10), col, 'center');
       doc.cell(4, col, 70, 20, v.vent_subtotal_iva.toString(), col, 'center');
