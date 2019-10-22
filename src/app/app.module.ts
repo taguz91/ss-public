@@ -88,11 +88,8 @@ import { MisComprasComponent } from './components/shopshop/mis-compras/mis-compr
     HomeVenComponent,
     PerfilComponent,
     CambioPassComponent,
-<<<<<<< HEAD
-    PerfilVenComponent
-=======
+    PerfilVenComponent,
     MisComprasComponent
->>>>>>> 0533ca22b8bc8f5cf4dc2804af290b17a80e5fdb
   ],
   imports: [
     BrowserModule,
