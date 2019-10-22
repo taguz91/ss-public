@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ProductoService } from 'src/app/services/producto-ss/producto/producto.service';
 import { Producto } from 'src/app/models/producto-ss/producto';
 import { Router } from '@angular/router';
+import * as jsPdf from 'jspdf';
+import * as jQuery from 'jquery';
 
 @Component({
   selector: 'app-producto-list',
@@ -36,6 +38,15 @@ export class ProductoListComponent implements OnInit {
     //   }
     // );
     this.router.navigate([`productos/guardar/:${producto.id_producto}`]);
+  }
+  verReporte(){
+    var doc=new jsPdf({
+      orientation: 'landscape'
+     });
+    doc.text('Reporte de Productos',125,30);
+    doc.fromHTML($('#body').get(0),40,30);
+    doc.save('Reporte-de-productos.pdf');
+    
   }
 
 }
