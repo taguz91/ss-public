@@ -41,12 +41,5 @@ submited = false;
         this.submited = true;
         this.save();
       }
-  getcomentario() {
-    this.Comentario.id_producto = 12;
-    
-    console.log(this.Comentario.comentario,  this.Comentario.id_producto );
-  }
-  llamarListar(){
-    
-  }
+ 
 }

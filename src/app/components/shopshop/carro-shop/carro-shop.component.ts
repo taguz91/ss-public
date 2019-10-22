@@ -10,18 +10,13 @@ import { ProductoService } from 'src/app/services/producto-ss/producto/producto.
 })
 export class CarroShopComponent implements OnInit {
 
-  // Informacion de todo  
-  private total = 0;
-  private subTotalSI = 0;
-  private subTotalI = 0;
-  private iva = 0;
-
   private productos: ProductoCarro[];
 
   constructor(
     private CS: CarritoService,
     private PS: ProductoService
   ) {
+    
     this.productos = CS.getProductos();
   }
 
@@ -36,23 +31,8 @@ export class CarroShopComponent implements OnInit {
     });
   }
 
-  actualizarPrecio(p: ProductoCarro) {
-    if(p.tiene_iva) {
-      this.subTotalI += p.total;
-    } else {
-      this.subTotalSI += p.total;
-    }
-    this.iva = this.subTotalI * 0.12;
-    this.total = this.subTotalSI + this.subTotalI + this.iva; 
-  }
-
   actualizarCarro() {
-    this.productos = this.CS.getProductos();
-
-    this.productos.forEach(p => {
-      this.actualizarPrecio(p);
-    });
+    console.log(this.CS.total);
   }
-
 
 }

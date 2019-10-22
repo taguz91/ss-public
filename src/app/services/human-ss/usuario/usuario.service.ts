@@ -1,34 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
-import { UsuarioLog } from 'src/app/models/human-ss/usuario-log';
 import { LoginRP } from 'src/app/models/shopshop/login-rp';
-import { Observable } from 'rxjs';
 import { Usuario } from 'src/app/models/human-ss/usuario';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
-
-  
-
-  private usuarios: Array<UsuarioLog> = [
-    {
-      id_persona: 1,
-      id_vendedor: 5,
-      id_cliente: 0,
-      username: 'cli',
-      token: ''
-    },
-    {
-      id_persona: 2,
-      id_vendedor: 0,
-      id_cliente: 12,
-      username: 'ven',
-      token: ''
-    }
-  ]
 
   constructor(
     private http: HttpClient
@@ -78,6 +56,13 @@ export class UsuarioService {
       sessionStorage.removeItem('cli');
     }
     
+  }
+
+
+  getIdCliente () {
+    if (this.estaLogueado()) {
+      return sessionStorage.getItem('cli');
+    }
   }
 
   getUserXnick(nick:string){

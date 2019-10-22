@@ -24,7 +24,11 @@ import { FilterNoExisteService } from './services/filter-nav/filter-no-existe/fi
 
 import { VendedorComponent } from './components/human-ss/vendedor/vendedor/vendedor.component';
 import { CambioPassComponent } from './components/cambio-pass/cambio-pass.component';
+
 import { PerfilVenComponent } from './components/human-ss/perfil-ven/perfil-ven.component';
+
+import { MisComprasComponent } from './components/shopshop/mis-compras/mis-compras.component';
+
 
 
 const routes: Routes = [
@@ -99,6 +103,11 @@ const routes: Routes = [
   { 
     path: 'perfil', 
     component: PerfilComponent,
+    canActivate: [FilterClienteService],
+  },
+  { 
+    path: 'compras', 
+    component: MisComprasComponent,
     canActivate: [FilterClienteService],
   },
   { 

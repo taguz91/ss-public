@@ -52,7 +52,7 @@ export class ProductoService {
   public getForPage() {
     return this.http.get<ProductoPage[]>(this.url + '/home/all', {
       params: {
-        limit: '10',
+        limit: '30',
         offset: '0'
       }
     });
@@ -95,6 +95,17 @@ export class ProductoService {
 
   public getForCarro(idProducto: number) {
     return this.http.get<ProductoPage>(this.url + '/page/' + idProducto);
+  }
+
+  // Buscamos por aguja 
+  getForAguja(aguja: string): Observable<ProductoPage[]> {
+    return this.http.get<ProductoPage[]>(this.url + '/buscar/', {
+      params: {
+        aguja: aguja,
+        limit: '10',
+        offset: '0'
+      }
+    });
   }
 
   // Obtenemos la imagen del producto 

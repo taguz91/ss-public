@@ -41,13 +41,16 @@ import { PreferenciasService } from './services/human-ss/preferencias/preferenci
 
 import { ComentarioListComponent } from './components/producto-ss/comentario/comentario-list/comentario-list.component';
 import { ComentarioUpdateComponent } from './components/producto-ss/comentario/comentario-update/comentario-update.component';
-import { CommonModule } from '@angular/common';
 import { CarroShopComponent } from './components/shopshop/carro-shop/carro-shop.component';
 import { HomeRouteComponent } from './components/templates/home-route/home-route.component';
 import { HomeVenComponent } from './components/human-ss/vendedor/home-ven/home-ven.component';
 import { PerfilComponent } from './components/shopshop/perfil/perfil.component';
 import { CambioPassComponent } from './components/cambio-pass/cambio-pass.component';
+
 import { PerfilVenComponent } from './components/human-ss/perfil-ven/perfil-ven.component';
+
+import { MisComprasComponent } from './components/shopshop/mis-compras/mis-compras.component';
+
 
 @NgModule({
   declarations: [
@@ -85,7 +88,11 @@ import { PerfilVenComponent } from './components/human-ss/perfil-ven/perfil-ven.
     HomeVenComponent,
     PerfilComponent,
     CambioPassComponent,
+<<<<<<< HEAD
     PerfilVenComponent
+=======
+    MisComprasComponent
+>>>>>>> 0533ca22b8bc8f5cf4dc2804af290b17a80e5fdb
   ],
   imports: [
     BrowserModule,

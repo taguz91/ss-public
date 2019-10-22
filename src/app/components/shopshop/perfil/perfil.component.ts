@@ -76,4 +76,8 @@ export class PerfilComponent implements OnInit {
     this.router.navigate(["/perfil/contrasena"],{ state: { id: this.cliente.usuario.id_usuario } });
   }
 
+  verMisCompras() {
+    this.router.navigate(['compras']);
+  }
+
 }
