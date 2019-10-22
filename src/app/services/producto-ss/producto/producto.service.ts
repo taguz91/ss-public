@@ -52,7 +52,7 @@ export class ProductoService {
   public getForPage() {
     return this.http.get<ProductoPage[]>(this.url + '/home/all', {
       params: {
-        limit: '10',
+        limit: '30',
         offset: '0'
       }
     });

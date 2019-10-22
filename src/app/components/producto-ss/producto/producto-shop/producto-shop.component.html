@@ -7,7 +7,11 @@
             <label class="ml-2">Buscar: </label>
             <input class="form-control ml-sm-2 mr-sm-2" name="aguja"  
             [(ngModel)]="aguja" type="search">
-            <button (click)="buscar()" class="btn btn-outline-dark my-2 my-sm-0">Buscar</button>
+            <button (click)="buscar()" class="btn btn-outline-dark my-2 my-sm-0">Buscar</button> 
+
+            <div class="spinner-border text-success ml-2" role="status" *ngIf="cargando">
+            <span class="sr-only">Loading...</span>
+            </div>
         </form>
 
     </div>

@@ -20,6 +20,7 @@ export class ProductoShopComponent implements OnInit {
   @Input('tipo') public tipo: string = 'p';
 
   productos: Array<ProductoPage> = [];
+  cargando = true;
 
   // Para saber si solo estamos agregando 
   agregando = false;
@@ -63,9 +64,11 @@ export class ProductoShopComponent implements OnInit {
 
   buscar() {
     if (this.aguja != '') {
+      this.cargando = true;
       this.PS.getForAguja(this.aguja).subscribe(
         data => {
           this.productos = data;
+          this.cargando = false;
         }
       );
     }
@@ -110,7 +113,6 @@ export class ProductoShopComponent implements OnInit {
   }
 
   agregarAlCarro(idProducto: number, cantidad: number) {
-    console.log(cantidad);
     if(this.userService.estaLogueado()) {
       this.PS.getForCarro(idProducto).subscribe(
         data => {
@@ -157,9 +159,11 @@ export class ProductoShopComponent implements OnInit {
   }
 
   private loadProducto(peticion: Observable<ProductoPage[]>) {
+    this.cargando = true;
     peticion.subscribe(
       res => {
         this.productos = res;
+        this.cargando = false;
       },
       err => {
         console.log(err);

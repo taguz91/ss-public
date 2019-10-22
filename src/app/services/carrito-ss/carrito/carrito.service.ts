@@ -3,13 +3,14 @@ import { ProductoCarro } from 'src/app/models/shopshop/producto-carro';
 import { ProductoPage } from 'src/app/models/shopshop/producto-page';
 import { UsuarioService } from '../../human-ss/usuario/usuario.service';
 import { HttpClient } from '@angular/common/http';
+import { MiVenta } from 'src/app/models/shopshop/mi-venta';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CarritoService {
 
-  private url = 'http://localhost:8080/api/v1/venta/guardar';
+  private url = 'http://localhost:8080/api/v1/venta/';
 
   private productos: ProductoCarro[] = Array<ProductoCarro>();
 
@@ -104,7 +105,7 @@ export class CarritoService {
           detalle.push(newdetalle);
         });
 
-        return this.http.post<Venta>(this.url, venta).subscribe(
+        return this.http.post<Venta>(this.url + 'guardar', venta).subscribe(
           data => {
             this.productos.splice(0, this.productos.length);
             this.total = 0;
@@ -115,9 +116,11 @@ export class CarritoService {
         );
       }
 
-
-      
     }
+  }
+
+  getVentasForCliente() {
+    return this.http.get<MiVenta[]>(this.url + 'page/' +  this.US.getIdCliente());
   }
   
 }

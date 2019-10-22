@@ -22,6 +22,7 @@ import { HomeRouteComponent } from './components/templates/home-route/home-route
 import { PerfilComponent } from './components/shopshop/perfil/perfil.component';
 import { FilterNoExisteService } from './services/filter-nav/filter-no-existe/filter-no-existe.service';
 import { CambioPassComponent } from './components/cambio-pass/cambio-pass.component';
+import { MisComprasComponent } from './components/shopshop/mis-compras/mis-compras.component';
 
 
 const routes: Routes = [
@@ -96,6 +97,11 @@ const routes: Routes = [
   { 
     path: 'perfil', 
     component: PerfilComponent,
+    canActivate: [FilterClienteService],
+  },
+  { 
+    path: 'compras', 
+    component: MisComprasComponent,
     canActivate: [FilterClienteService],
   },
   { 
