@@ -47,6 +47,7 @@ import { HomeRouteComponent } from './components/templates/home-route/home-route
 import { HomeVenComponent } from './components/human-ss/vendedor/home-ven/home-ven.component';
 import { PerfilComponent } from './components/shopshop/perfil/perfil.component';
 import { CambioPassComponent } from './components/cambio-pass/cambio-pass.component';
+import { PerfilVenComponent } from './components/human-ss/perfil-ven/perfil-ven.component';
 
 @NgModule({
   declarations: [
@@ -83,7 +84,8 @@ import { CambioPassComponent } from './components/cambio-pass/cambio-pass.compon
     HomeRouteComponent,
     HomeVenComponent,
     PerfilComponent,
-    CambioPassComponent
+    CambioPassComponent,
+    PerfilVenComponent
   ],
   imports: [
     BrowserModule,

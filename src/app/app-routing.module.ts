@@ -21,7 +21,10 @@ import { ComentarioUpdateComponent } from './components/producto-ss/comentario/c
 import { HomeRouteComponent } from './components/templates/home-route/home-route.component';
 import { PerfilComponent } from './components/shopshop/perfil/perfil.component';
 import { FilterNoExisteService } from './services/filter-nav/filter-no-existe/filter-no-existe.service';
+
+import { VendedorComponent } from './components/human-ss/vendedor/vendedor/vendedor.component';
 import { CambioPassComponent } from './components/cambio-pass/cambio-pass.component';
+import { PerfilVenComponent } from './components/human-ss/perfil-ven/perfil-ven.component';
 
 
 const routes: Routes = [
@@ -102,6 +105,14 @@ const routes: Routes = [
     path: 'perfil/editar', 
     component: ClienteFormComponent,
     canActivate: [FilterClienteService],
+  },
+  { 
+    path: 'perfil-vendedor', 
+    component: PerfilVenComponent,
+  },
+  { 
+    path: 'perfil-vendedor/editar', 
+    component: VendedorComponent,
   },
   { 
     path: 'registrarse', 

@@ -85,4 +85,13 @@ export class UsuarioService {
     
   }
 
+  updateUser(usuario:Usuario){
+    return this.http.put<Usuario>(this.Url+"actualizar/"+usuario.id_usuario,usuario);
+   
+  }
+
+  getUserId(id_usuario:number){
+    return this.http.get<Usuario>(this.Url+"/"+id_usuario);
+  }
+
 }

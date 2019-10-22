@@ -86,18 +86,20 @@ button {
     font-size: 18px;
     background-color: #303952;
     color: white;
-    margin-right: 15%;
-    background-color: hsl(166, 61%, 41%);
+    right: 120px;
+  bottom: 370px;
+  position: fixed !important;
+    background-color: #33d9b2;
     
 }
 
 ::ng-deep .mat-checkbox-checked .mat-checkbox-background,
 .mat-checkbox-indeterminate .mat-checkbox-background {
-    background: hsl(166, 62%, 48%)!important;
+    background: #33d9b2 !important;
 }
 
  ::ng-deep .mat-checkbox:not(.mat-checkbox-disabled) .mat-checkbox-ripple .mat-ripple-element {
-    background: hsl(166, 62%, 48%)!important;
+    background:  #33d9b2 !important;
     
 }
 

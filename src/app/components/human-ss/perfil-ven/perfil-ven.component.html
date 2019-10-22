@@ -1,0 +1,47 @@
+<div class="container my-5">
+
+    <div class="row">
+  
+      <div class="col-5">
+        <h3 class="d-inline-block">Nombre:</h3>
+        <h4  class="d-inline-block ml-2">{{vendedor.per_primer_nombre}} {{vendedor.per_primer_apellido}}</h4>
+      </div>
+  
+      <div class="col-5">
+        <h3 class="d-inline-block">Usuario:</h3>
+        <h4 class="d-inline-block ml-2">{{vendedor.usuario.user_nick}}</h4>
+      </div>
+  
+      
+  
+      
+  
+    </div>
+  
+    <hr class="separador-pri w-100">
+  
+    <div class="row">
+  
+      <div class="col-4 col-md-4">
+        <button class="btn bg-pri text-white text-center btn-block">
+          Mis Ventas
+        </button>
+      </div>
+  
+      
+
+      <div class="col-4 col-md-4">
+        <button (click)="misDatos()" class="btn bg-pri text-white text-center btn-block">
+          Mis Datos
+        </button>
+      </div>
+
+      <div class="col-4 col-md-4">
+        <button (click)="cambiarContrasena()" class="btn bg-pri text-white text-center btn-block">
+            Seguridad
+        </button>
+        </div>
+        
+    </div>
+
+  </div>

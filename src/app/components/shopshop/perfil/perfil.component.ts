@@ -72,7 +72,8 @@ export class PerfilComponent implements OnInit {
   }
 
   cambiarContrasena(){
-    this.router.navigate(["/perfil/contrasena"],{ state: { id: this.cliente.id_persona } });
+    console.log(this.cliente.usuario.id_usuario);
+    this.router.navigate(["/perfil/contrasena"],{ state: { id: this.cliente.usuario.id_usuario } });
   }
 
 }

@@ -53,27 +53,43 @@ export class ClienteFormComponent implements OnInit {
   ngOnInit() {
   
 
-    this.registerForm = this.formBuilder.group({
-      tipoIdentificacion: ['', Validators.required],
-      identificacion: ['', Validators.required  ],
-      primerNombre: ['', Validators.required],
-      segundoNombre: [''],
-      primerApellido: ['', Validators.required],
-      segundoApellido: ['' ],
-      correoElectronico: ['', Validators.required],
-      sexo: ['', Validators.required],
-      nick: ['', Validators.required],
-      contrasena: ['', Validators.required ],
-      fechaNacimiento: ['', Validators.required],
-      acceptTerms: [false, Validators.required ]
-      
-    });
+    
 
     //Solo para pruebas
     console.log(this.router.url); 
       if (this.router.url === '/perfil/editar'){
         this.registro=false;
+        this.registerForm = this.formBuilder.group({
+          tipoIdentificacion: ['', Validators.required],
+          identificacion: ['', Validators.required  ],
+          primerNombre: ['', Validators.required],
+          segundoNombre: [''],
+          primerApellido: ['', Validators.required],
+          segundoApellido: ['' ],
+          correoElectronico: ['', Validators.required],
+          sexo: ['', Validators.required],
+          nick: ['', Validators.required],
+          fechaNacimiento: ['', Validators.required],
+       
+          
+        });
         this.editar();
+      }else{
+        this.registerForm = this.formBuilder.group({
+          tipoIdentificacion: ['', Validators.required],
+          identificacion: ['', Validators.required  ],
+          primerNombre: ['', Validators.required],
+          segundoNombre: [''],
+          primerApellido: ['', Validators.required],
+          segundoApellido: ['' ],
+          correoElectronico: ['', Validators.required],
+          sexo: ['', Validators.required],
+          nick: ['', Validators.required],
+          contrasena: ['', Validators.required ],
+          fechaNacimiento: ['', Validators.required],
+          acceptTerms: [false, Validators.required ]
+          
+        });
       }
     
           
