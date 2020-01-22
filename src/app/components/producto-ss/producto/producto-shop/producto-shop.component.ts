@@ -34,7 +34,9 @@ export class ProductoShopComponent implements OnInit {
   private idVendedor; 
   // Para buscar  
   private aguja: string = '';
-
+  // Para saber si estamos en la pagina 
+  private isPage: boolean = false; 
+  private limitIni: number;
 
   constructor(
     private PS: ProductoService,
@@ -49,6 +51,7 @@ export class ProductoShopComponent implements OnInit {
       this.idMarca = params.idMarca;
       this.idVendedor = params.idVendedor;
     });
+    this.limitIni = PS.LIMIT;
   }
 
   verProducto(id: number): void {
@@ -86,12 +89,15 @@ export class ProductoShopComponent implements OnInit {
       switch(this.tipo){
         case('home'):
           this.loadForHome();
+          this.isPage = false;
         break;
         default:
           this.loadForPage();
+          this.isPage = true;
         break;
       }
     } else {
+      this.isPage = false;
       if (this.idCategoria != null) {
         this.loadForCategoria();
       }
@@ -167,6 +173,26 @@ export class ProductoShopComponent implements OnInit {
       },
       err => {
         console.log(err);
+        this.cargando = false;
+      }
+    );
+  }
+
+  cargarMasProductos() {
+    this.cargando = true;
+    this.limitIni += this.PS.LIMIT;
+    this.PS.getForPageWithOffset(this.limitIni).subscribe(
+      res => {
+        if (res != null) {
+          res.forEach((pro) => {
+            this.productos.push(pro);
+          });
+        }
+        this.cargando = false;
+      },
+      err => {
+        console.log(err);
+        this.cargando = false;
       }
     );
   }

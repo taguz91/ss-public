@@ -12,6 +12,8 @@ export class ProductoService {
 
   url: string = "http://localhost:6060/api/v1/producto";
 
+  public LIMIT: number = 20;
+
   public producto: Producto;
 
   constructor( private http:HttpClient) { }
@@ -52,8 +54,17 @@ export class ProductoService {
   public getForPage() {
     return this.http.get<ProductoPage[]>(this.url + '/home/all', {
       params: {
-        limit: '30',
+        limit: this.LIMIT + '',
         offset: '0'
+      }
+    });
+  }
+
+  public getForPageWithOffset(offset: number) {
+    return this.http.get<ProductoPage[]>(this.url + '/home/all', {
+      params: {
+        limit: this.LIMIT + '',
+        offset: offset + ''
       }
     });
   }
